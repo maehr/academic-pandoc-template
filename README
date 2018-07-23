@@ -1,0 +1,81 @@
+# Academic pandoc template
+
+This template is intended to use with [typademic](https://typademic.ch) but it works with a variety of systems.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine.
+
+### Use with [typademic](https://typademic.ch) online
+
+1. Go to [typademic](https://typademic.ch)
+2. Follow the instructions
+3. Be happy
+
+### Use with Pandoc and Latex
+
+Install all prerequisites
+
+- [Pandoc](http://pandoc.org/installing.html)
+- [Pandoc Citeproc](https://github.com/jgm/pandoc-citeproc)
+- [LaTeX](https://www.latex-project.org/get/)
+- [Google Fonts](https://github.com/google/fonts)
+
+Open your command line, navigate to the root of this folder and execute teh following commands.
+
+```bash
+pandoc academic-pandoc-template.md --output academic-pandoc-template.pdf --from markdown+ascii_identifiers+tex_math_single_backslash+raw_tex+table_captions+yaml_metadata_block+autolink_bare_uris --pdf-engine xelatex--filter pandoc-citeproc --standalone
+pandoc academic-pandoc-template.md --output academic-pandoc-template.docx --from markdown+ascii_identifiers+tex_math_single_backslash+raw_tex+table_captions+yaml_metadata_block+autolink_bare_uris --pdf-engine xelatex--filter pandoc-citeproc --standalone
+```
+
+### Use with [typademic](https://github.com/maehr/typademic) on [Docker](https://docker.com)
+
+Install [Docker CE](https://www.docker.com/community-edition) and start a [typademic](https://github.com/maehr/typademic) instance.
+
+#### Mac with [Homebrew](https://brew.sh/index_de)
+
+```bash
+brew install docker git
+git clone git@github.com:maehr/typademic.git
+docker-compose up
+```
+
+#### Ubuntu 16.04
+
+```bash
+sudo apt-get update
+sudo apt-get install docker-ce git
+git clone git@github.com:maehr/typademic.git
+docker-compose up
+```
+
+## Built With
+
+* [Docker CE](https://www.docker.com/community-edition)
+* [CSL](https://citationstyles.org/)
+* [LaTeX](https://www.latex-project.org/)
+* [Markdown](https://daringfireball.net/projects/markdown/)
+* [Pandoc](https://pandoc.org/)
+
+## Contributing
+
+Please read [CONTRIBUTING](https://github.com/maehr/academic-pandoc-template/blob/master/CCONTRIBUTING) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/maehr/academic-pandoc-template/tags).
+
+## Authors
+
+* **Moritz Mähr** - *Initial work* - [maehr](https://github.com/maehr)
+
+See also the list of [contributors](https://github.com/maehr/academic-pandoc-template/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+* Amazing work by [John MacFarlane](http://johnmacfarlane.net/)
+* More mentions to come!
