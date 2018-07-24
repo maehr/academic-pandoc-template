@@ -22,7 +22,7 @@ Install all prerequisites
 - [LaTeX](https://www.latex-project.org/get/)
 - [Google Fonts](https://github.com/google/fonts)
 
-Open your command line, navigate to the root of this folder and execute the following commands.
+Open your command line, navigate to `/template/` and execute the following commands.
 
 ```bash
 pandoc academic-pandoc-template.md --output academic-pandoc-template.pdf --from markdown+ascii_identifiers+tex_math_single_backslash+raw_tex+table_captions+yaml_metadata_block+autolink_bare_uris --pdf-engine xelatex --filter pandoc-citeproc --standalone
