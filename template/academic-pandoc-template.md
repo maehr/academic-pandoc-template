@@ -162,7 +162,7 @@ Etwas Text, um zu zeigen, dass die Verweise später folgen können.
 
 ## Bilder
 
-Speichern Sie Ihr Bild in diesem Ordner und fügen Sie es so ein:
+Speichern Sie Ihr Bild als JPG oder PNG in den Ordner `/template/` und fügen Sie es so ein:
 
 Inline-Stil:
 
