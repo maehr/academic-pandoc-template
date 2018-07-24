@@ -76,12 +76,14 @@ Some text to show that the reference links can follow later.
 ## Images
 
 ```markdown
-Save your image to `images/` and insert it like this:
+Save your image to `/template/` and insert it like this:
 
 Inline-style:
-![alt text](images/example.jpg "Logo Title Text 1")
+
+![Figure caption text](images/example.jpg "Logo Title Text 1")
 
 Reference-style:
+
 ![alt text][logo]
 
 [logo]: images/example.jpg "Logo Title Text 2"
@@ -97,6 +99,8 @@ Colons can be used to align columns.
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
+
+Table: Table captions are done like this.
 
 There must be at least 3 dashes separating each header cell.
 The outer pipes (|) are optional, and you don't need to make the
@@ -135,10 +139,6 @@ If you want to use endnotes instead turn them on in document options.
 <!-- Comments are not shown in the final PDF. -->
 ```
 
-# Citations EndNote
-
-Coming soon
-
 # Citations JabRef
 
 1. Create a bibliography with JabRef.
@@ -148,10 +148,6 @@ Coming soon
 3. Save file
 
 ![JabRef](.doc/JabRef.png)
-
-# Citations Zotero
-
-Coming soon
 
 ## Add citations to your document
 
@@ -178,3 +174,7 @@ You can also write an in-text citation, as follows:
 ## Change citations style
 
 Choose a style from the list [CSL-Repository](https://www.zotero.org/styles) (or its corresponding [GitHub Repo](https://github.com/citation-style-language/styles))
+
+## Bibliography
+
+The last heading without any text following will be the heading for the bibliography.
