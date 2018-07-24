@@ -1,74 +1,47 @@
 ---
 # Front matter
 lang: de-CH
-title: "LOREM IPSUM"
-subtitle: "dolor sit amet, consetetur sadipscing elitr"
+title: "Ein schöner Titel"
+subtitle: "ein wundervoller Undertitel"
 author: "Petra Muster"
 date: "30. Juni 2018"
-keywords: "Lorem, Ipsum"
+abstract: "Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging."
+keywords: "Schlagworte, Worte"
+thanks: "Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare."
 
 # Bibliography
-csl: infoclio-de.csl # See https://www.zotero.org/styles for more styles.
+csl: style.csl # See https://www.zotero.org/styles for more styles.
 bibliography: references.bib # CSL JSON and CSL YAML work best with infoclio-de BIB also kind of works. See https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md for more formats.
-suppress-bibliography: no
-link-citations: yes
-color-links: yes
+suppress-bibliography: false
+link-citations: true
+color-links: true
 linkcolor: black
 urlcolor: black
 citecolor: black
-endnote: no
+endnote: false
 
 # Formatting
-toc: yes # Table of contents
+toc: true # Table of contents
 toc_depth: 2
-lof: no # List of figures
-lot: no # List of tables
+lof: true # List of figures
+lot: true # List of tables
 fontsize: 12pt
 linestretch: 1.5
 mainfont: "Merriweather"
 sansfont: "Raleway"
 # monofont:
 # mathfont:
-documentclass: scrbook
-# classoption: [twoside, openright]
-geometry: [a4paper, bindingoffset=10mm, inner=30mm, outer=30mm, top=30mm, bottom=30mm]
+documentclass: report
+classoption: [notitlepage, onecolumn, openany] # See https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/
+geometry: [a4paper, bindingoffset=0mm, inner=30mm, outer=30mm, top=30mm, bottom=30mm]
 header-includes:
-  # - \raggedbottom # keeps text to the top, versus \flushbottom
-  # - \usepackage{tcolorbox} # infoboxes
-  # - \KOMAoptions{BCOR=8.25mm} # binding correction
-  - \KOMAoptions{DIV=calc}
-  # - \usepackage{makeidx}
-  # - \makeindex
-  # - \usepackage[ngerman]{babel} # new german for pdflatex
-  # - \usepackage[margins=raggedright]{floatrow} # tables align left
   - \clubpenalty10000
   - \widowpenalty10000
-  - \interlinepenalty100
-  - \displaywidowpenalty=10000
   - \interfootnotelinepenalty=10000
   - \usepackage{float} # keep figures where there are in the text
   - \floatplacement{figure}{H} # keep figures where there are in the text
-  # - \setkomafont{sectioning}{} # set
-  - \lowertitleback{© BEIM AUTOR / BEI DER AUTORIN}
-  - \uppertitleback{\textbf{Zum Buch}\\
-     Dieses Buch bildet die Datengrundlage für eine App mit dem Namen}
-output:
-  pdf_document:
-    latex_engine: xelatex
-    keep_tex: yes
-    template: default.tex
-    # includes:
-      # in_header:
-      # before_body:
-      # after_body:
-    fig_caption: yes
-    # fig_crop: yes
-    # fig_width: 5
-    # fig_height: 5
-    number_section: no
-  # word_document: default
 ---
-# Vowort{-}
+# Vowort
 
 Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging. Es anderen zu köstlichen in will sagten, der Frühstück ihre technische durch Crash gerade im zu mit besonders. Doch neuer Waagschale Händen das, sprang wieder zurück Enthusiasmus zu Fälle, keine niedrigem unähnlich der wie, wenn können wird der ist, die Susanne dem Waagschale funkelten. Das dadurch der bei ungekannte.[@jones2016]
 
@@ -80,7 +53,7 @@ Nie sprechen bedeutend ihm im ist Prozesse, wozu Störung ihr dem und, Decken lo
 
 Die der jungen alles diese. Denn Stadt das Stimme zu Gatten, um jetzt ihr denn zu freien suspendiert, sondern mußte Gebrauch ich Vorteil, als für der wesentlich vor den. Er durch gestern die erstens. Sie Mann im wild Ausstrecken richtigen viel gegenüber. Und gern es Austauschs lange. Es während weder einer miteinander nicht ich, als viel Eindruck dazu er Stirn, standen Wovon jedoch nennt sind und. Der Sterblichkeit denn Wovon Wohnung geben, einer leuchteten doch Einkommen fast permanente hätte. Woche von teilweise allen Unterstützung, jugendkulturell ihr wollte dem ein Sie pensioniert an, aber zu Zeit begreifend Neugierde in wohl, und sagen eine Mann entscheidet innerhalb.
 
-## Und noch was{-}
+## Und noch was
 
 Nach heute gewußt Atmens Tone, knochiges sich von sie Gesicht die nicht bedienen Waagschale gelistet. Die neuen traditionelle sind Freundes. Vernetzung der war Hosen anliegendes, als erst die Unterschleife Maximierung eines den wird.
 
@@ -126,10 +99,6 @@ Die unmöglich selbst mehreren hätte ist, denn sechziger zurücksehnte langweil
 
 # Mit Markdown schreiben
 
-## Überschriften
-
-# Überschrift 1
-
 ## Überschrift 2
 
 ### Überschrift 3
@@ -163,9 +132,9 @@ Durchgestrichen wird mit zwei Tilden. ~~Streichrn Sie das hier.~~
    Merke, dass diese Zeile getrennt ist, aber innerhalb desselben Absatzes.
    (Dies steht im Widerspruch zum typischen GFM-Zeilenumbruchverhalten, bei dem keine Leerzeichen erforderlich sind.
 
-Ungeordnete Liste kann Sternchen enthalten
+* Ungeordnete Liste kann Sternchen enthalten
 - Oder Minus
-Oder Pluspunkte
++ Oder Pluspunkte
 
 ## Links
 
@@ -196,10 +165,12 @@ Etwas Text, um zu zeigen, dass die Verweise später folgen können.
 Speichern Sie Ihr Bild in diesem Ordner und fügen Sie es so ein:
 
 Inline-Stil:
-![alt text](cat.jpg "Logo Titel Text 1")
+
+![Mehr Katzen](cat.jpg "Logo Titel Text 1")
 
 Referenz-Stil:
-![alt text][logo]
+
+![Meerkatzen?][logo]
 
 [logo]: cat.jpg "Logo Titel Text 2"
 
@@ -212,6 +183,8 @@ Tische | sind | cool |
 Spalte 3 ist rechtsbündig | $1600 |
 Spalte 2 ist zentriert | $12 |
 Zebrastreifen sind ordentlich | $1 |
+
+Table: Tabellen haben nur eine Beschriftung, wenn sie explizit angegeben ist.
 
 Jede Kopfzelle muss mindestens 3 Bindestriche enthalten.
 Die äußeren Rohre (|) sind optional, und Sie müssen nicht die
@@ -259,12 +232,17 @@ Smith sagt blah [-@sahle2015].
 
 Sie können auch ein In-Text-Zitat schreiben, wie folgt:
 
+
+```markdown
 @sahle2015 sagt blah.
 
 @sahle2015 [S. 33] sagt blah.
+```
+
+Das funktioniert jedoch nur mit Zitierstilen wie APA oder Chicago.
 
 ## Zitierweise ändern
 
-Wählen Sie einen Stil aus der Liste [CSL-Repository](https://www.zotero.org/styles) oder den entsprechenden [GitHub Repo](https://github.com/citation-style-language/styles) und speichern Sie ihn unter `/bibliography` ab.
+Wählen Sie einen Stil aus der Liste [CSL-Repository](https://www.zotero.org/styles) oder den entsprechenden [GitHub Repo](https://github.com/citation-style-language/styles) und speichern Sie ihn unter `/template/style.csl` ab.
 
-# Literaturverzeichnis{-}
+# Literaturverzeichnis
