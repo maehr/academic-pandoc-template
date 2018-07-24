@@ -76,7 +76,7 @@ Some text to show that the reference links can follow later.
 ## Images
 
 ```markdown
-Save your image to `/template/` and insert it like this:
+Save your image (jpg or png format only) to `/template/` and insert it like this:
 
 Inline-style:
 
