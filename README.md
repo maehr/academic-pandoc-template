@@ -59,7 +59,7 @@ docker-compose up
 
 ## Contributing
 
-Please read [CONTRIBUTING](https://github.com/maehr/academic-pandoc-template/blob/master/CCONTRIBUTING) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/maehr/academic-pandoc-template/blob/master/CCONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -73,7 +73,7 @@ See also the list of [contributors](https://github.com/maehr/academic-pandoc-tem
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 

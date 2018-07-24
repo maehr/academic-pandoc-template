@@ -56,7 +56,7 @@ output:
   pdf_document:
     latex_engine: xelatex
     keep_tex: yes
-    template: template/default.tex
+    template: default.tex
     # includes:
       # in_header:
       # before_body:
@@ -175,11 +175,11 @@ Oder Pluspunkte
 
 [Ich bin ein Link im Referenz-Stil][Groß- und Kleinschreibung wird nicht berücksichtigt]
 
-Ich bin ein relativer Verweis auf eine [Repository-Datei](../blob/master/LICENSE)
+Ich bin ein relativer Verweis auf eine [Repository-Datei](../blob/master/LICENSE.md)
 
 Sie können Nummern für Referenz-Link-Definitionen verwenden][1].
 
-Oder lassen Sie es leer und verwenden Sie den[Linktext selbst].
+Oder lassen Sie es leer und verwenden Sie den [Linktext selbst].
 
 URLs und URLs in spitzen Klammern werden automatisch in Links umgewandelt.
 http://www.example.com oder <http://www.example.com> und manchmal auch

@@ -78,7 +78,7 @@ An archaic GitHub Markdown workflow for the Department of the History of Technol
 
 ![](.doc/10.png)
 
-- Edit your file according to the [Markdown Tutorial](./README#write-markdown) and click on `Preview changes`
+- Edit your file according to the [Markdown Tutorial](./README_MARKDOWN.md) and click on `Preview changes`
 
 ![](.doc/11.png)
 
@@ -140,7 +140,7 @@ Step Description Figure
 
 ![](.doc/29.png)
 
-- Edit your file according to the [Markdown Tutorial](./README#write-markdown)
+- Edit your file according to the [Markdown Tutorial](./README_MARKDOWN.md)
 
 ![](.doc/30.png)
 
