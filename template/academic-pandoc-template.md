@@ -1,6 +1,6 @@
 ---
 # Front matter
-lang: de-CH
+lang: de-CH # Use language codes like de, de-DE, en, en-UK, en-US, fr, it, ...
 title: "Ein schöner Titel"
 subtitle: "ein wundervoller Undertitel"
 author: "Petra Muster"
@@ -11,10 +11,10 @@ thanks: "Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare."
 
 # Bibliography
 csl: style.csl # See https://www.zotero.org/styles for more styles.
-bibliography: references.bib # CSL JSON and CSL YAML work best with infoclio-de BIB also kind of works. See https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md for more formats.
+bibliography: references.bib # See https://github.com/jgm/pandoc-citeproc/blob/master/man/pandoc-citeproc.1.md for more formats.
 suppress-bibliography: false
 link-citations: true
-color-links: true
+color-links: true # See https://ctan.org/pkg/xcolor for colors
 linkcolor: black
 urlcolor: black
 citecolor: black
@@ -27,13 +27,13 @@ lof: true # List of figures
 lot: true # List of tables
 fontsize: 12pt
 linestretch: 1.5
-mainfont: "Merriweather"
+mainfont: "Merriweather" # See https://fonts.google.com/ for fonts
 sansfont: "Raleway"
-# monofont:
-# mathfont:
-documentclass: report
-classoption: [notitlepage, onecolumn, openany] # See https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/
-geometry: [a4paper, bindingoffset=0mm, inner=30mm, outer=30mm, top=30mm, bottom=30mm]
+monofont: "IBM Plex Mono"
+mathfont:
+documentclass: report # See https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes for more classes and options
+classoption: [notitlepage, onecolumn, openany]
+geometry: [a4paper, bindingoffset=0mm, inner=30mm, outer=30mm, top=30mm, bottom=30mm] # See https://ctan.org/pkg/geometry for more options
 header-includes:
   - \clubpenalty10000
   - \widowpenalty10000
@@ -202,7 +202,7 @@ Diese Zeile ist Teil desselben Zitats.
 
 Zitat Pause.
 
-Dies ist eine sehr lange Zeile, die immer noch richtig zitiert wird, wenn sie umgebrochen wird. Oh Junge, lass uns weiter schreiben, um sicher zu gehen, dass das lang genug ist, um es für alle zu verpacken. Oh, Sie können **Markdown* in ein Blockzitat eingeben.
+Dies ist eine sehr lange Zeile, die immer noch richtig zitiert wird, wenn sie umgebrochen wird. Oh Junge, lass uns weiter schreiben, um sicher zu gehen, dass das lang genug ist, um es für alle zu verpacken. Oh, Sie können **Markdown** in ein Blockzitat eingeben.
 
 ## Fußnoten
 
