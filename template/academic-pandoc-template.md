@@ -4,7 +4,7 @@ lang: de-CH # Use language codes like de, de-DE, en, en-UK, en-US, fr, it, ...
 title: "Ein schöner Titel"
 subtitle: "ein wundervoller Undertitel"
 author: "Petra Muster"
-date: "30. Juni 2018"
+date: 30-06-2018
 abstract: "Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging."
 keywords: "Schlagworte, Worte"
 thanks: "Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare."
@@ -142,8 +142,6 @@ Durchgestrichen wird mit zwei Tilden. ~~Streichrn Sie das hier.~~
 
 [Ich bin ein Inline-Link mit Titel](https://www.google.com "Google's Homepage")
 
-[Ich bin ein Link im Referenz-Stil][Groß- und Kleinschreibung wird nicht berücksichtigt]
-
 Ich bin ein relativer Verweis auf eine [Repository-Datei](../blob/master/LICENSE.md)
 
 Sie können Nummern für Referenz-Link-Definitionen verwenden][1].
@@ -154,25 +152,11 @@ URLs und URLs in spitzen Klammern werden automatisch in Links umgewandelt.
 http://www.example.com oder <http://www.example.com> und manchmal auch
 example.com (aber nicht auf Github, zum Beispiel).
 
-Etwas Text, um zu zeigen, dass die Verweise später folgen können.
-
-[beliebige Groß-/Kleinschreibung beachten]: https://www.mozilla.org
-[1]: http://slashdot.org
-[Linktext selbst]: http://www.reddit.com
-
 ## Bilder
 
 Speichern Sie Ihr Bild als JPG oder PNG in den Ordner `/template/` und fügen Sie es so ein:
 
-Inline-Stil:
-
 ![Mehr Katzen](cat.jpg "Logo Titel Text 1")
-
-Referenz-Stil:
-
-![Meerkatzen?][logo]
-
-[logo]: cat.jpg "Logo Titel Text 2"
 
 ## Tabellen
 
@@ -187,8 +171,7 @@ Zebrastreifen sind ordentlich | $1 |
 Table: Tabellen haben nur eine Beschriftung, wenn sie explizit angegeben ist.
 
 Jede Kopfzelle muss mindestens 3 Bindestriche enthalten.
-Die äußeren Rohre (|) sind optional, und Sie müssen nicht die
-rohes Markdown Line Up hübsch. Sie können auch die Inline-Abschrift verwenden.
+Die äußeren Rohre (|) sind optional.
 
 Abschrift | Weniger | Hübsch
 --- | --- | ---
@@ -197,12 +180,14 @@ Abschrift | Weniger | Hübsch
 
 ## Blockzitate
 
-Blockquotes sind sehr praktisch in E-Mails, um Antworttexte zu emulieren.
-Diese Zeile ist Teil desselben Zitats.
+Blockzitat:
+
+> Blockquotes sind sehr praktisch in E-Mails, um Antworttexte anzuzeigen.
+> Diese Zeile ist Teil desselben Zitats.
 
 Zitat Pause.
 
-Dies ist eine sehr lange Zeile, die immer noch richtig zitiert wird, wenn sie umgebrochen wird. Oh Junge, lass uns weiter schreiben, um sicher zu gehen, dass das lang genug ist, um es für alle zu verpacken. Oh, Sie können **Markdown** in ein Blockzitat eingeben.
+> Dies ist eine sehr lange Zeile, die immer noch richtig zitiert wird, wenn sie umgebrochen wird. Oh Junge, lass uns weiter schreiben, um sicher zu gehen, dass das lang genug ist, um es für alle zu verpacken. Oh, Sie können **Markdown** in ein Blockzitat eingeben.
 
 ## Fußnoten
 
@@ -214,7 +199,7 @@ Wenn Sie Endnoten verwenden möchten, schalten Sie diese stattdessen in den Doku
 
 ## Kommentare
 
-Kommentare werden im endgültigen PDF nicht angezeigt. -->
+<!-- Kommentare werden im endgültigen PDF nicht angezeigt. -->
 
 ## Zitate zu Ihrem Dokument hinzufügen
 
@@ -231,7 +216,6 @@ Ein Minuszeichen (-) vor dem @ unterdrückt die Erwähnung des Autors im Zitat. 
 Smith sagt blah [-@sahle2015].
 
 Sie können auch ein In-Text-Zitat schreiben, wie folgt:
-
 
 ```markdown
 @sahle2015 sagt blah.

@@ -54,8 +54,6 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
 [I'm a relative reference to a repository file](../blob/master/LICENSE.md)
 
 [You can use numbers for reference-style link definitions][1]
@@ -65,12 +63,6 @@ Or leave it empty and use the [link text itself].
 URLs and URLs in angle brackets will automatically get turned into links.
 http://www.example.com or <http://www.example.com> and sometimes
 example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
 ```
 
 ## Images
@@ -78,15 +70,7 @@ Some text to show that the reference links can follow later.
 ```markdown
 Save your image (jpg or png format only) to `template/` and insert it like this:
 
-Inline-style:
-
 ![Figure caption text](images/example.jpg "Logo Title Text 1")
-
-Reference-style:
-
-![alt text][logo]
-
-[logo]: images/example.jpg "Logo Title Text 2"
 ```
 
 ## Tables
@@ -192,7 +176,7 @@ lang: de-CH # Use language codes like de, de-DE, en, en-UK, en-US, fr, it, ...
 title: "Ein schöner Titel"
 subtitle: "ein wundervoller Undertitel"
 author: "Petra Muster"
-date: "30. Juni 2018"
+date: 30-06-2018
 abstract: "Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging."
 keywords: "Schlagworte, Worte"
 thanks: "Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare."
