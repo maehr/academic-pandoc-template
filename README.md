@@ -13,7 +13,7 @@ Make sure you have a Markdown editor like [Atom.io](https://atom.io/) and a Bibt
 
 ### Use with [typademic](https://typademic.ch) online (BEGINNER)
 
-1. Download the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template.git)
+1. Download the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template/archive/master.zip)
 2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://github.com/maehr/academic-pandoc-template/blob/master/README_MARKDOWN.md) with your favorite Markdown editor
 3. Edit `/template/references.bib` with your favorite Bibtex editor
 3. Upload all files in `/template/` to [typademic](https://typademic.ch) and convert it to PDF or Docx
