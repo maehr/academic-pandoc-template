@@ -34,27 +34,6 @@ pandoc academic-pandoc-template.md --output academic-pandoc-template.pdf --from 
 pandoc academic-pandoc-template.md --output academic-pandoc-template.docx --from markdown+ascii_identifiers+tex_math_single_backslash+raw_tex+table_captions+yaml_metadata_block+autolink_bare_uris --pdf-engine xelatex --filter pandoc-citeproc --standalone
 ```
 
-### Use with [typademic](https://github.com/maehr/typademic) on [Docker](https://docker.com) (EXPERT)
-
-Install [Docker CE](https://www.docker.com/community-edition) and start a [typademic](https://github.com/maehr/typademic) instance.
-
-#### Mac with [Homebrew](https://brew.sh/index_de)
-
-```bash
-brew install docker git
-git clone git@github.com:maehr/typademic.git
-docker-compose up
-```
-
-#### Ubuntu 16.04
-
-```bash
-sudo apt-get update
-sudo apt-get install docker-ce git
-git clone git@github.com:maehr/typademic.git
-docker-compose up
-```
-
 ## Support
 
 This project is maintained by [@maehr](https://github.com/maehr). Please understand that we won't be able to provide individual support via email. We also believe that help is much more valuable if it's shared publicly, so that more people can benefit from it.
