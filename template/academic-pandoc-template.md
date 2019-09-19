@@ -40,6 +40,12 @@ header-includes:
   - \interfootnotelinepenalty=10000
   - \usepackage{float} # keep figures where there are in the text
   - \floatplacement{figure}{H} # keep figures where there are in the text
+# if you use RStudio uncomment these lines
+# output:
+#    word_document:
+#      path: academic-pandoc-template.docx
+#   pdf_document:
+#     path: academic-pandoc-template.pdf
 ---
 # Vowort
 

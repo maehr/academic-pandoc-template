@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Write Markdown
 
 ## Heading
@@ -442,3 +446,5 @@ LaTeX variables are used when [creating a PDF](https://pandoc.org/MANUAL.html#cr
 - `pagestyle`
 
   An option for LaTeX’s `\pagestyle{}`. The default article class supports ‘plain’ (default), ‘empty’, and ‘headings’; headings puts section titles in the header.
+
+[back](./)

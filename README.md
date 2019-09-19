@@ -9,12 +9,12 @@ Write beautiful academic texts with the distraction-free [Pandoc Markdown](http:
 
 ## Getting Started
 
-Make sure you have a Markdown editor like [Atom.io](https://atom.io/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
+Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Atom.io](https://atom.io/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
 
 ### Use with [typademic](https://typademic.ch) online (BEGINNER)
 
-1. Download the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template.git)
-2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://github.com/maehr/academic-pandoc-template/blob/master/README_MARKDOWN.md) with your favorite Markdown editor
+1. Download the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template/archive/master.zip)
+2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://maehr.github.io/academic-pandoc-template/markdown.html) with your favorite Markdown editor
 3. Edit `/template/references.bib` with your favorite Bibtex editor
 3. Upload all files in `/template/` to [typademic](https://typademic.ch) and convert it to PDF or Docx
 4. Be happy!
@@ -55,12 +55,25 @@ git clone git@github.com:maehr/typademic.git
 docker-compose up
 ```
 
+## Support
+
+This project is maintained by [@maehr](https://github.com/maehr). Please understand that we won't be able to provide individual support via email. We also believe that help is much more valuable if it's shared publicly, so that more people can benefit from it.
+
+| Type                   | Platforms                                                    |
+| ---------------------- | ------------------------------------------------------------ |
+| 🚨 **Bug Reports**      | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
+| 🎁 **Feature Requests** | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
+
 ## Built With
 
 - [Google Fonts](https://github.com/google/fonts)
-- [Infoclio Citation Style](https://www.infoclio.ch/de/node/130403)
+- [Chicago Manual of Style 17th edition (note)](https://www.zotero.org/styles?q=chicago)
 - [LaTeX](https://www.latex-project.org/)
 - [Pandoc](https://pandoc.org/)
+
+## Roadmap
+
+No changes are currently planned.
 
 ## Contributing
 
