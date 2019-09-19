@@ -1,0 +1,6 @@
+theme: jekyll-theme-minimal
+title: Academic Pandoc template
+description: Write beautiful academic texts with the distraction-free Pandoc Markdown and typademic.
+# logo: "/assets/images/just-the-docs.png"
+show_downloads: ["true"]
+# google_analytics: [Your Google Analytics tracking ID]
