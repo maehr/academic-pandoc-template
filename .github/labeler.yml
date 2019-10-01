@@ -1,0 +1,13 @@
+template:
+- template/*
+
+docs:
+- .github/*
+- docs/*
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- LICENSE.md
+- README.md
+- SECURITY.md
+- .gitattributes
+- .gitignore
