@@ -2,7 +2,7 @@
 # Front matter
 lang: de-CH # Use language codes like de, de-DE, en, en-UK, en-US, fr, it, ...
 title: "Ein schöner Titel"
-subtitle: "ein wundervoller Undertitel"
+subtitle: "ein wundervoller Untertitel"
 author: "Petra Muster"
 date: 30-06-2018
 abstract: "Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging."
@@ -236,3 +236,4 @@ Das funktioniert jedoch nur mit Zitierstilen wie APA oder Chicago.
 Wählen Sie einen Stil aus der Liste [CSL-Repository](https://www.zotero.org/styles) oder den entsprechenden [GitHub Repo](https://github.com/citation-style-language/styles) und speichern Sie ihn unter `/template/style.csl` ab.
 
 # Literaturverzeichnis
+\leavevmode
