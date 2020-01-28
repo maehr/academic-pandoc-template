@@ -2,6 +2,8 @@
 layout: default
 ---
 
+![Preview](assets/images/academic-pandoc-template.png)
+
 ## Getting Started
 
 Make sure you have a Markdown editor like [Atom.io](https://atom.io/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.

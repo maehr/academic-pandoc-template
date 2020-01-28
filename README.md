@@ -7,6 +7,8 @@ Write beautiful academic texts with the distraction-free [Pandoc Markdown](http:
 [![GitHub stars](https://img.shields.io/github/stars/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/stargazers)
 [![GitHub license](https://img.shields.io/github/license/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/blob/master/LICENSE.md)
 
+![Preview](docs/assets/images/academic-pandoc-template.png)
+
 ## Getting Started
 
 Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Atom.io](https://atom.io/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
