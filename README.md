@@ -32,8 +32,8 @@ Install all prerequisites
 Open your command line, navigate to `/template/` and execute the following commands.
 
 ```bash
-pandoc academic-pandoc-template.md --output academic-pandoc-template.pdf --from markdown+ascii_identifiers+tex_math_single_backslash+raw_tex+table_captions+yaml_metadata_block+autolink_bare_uris --pdf-engine xelatex --filter pandoc-citeproc --standalone
-pandoc academic-pandoc-template.md --output academic-pandoc-template.docx --from markdown+ascii_identifiers+tex_math_single_backslash+raw_tex+table_captions+yaml_metadata_block+autolink_bare_uris --pdf-engine xelatex --filter pandoc-citeproc --standalone
+pandoc academic-pandoc-template.md --output academic-pandoc-template.pdf --from markdown+tex_math_single_backslash --pdf-engine xelatex --filter pandoc-citeproc --standalone
+pandoc academic-pandoc-template.md --output academic-pandoc-template.docx --from markdown+tex_math_single_backslash --pdf-engine xelatex --filter pandoc-citeproc --standalone
 ```
 
 ## Support
@@ -44,6 +44,7 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 | ---------------------- | ------------------------------------------------------------ |
 | 🚨 **Bug Reports**      | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
 | 🎁 **Feature Requests** | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
+| 🛡 **Report a security vulnerability**      | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
 
 ## Built With
 
