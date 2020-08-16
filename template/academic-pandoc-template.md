@@ -249,4 +249,6 @@ Das funktioniert jedoch nur mit Zitierstilen wie APA oder Chicago.
 Wählen Sie einen Stil aus der Liste [CSL-Repository](https://www.zotero.org/styles) oder den entsprechenden [GitHub Repo](https://github.com/citation-style-language/styles) und ändern Sie die Zeile `bibliography`.
 
 # Literaturverzeichnis
-\leavevmode
+
+::: {#refs}
+:::

@@ -1,13 +1,24 @@
-template:
-- template/*
+src:
+- .gitattributes
+- .gitignore
+- src/*
 
 docs:
-- .github/*
-- docs/*
 - CODE_OF_CONDUCT.md
 - CONTRIBUTING.md
 - LICENSE.md
 - README.md
 - SECURITY.md
-- .gitattributes
-- .gitignore
+- _config.yml
+- _layouts
+- android-chrome-192x192.png
+- android-chrome-512x512.png
+- apple-touch-icon.png
+- assets/*
+- favicon-16x16.png
+- favicon-32x32.png
+- favicon.ico
+- site.webmanifest
+
+github:
+- .github/*

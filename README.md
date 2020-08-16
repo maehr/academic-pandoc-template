@@ -7,11 +7,11 @@ Write beautiful academic texts with the distraction-free [Pandoc Markdown](http:
 [![GitHub stars](https://img.shields.io/github/stars/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/stargazers)
 [![GitHub license](https://img.shields.io/github/license/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/blob/master/LICENSE.md)
 
-![Preview](docs/assets/images/academic-pandoc-template.png)
+![Preview](academic-pandoc-template.png)
 
 ## Getting Started
 
-Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Atom.io](https://atom.io/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
+Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Zettlr](https://www.zettlr.com/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
 
 ### Use with [typademic](https://typademic.ch) online (BEGINNER)
 
@@ -32,8 +32,8 @@ Install all prerequisites
 Open your command line, navigate to `/template/` and execute the following commands.
 
 ```bash
-pandoc academic-pandoc-template.md --output academic-pandoc-template.pdf --from markdown+tex_math_single_backslash --pdf-engine xelatex --filter pandoc-citeproc --standalone
-pandoc academic-pandoc-template.md --output academic-pandoc-template.docx --from markdown+tex_math_single_backslash --pdf-engine xelatex --filter pandoc-citeproc --standalone
+pandoc -d pdf.yaml academic-pandoc-template.md
+pandoc -d docx.yaml academic-pandoc-template.md
 ```
 
 ## Support
