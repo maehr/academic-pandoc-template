@@ -1,6 +1,6 @@
 name: Lint Code Base
 on:
-  pull_requests:
+  pull_request:
 jobs:
   build:
     name: Lint Code Base
