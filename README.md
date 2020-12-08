@@ -25,9 +25,9 @@ Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and 
 
 Install all prerequisites
 
-- [Pandoc](http://pandoc.org/installing.html) with [Pandoc Citeproc](https://github.com/jgm/pandoc-citeproc)
+- [Pandoc 2.11 or newer](http://pandoc.org/installing.html)
 - [LaTeX](https://www.latex-project.org/get/)
-- [Google Fonts](https://github.com/google/fonts)
+- [EB Garamond Font](https://fonts.google.com/specimen/EB+Garamond)
 
 Open your command line, navigate to `/template/` and execute the following commands.
 
