@@ -4,8 +4,7 @@ file-scope: false # Parse each file individually before combining for multifile 
 to: docx
 output-file: academic-pandoc-template.docx
 standalone: true
-filters:
-- pandoc-citeproc
+citeproc: true
 data-dir: # A reference.odt, reference.docx, epub.css, templates, slidy, slideous, or s5 directory placed in this directory will override pandoc’s normal defaults.
 abbreviations: # Specifies a custom abbreviations file, with abbreviations one to a line.
 verbosity: WARNING # ERROR, WARNING, or INFO
