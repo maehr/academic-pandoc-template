@@ -29,8 +29,8 @@ lot: true # List of tables
 fontsize: 12pt
 linestretch: 1.5
 # Uncomment and check https://tug.org/FontCatalogue/ and https://fonts.google.com/ for fonts
-# mainfont: "Merriweather"
-# sansfont: "Raleway"
+# mainfont: "EB Garamond"
+# sansfont: "Roboto"
 # monofont: "IBM Plex Mono"
 # mathfont:
 documentclass: report # See https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes for more classes and options
@@ -60,7 +60,7 @@ header-includes:
 #   pdf_document:
 #     path: academic-pandoc-template.pdf
 ---
-# Vowort
+## Vowort
 
 Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging. Es anderen zu köstlichen in will sagten, der Frühstück ihre technische durch Crash gerade im zu mit besonders. Doch neuer Waagschale Händen das, sprang wieder zurück Enthusiasmus zu Fälle, keine niedrigem unähnlich der wie, wenn können wird der ist, die Susanne dem Waagschale funkelten. Das dadurch der bei ungekannte.[@jones2016]
 
@@ -72,7 +72,7 @@ Nie sprechen bedeutend ihm im ist Prozesse, wozu Störung ihr dem und, Decken lo
 
 Die der jungen alles diese. Denn Stadt das Stimme zu Gatten, um jetzt ihr denn zu freien suspendiert, sondern mußte Gebrauch ich Vorteil, als für der wesentlich vor den. Er durch gestern die erstens. Sie Mann im wild Ausstrecken richtigen viel gegenüber. Und gern es Austauschs lange. Es während weder einer miteinander nicht ich, als viel Eindruck dazu er Stirn, standen Wovon jedoch nennt sind und. Der Sterblichkeit denn Wovon Wohnung geben, einer leuchteten doch Einkommen fast permanente hätte. Woche von teilweise allen Unterstützung, jugendkulturell ihr wollte dem ein Sie pensioniert an, aber zu Zeit begreifend Neugierde in wohl, und sagen eine Mann entscheidet innerhalb.
 
-## Und noch was
+### Und noch was
 
 Nach heute gewußt Atmens Tone, knochiges sich von sie Gesicht die nicht bedienen Waagschale gelistet. Die neuen traditionelle sind Freundes. Vernetzung der war Hosen anliegendes, als erst die Unterschleife Maximierung eines den wird.
 
@@ -116,17 +116,17 @@ Table: Warum mit innerhalb dem dieser folgte, so Information.
 
 Die unmöglich selbst mehreren hätte ist, denn sechziger zurücksehnte langweilige mehrere, die von Möglichkeiten Benutzung Sarah und spätestens auf, Sie Aufgaben mir fortwährenden dem einen, daß auf Gruppen nun nehmen hätte, der sehen sprachen man sie gleichgültig, alles abgegangen freilich Bemühungen er hätte dem, seitlich Das drohte gar Laufen es dem aber ausgerungen, die gewesen Wohnzimmer Software sich wollte, als das tun dem Fürsorge. Als Internet das setzen mehreren müsse, Kommunikation eines gegen sich plötzlich, wie hatte sich aktivsten es gestiftet aber, dlas nennen Buch kräftig nur Sinn, ins nicht Klang trat Schuhe, sondern Information sechziger braucht da Gewerkschaften, Neuen alten müssen noch Existenz wäe Sie, uneinheitliche auch Sarah wurde Bevölkerungsgruppen streckte und. Wer Vorteil geschehen verantwortlich so, dass Worte als lautstarken man mit, dessen sie Tischchen Gesellschaften der ihr, so die des verständigte blenden sie, und Monatsgebühr mit solche funkelten, mit über zu so gewesen, sagte der Triumph möglichst gestanden.
 
-# Mit Markdown schreiben
+## Mit Markdown schreiben
 
-## Überschrift 2
+### Überschrift 2
 
-### Überschrift 3
+#### Überschrift 3
 
-#### Überschrift 4
+##### Überschrift 4
 
-##### Überschrift 5
+###### Überschrift 5
 
-## Betonung
+### Betonung
 
 Hervorhebung, auch kursiv, mit *Sternchen* oder _Unterstrichen_.
 
@@ -136,14 +136,16 @@ Kombinierte Betonung mit **asterisks und _Unterstrichen_**.
 
 Durchgestrichen wird mit zwei Tilden. ~~Streichrn Sie das hier.~~
 
-## Listen
+### Listen
 
 1. Erster geordneter Listenpunkt
 2. Ein weiterer Punkt
-  * Ungeordnete Teilliste.
-1. Tatsächliche Zahlen spielen keine Rolle, nur dass es eine Zahl ist.
-  1. Bestellte Teilliste
-4. Und noch eine Sache.
+
+    - Ungeordnete Teilliste.
+
+3. Tatsächliche Zahlen spielen keine Rolle, nur dass es eine Zahl ist.
+4. Bestellte Teilliste
+5. Und noch eine Sache.
 
    Man kann Absätze innerhalb von Listeneinträgen richtig eingerückt haben. Beachten Sie die Leerzeile oben und die führenden Leerzeichen (mindestens eines, aber wir verwenden hier drei, um auch den rohen Markdown auszurichten).
 
@@ -151,11 +153,9 @@ Durchgestrichen wird mit zwei Tilden. ~~Streichrn Sie das hier.~~
    Merke, dass diese Zeile getrennt ist, aber innerhalb desselben Absatzes.
    (Dies steht im Widerspruch zum typischen GFM-Zeilenumbruchverhalten, bei dem keine Leerzeichen erforderlich sind.
 
-* Ungeordnete Liste kann Sternchen enthalten
-- Oder Minus
-+ Oder Pluspunkte
+- Ungeordnete Liste kann Sternchen, Minus- oder Pluspunkte
 
-## Links
+### Links
 
 [Ich bin ein Inline-Link](https://www.google.com)
 
@@ -168,16 +168,16 @@ Sie können Nummern für Referenz-Link-Definitionen verwenden][1].
 Oder lassen Sie es leer und verwenden Sie den [Linktext selbst].
 
 URLs und URLs in spitzen Klammern werden automatisch in Links umgewandelt.
-http://www.example.com oder <http://www.example.com> und manchmal auch
+<http://www.example.com> und manchmal auch
 example.com (aber nicht auf Github, zum Beispiel).
 
-## Bilder
+### Bilder
 
 Speichern Sie Ihr Bild als JPG oder PNG in den Ordner `/template/` und fügen Sie es so ein:
 
 ![Mehr Katzen](cat.jpg "Logo Titel Text 1")
 
-## Tabellen
+### Tabellen
 
 Doppelpunkte können zum Ausrichten von Spalten verwendet werden.
 
@@ -197,7 +197,7 @@ Abschrift | Weniger | Hübsch
 *Still* | `renders` | **nicely*
 1 | 2 | 3
 
-## Blockzitate
+### Blockzitate
 
 Blockzitat:
 
@@ -208,7 +208,7 @@ Zitat Pause.
 
 > Dies ist eine sehr lange Zeile, die immer noch richtig zitiert wird, wenn sie umgebrochen wird. Oh Junge, lass uns weiter schreiben, um sicher zu gehen, dass das lang genug ist, um es für alle zu verpacken. Oh, Sie können **Markdown** in ein Blockzitat eingeben.
 
-## Fußnoten
+### Fußnoten
 
 Fußnoten werden am besten direkt nach dem ersten verwendeten Absatz platziert.[^Fußnote]
 
@@ -216,11 +216,11 @@ Fußnoten werden am besten direkt nach dem ersten verwendeten Absatz platziert.[
 
 Wenn Sie Endnoten verwenden möchten, schalten Sie diese stattdessen in den Dokumentoptionen ein.
 
-## Kommentare
+### Kommentare
 
 <!-- Kommentare werden im endgültigen PDF nicht angezeigt. -->
 
-## Zitate zu Ihrem Dokument hinzufügen
+### Zitate zu Ihrem Dokument hinzufügen
 
 Zitate werden in eckige Klammern gesetzt und durch Semikolons getrennt. Jedes Zitat muss einen Schlüssel haben, bestehend aus'@' + der Zitatkennung aus der Datenbank, und kann optional ein Präfix, einen Locator und ein Suffix haben. Hier sind einige Beispiele:
 
@@ -244,11 +244,11 @@ Sie können auch ein In-Text-Zitat schreiben, wie folgt:
 
 Das funktioniert jedoch nur mit Zitierstilen wie APA oder Chicago.
 
-## Zitierweise ändern
+### Zitierweise ändern
 
 Wählen Sie einen Stil aus der Liste [CSL-Repository](https://www.zotero.org/styles) oder den entsprechenden [GitHub Repo](https://github.com/citation-style-language/styles) und ändern Sie die Zeile `bibliography`.
 
-# Literaturverzeichnis
+## Literaturverzeichnis
 
 ::: {#refs}
 :::
