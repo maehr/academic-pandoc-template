@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
 
+- fixed default.yaml files to comply with pandoc 2.11
+
 ## [0.0.6](https://github.com/maehr/academic-pandoc-template/tree/v0.0.6) - 2020-08-16
 
 ### Added
