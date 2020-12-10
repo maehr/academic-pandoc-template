@@ -27,7 +27,6 @@ Install all prerequisites
 
 - [Pandoc 2.11 or newer](http://pandoc.org/installing.html)
 - [LaTeX](https://www.latex-project.org/get/)
-- [EB Garamond Font](https://fonts.google.com/specimen/EB+Garamond)
 
 Open your command line, navigate to `/template/` and execute the following commands.
 
@@ -48,7 +47,6 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 
 ## Built With
 
-- [Google Fonts](https://github.com/google/fonts)
 - [Chicago Manual of Style 17th edition (note)](https://www.zotero.org/styles?q=chicago)
 - [LaTeX](https://www.latex-project.org/)
 - [Pandoc](https://pandoc.org/)
