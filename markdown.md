@@ -240,230 +240,353 @@ header-includes:
 
 You can easily add, remove or modify these variables by editing the corresponding value.
 
-## Variables set by pandoc
+## Variables
 
-Some variables are set automatically by pandoc. These vary somewhat depending on the output format, but include the following:
+### Metadata variables
 
-- `sourcefile`, `outputfile`
+`title`, `author`, `date`
 
-  source and destination filenames, as given on the command line. `sourcefile` can also be a list if input comes from multiple files, or empty if input is from stdin. You can use the following snippet in your template to distinguish them:`$if(sourcefile)$ $for(sourcefile)$ $sourcefile$ $endfor$ $else$ (stdin) $endif$`Similarly, `outputfile` can be `-` if output goes to the terminal.
+allow identification of basic aspects of the document. Included in PDF metadata through LaTeX and ConTeXt. These can be set through a [pandoc title block](https://pandoc.org/MANUAL.html#extension-pandoc_title_block), which allows for multiple authors, or through a [YAML metadata block](https://pandoc.org/MANUAL.html#extension-yaml_metadata_block):
 
-- `title`, `author`, `date`
+```
+---
+author:
+- Aristotle
+- Peter Abelard
+...
+```
 
-  allow identification of basic aspects of the document. Included in PDF metadata through LaTeX and ConTeXt. These can be set through a [pandoc title block](https://pandoc.org/MANUAL.html#extension-pandoc_title_block), which allows for multiple authors, or through a YAML metadata block:`--- author: - Aristotle - Peter Abelard ...`
+Note that if you just want to set PDF or HTML metadata, without including a title block in the document itself, you can set the `title-meta`, `author-meta`, and `date-meta` variables. (By default these are set automatically, based on `title`, `author`, and `date`.) The page title in HTML is set by `pagetitle`, which is equal to `title` by default.
 
-- `subtitle`
+`subtitle`
 
-  document subtitle, included in HTML, EPUB, LaTeX, ConTeXt, and Word docx; renders in LaTeX only when using a document class that supports `\subtitle`, such as `beamer` or the [KOMA-Script](https://ctan.org/pkg/koma-script)series (`scrartcl`, `scrreprt`, `scrbook`).[1](https://pandoc.org/MANUAL.html#fn1)
+document subtitle, included in HTML, EPUB, LaTeX, ConTeXt, and docx documents
 
-- `institute`
+`abstract`
 
-  author affiliations (in LaTeX and Beamer only). Can be a list, when there are multiple authors.
+document summary, included in LaTeX, ConTeXt, AsciiDoc, and docx documents
 
-- `abstract`
+`keywords`
 
-  document summary, included in LaTeX, ConTeXt, AsciiDoc, and Word docx
+list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc metadata; repeat as for `author`, above
 
-- `keywords`
+`subject`
 
-  list of keywords to be included in HTML, PDF, and AsciiDoc metadata; may be repeated as for `author`, above
+document subject, included in ODT, PDF, docx and pptx metadata
 
-- `header-includes`
+`description`
 
-  contents specified by `-H/--include-in-header` (may have multiple values)
+document description, included in ODT, docx and pptx metadata. Some applications show this as `Comments` metadata.
 
-- `toc`
+`category`
 
-  non-null value if `--toc/--table-of-contents` was specified
+document category, included in docx and pptx metadata
 
-- `toc-title`
+Additionally, any root-level string metadata, not included in ODT, docx or pptx metadata is added as a *custom property*. The following [YAML](https://yaml.org/spec/1.2/spec.html "YAML v1.2 Spec") metadata block for instance:
 
-  title of table of contents (works only with EPUB, opendocument, odt, docx, pptx)
+```
+---
+title:  'This is the title'
+subtitle: "This is the subtitle"
+author:
+- Author One
+- Author Two
+description: |
+    This is a long
+    description.
 
-- `include-before`
+    It consists of two paragraphs
+...
+```
 
-  contents specified by `-B/--include-before-body` (may have multiple values)
+will include `title`, `author` and `description` as standard document properties and `subtitle` as a custom property when converting to docx, ODT or pptx.
 
-- `include-after`
+### Language variables
 
-  contents specified by `-A/--include-after-body` (may have multiple values)
+`lang`
 
-- `body`
+identifies the main language of the document using IETF language tags (following the [BCP 47](https://tools.ietf.org/html/bcp47) standard), such as `en` or `en-GB`. The [Language subtag lookup](https://r12a.github.io/app-subtags/) tool can look up or verify these tags. This affects most formats, and controls hyphenation in PDF output when using LaTeX (through [`babel`](https://ctan.org/pkg/babel) and [`polyglossia`](https://ctan.org/pkg/polyglossia)) or ConTeXt.
 
-  body of document
+Use native pandoc [Divs and Spans](https://pandoc.org/MANUAL.html#divs-and-spans) with the `lang` attribute to switch the language:
 
-- `meta-json`
+```
+---
+lang: en-GB
+...
 
-  JSON representation of all of the document’s metadata. Field values are transformed to the selected output format.
+Text in the main document language (British English).
 
-## Language variables
+::: {lang=fr-CA}
+> Cette citation est écrite en français canadien.
+:::
 
-- `lang`
+More text in English. ['Zitat auf Deutsch.']{lang=de}
+```
 
-  identifies the main language of the document, using a code according to [BCP 47](https://tools.ietf.org/html/bcp47) (e.g. `en` or `en-GB`). For some output formats, pandoc will convert it to an appropriate format stored in the additional variables `babel-lang`, `polyglossia-lang` (LaTeX) and `context-lang` (ConTeXt).Native pandoc Spans and Divs with the lang attribute (value in BCP 47) can be used to switch the language in that range. In LaTeX output, `babel-otherlangs` and `polyglossia-otherlangs`variables will be generated automatically based on the `lang` attributes of Spans and Divs in the document.
+`dir`
 
-- `dir`
+the base script direction, either `rtl` (right-to-left) or `ltr` (left-to-right).
 
-  the base direction of the document, either `rtl` (right-to-left) or `ltr` (left-to-right).For bidirectional documents, native pandoc `span`s and `div`s with the `dir` attribute (value `rtl` or `ltr`) can be used to override the base direction in some output formats. This may not always be necessary if the final renderer (e.g. the browser, when generating HTML) supports the [Unicode Bidirectional Algorithm](http://www.w3.org/International/articles/inline-bidi-markup/uba-basics).When using LaTeX for bidirectional documents, only the `xelatex` engine is fully supported (use `--pdf-engine=xelatex`).
+For bidirectional documents, native pandoc `span`s and `div`s with the `dir` attribute (value `rtl` or `ltr`) can be used to override the base direction in some output formats. This may not always be necessary if the final renderer (e.g. the browser, when generating HTML) supports the [Unicode Bidirectional Algorithm](https://www.w3.org/International/articles/inline-bidi-markup/uba-basics).
 
-## Variables for slides
+When using LaTeX for bidirectional documents, only the `xelatex` engine is fully supported (use [`--pdf-engine=xelatex`](https://pandoc.org/MANUAL.html#option--pdf-engine)).
 
-Variables are available for [producing slide shows with pandoc](https://pandoc.org/MANUAL.html#producing-slide-shows-with-pandoc), including all [reveal.js configuration options](https://github.com/hakimel/reveal.js#configuration).
+### Variables for LaTeX
 
-- `titlegraphic`
+Pandoc uses these variables when [creating a PDF](https://pandoc.org/MANUAL.html#creating-a-pdf) with a LaTeX engine.
 
-  title graphic for Beamer documents
+#### Layout
 
-- `logo`
+`block-headings`
 
-  logo for Beamer documents
+make `\paragraph` and `\subparagraph` (fourth- and fifth-level headings, or fifth- and sixth-level with book classes) free-standing rather than run-in; requires further formatting to distinguish from `\subsubsection` (third- or fourth-level headings). Instead of using this option, [KOMA-Script](https://ctan.org/pkg/koma-script) can adjust headings more extensively:
 
-- `theme`, `colortheme`, `fonttheme`, `innertheme`, `outertheme`
+```
+---
+documentclass: scrartcl
+header-includes: |
+  \RedeclareSectionCommand[
+    beforeskip=-10pt plus -2pt minus -1pt,
+    afterskip=1sp plus -1sp minus 1sp,
+    font=\normalfont\itshape]{paragraph}
+  \RedeclareSectionCommand[
+    beforeskip=-10pt plus -2pt minus -1pt,
+    afterskip=1sp plus -1sp minus 1sp,
+    font=\normalfont\scshape,
+    indent=0pt]{subparagraph}
+...
+```
 
-  themes for LaTeX [`beamer`](https://ctan.org/pkg/beamer) documents
+`classoption`
 
-- `themeoptions`
+option for document class, e.g. `oneside`; repeat for multiple options:
 
-  options for LaTeX beamer themes (a list).
+```
+---
+classoption:
+- twocolumn
+- landscape
+...
+```
 
-- `navigation`
+`documentclass`
 
-  controls navigation symbols in `beamer` documents (default is `empty` for no navigation symbols; other valid values are `frame`, `vertical`, and `horizontal`).
+document class: usually one of the standard classes, [`article`](https://ctan.org/pkg/article), [`book`](https://ctan.org/pkg/book), and [`report`](https://ctan.org/pkg/report); the [KOMA-Script](https://ctan.org/pkg/koma-script) equivalents, `scrartcl`, `scrbook`, and `scrreprt`, which default to smaller margins; or [`memoir`](https://ctan.org/pkg/memoir)
 
-- `section-titles`
+`geometry`
 
-  enables on “title pages” for new sections in `beamer` documents (default = true).
+option for [`geometry`](https://ctan.org/pkg/geometry) package, e.g. `margin=1in`; repeat for multiple options:
 
-- `beamerarticle`
+```
+---
+geometry:
+- top=30mm
+- left=20mm
+- heightrounded
+...
+```
 
-  when true, the `beamerarticle` package is loaded (for producing an article from beamer slides).
+`hyperrefoptions`
 
-- `aspectratio`
+option for [`hyperref`](https://ctan.org/pkg/hyperref) package, e.g. `linktoc=all`; repeat for multiple options:
 
-  aspect ratio of slides (for beamer only, `1610` for 16:10, `169` for 16:9, `149` for 14:9, `141` for 1.41:1, `54` for 5:4, `43` for 4:3 which is the default, and `32` for 3:2).
+```
+---
+hyperrefoptions:
+- linktoc=all
+- pdfwindowui
+- pdfpagemode=FullScreen
+...
+```
 
-## Variables for LaTeX
+`indent`
 
-LaTeX variables are used when [creating a PDF](https://pandoc.org/MANUAL.html#creating-a-pdf).
+if true, pandoc will use document class settings for indentation (the default LaTeX template otherwise removes indentation and adds space between paragraphs)
 
-- `papersize`
+`linestretch`
 
-  paper size, e.g. `letter`, `a4`
+adjusts line spacing using the [`setspace`](https://ctan.org/pkg/setspace) package, e.g. `1.25`, `1.5`
 
-- `fontsize`
+`margin-left`, `margin-right`, `margin-top`, `margin-bottom`
 
-  font size for body text (e.g. `10pt`, `12pt`)
+sets margins if `geometry` is not used (otherwise `geometry` overrides these)
 
-- `documentclass`
+`pagestyle`
 
-  document class, e.g. [`article`](https://ctan.org/pkg/article), [`report`](https://ctan.org/pkg/report), [`book`](https://ctan.org/pkg/book), [`memoir`](https://ctan.org/pkg/memoir)
+control `\pagestyle{}`: the default article class supports `plain` (default), `empty` (no running heads or page numbers), and `headings` (section titles in running heads)
 
-- `classoption`
+`papersize`
 
-  option for document class, e.g. `oneside`; may be repeated for multiple options
+paper size, e.g. `letter`, `a4`
 
-- `beameroption`
+`secnumdepth`
 
-  In beamer, add extra beamer option with `\setbeameroption{}`
+numbering depth for sections (with [`--number-sections`](https://pandoc.org/MANUAL.html#option--number-sections) option or `numbersections` variable)
 
-- `geometry`
+#### Fonts
 
-  option for [`geometry`](https://ctan.org/pkg/geometry) package, e.g. `margin=1in`; may be repeated for multiple options
+`fontenc`
 
-- `margin-left`, `margin-right`, `margin-top`, `margin-bottom`
+allows font encoding to be specified through `fontenc` package (with `pdflatex`); default is `T1` (see [LaTeX font encodings guide](https://ctan.org/pkg/encguide))
 
-  sets margins, if `geometry` is not used (otherwise `geometry` overrides these)
+`fontfamily`
 
-- `linestretch`
+font package for use with `pdflatex`: [TeX Live](https://www.tug.org/texlive/) includes many options, documented in the [LaTeX Font Catalogue](https://tug.org/FontCatalogue/). The default is [Latin Modern](https://ctan.org/pkg/lm).
 
-  adjusts line spacing using the [`setspace`](https://ctan.org/pkg/setspace) package, e.g. `1.25`, `1.5`
+`fontfamilyoptions`
 
-- `fontfamily`
+options for package used as `fontfamily`; repeat for multiple options. For example, to use the Libertine font with proportional lowercase (old-style) figures through the [`libertinus`](https://ctan.org/pkg/libertinus) package:
 
-  font package for use with `pdflatex`: [TeX Live](http://www.tug.org/texlive/) includes many options, documented in the [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/). The default is [Latin Modern](https://ctan.org/pkg/lm).
+```
+---
+fontfamily: libertinus
+fontfamilyoptions:
+- osf
+- p
+...
+```
 
-- `fontfamilyoptions`
+`fontsize`
 
-  options for package used as `fontfamily`: e.g. `osf,sc` with `fontfamily` set to [`mathpazo`](https://ctan.org/pkg/mathpazo)provides Palatino with old-style figures and true small caps; may be repeated for multiple options
+font size for body text. The standard classes allow 10pt, 11pt, and 12pt. To use another size, set `documentclass` to one of the [KOMA-Script](https://ctan.org/pkg/koma-script) classes, such as `scrartcl` or `scrbook`.
 
-- `mainfont`, `sansfont`, `monofont`, `mathfont`, `CJKmainfont`
+`mainfont`, `sansfont`, `monofont`, `mathfont`, `CJKmainfont`
 
-  font families for use with `xelatex` or `lualatex`: take the name of any system font, using the [`fontspec`](https://ctan.org/pkg/fontspec) package. Note that if `CJKmainfont` is used, the [`xecjk`](https://ctan.org/pkg/xecjk) package must be available.
+font families for use with `xelatex` or `lualatex`: take the name of any system font, using the [`fontspec`](https://ctan.org/pkg/fontspec) package. `CJKmainfont` uses the [`xecjk`](https://ctan.org/pkg/xecjk) package.
 
-- `mainfontoptions`, `sansfontoptions`, `monofontoptions`, `mathfontoptions`, `CJKoptions`
+`mainfontoptions`, `sansfontoptions`, `monofontoptions`, `mathfontoptions`, `CJKoptions`
 
-  options to use with `mainfont`, `sansfont`, `monofont`, `mathfont`, `CJKmainfont` in `xelatex` and `lualatex`. Allow for any choices available through [`fontspec`](https://ctan.org/pkg/fontspec), such as the OpenType features `Numbers=OldStyle,Numbers=Proportional`. May be repeated for multiple options.
+options to use with `mainfont`, `sansfont`, `monofont`, `mathfont`, `CJKmainfont` in `xelatex` and `lualatex`. Allow for any choices available through [`fontspec`](https://ctan.org/pkg/fontspec); repeat for multiple options. For example, to use the [TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre) version of Palatino with lowercase figures:
 
-- `fontenc`
+```
+---
+mainfont: TeX Gyre Pagella
+mainfontoptions:
+- Numbers=Lowercase
+- Numbers=Proportional
+...
+```
 
-  allows font encoding to be specified through `fontenc` package (with `pdflatex`); default is `T1`(see guide to [LaTeX font encodings](https://ctan.org/pkg/encguide))
+`microtypeoptions`
 
-- `microtypeoptions`
+options to pass to the microtype package
 
-  options to pass to the microtype package
+#### Links
 
-- `colorlinks`
+`colorlinks`
 
-  add color to link text; automatically enabled if any of `linkcolor`, `citecolor`, `urlcolor`, or `toccolor` are set
+add color to link text; automatically enabled if any of `linkcolor`, `filecolor`, `citecolor`, `urlcolor`, or `toccolor` are set
 
-- `linkcolor`, `citecolor`, `urlcolor`, `toccolor`
+`linkcolor`, `filecolor`, `citecolor`, `urlcolor`, `toccolor`
 
-  color for internal links, citation links, external links, and links in table of contents: uses options allowed by [`xcolor`](https://ctan.org/pkg/xcolor), including the `dvipsnames`, `svgnames`, and `x11names` lists
+color for internal links, external links, citation links, linked URLs, and links in table of contents, respectively: uses options allowed by [`xcolor`](https://ctan.org/pkg/xcolor), including the `dvipsnames`, `svgnames`, and `x11names` lists
 
-- `links-as-notes`
+`links-as-notes`
 
-  causes links to be printed as footnotes
+causes links to be printed as footnotes
 
-- `indent`
+#### Front matter
 
-  uses document class settings for indentation (the default LaTeX template otherwise removes indentation and adds space between paragraphs)
+`lof`, `lot`
 
-- `subparagraph`
+include list of figures, list of tables
 
-  disables default behavior of LaTeX template that redefines (sub)paragraphs as sections, changing the appearance of nested headings in some classes
+`thanks`
 
-- `thanks`
+contents of acknowledgments footnote after document title
 
-  specifies contents of acknowledgments footnote after document title.
+`toc`
 
-- `toc`
+include table of contents (can also be set using [`--toc/--table-of-contents`](https://pandoc.org/MANUAL.html#option--toc))
 
-  include table of contents (can also be set using `--toc/--table-of-contents`)
+`toc-depth`
 
-- `toc-depth`
+level of section to include in table of contents
 
-  level of section to include in table of contents
+#### BibLaTeX Bibliographies
 
-- `secnumdepth`
+These variables function when using BibLaTeX for [citation rendering](https://pandoc.org/MANUAL.html#citation-rendering).
 
-  numbering depth for sections, if sections are numbered
+`biblatexoptions`
 
-- `lof`, `lot`
+list of options for biblatex
 
-  include list of figures, list of tables
+`biblio-style`
 
-- `bibliography`
+bibliography style, when used with [`--natbib`](https://pandoc.org/MANUAL.html#option--natbib) and [`--biblatex`](https://pandoc.org/MANUAL.html#option--biblatex).
 
-  bibliography to use for resolving references
+`biblio-title`
 
-- `biblio-style`
+bibliography title, when used with [`--natbib`](https://pandoc.org/MANUAL.html#option--natbib) and [`--biblatex`](https://pandoc.org/MANUAL.html#option--biblatex).
 
-  bibliography style, when used with `--natbib` and `--biblatex`.
+`bibliography`
 
-- `biblio-title`
+bibliography to use for resolving references
 
-  bibliography title, when used with `--natbib` and `--biblatex`.
+`natbiboptions`
 
-- `biblatexoptions`
+list of options for natbib
 
-  list of options for biblatex.
+### Variables set automatically
 
-- `natbiboptions`
+Pandoc sets these variables automatically in response to [options](https://pandoc.org/MANUAL.html#options) or document contents; users can also modify them. These vary depending on the output format, and include the following:
 
-  list of options for natbib.
+`body`
 
-- `pagestyle`
+body of document
 
-  An option for LaTeX’s `\pagestyle{}`. The default article class supports ‘plain’ (default), ‘empty’, and ‘headings’; headings puts section titles in the header.
+`date-meta`
+
+the `date` variable converted to ISO 8601 YYYY-MM-DD, included in all HTML based formats (dzslides, epub, html, html4, html5, revealjs, s5, slideous, slidy). The recognized formats for `date` are: `mm/dd/yyyy`, `mm/dd/yy`, `yyyy-mm-dd` (ISO 8601), `dd MM yyyy` (e.g. either `02 Apr 2018` or `02 April 2018`), `MM dd, yyyy` (e.g. `Apr. 02, 2018` or `April 02, 2018),`yyyy[mm[dd]]]`(e.g.`20180402, `201804` or `2018`).
+
+`header-includes`
+
+contents specified by [`-H/--include-in-header`](https://pandoc.org/MANUAL.html#option--include-in-header) (may have multiple values)
+
+`include-before`
+
+contents specified by [`-B/--include-before-body`](https://pandoc.org/MANUAL.html#option--include-before-body) (may have multiple values)
+
+`include-after`
+
+contents specified by [`-A/--include-after-body`](https://pandoc.org/MANUAL.html#option--include-after-body) (may have multiple values)
+
+`meta-json`
+
+JSON representation of all of the document’s metadata. Field values are transformed to the selected output format.
+
+`numbersections`
+
+non-null value if [`-N/--number-sections`](https://pandoc.org/MANUAL.html#option--number-sections) was specified
+
+`sourcefile`, `outputfile`
+
+source and destination filenames, as given on the command line. `sourcefile` can also be a list if input comes from multiple files, or empty if input is from stdin. You can use the following snippet in your template to distinguish them:
+
+```
+$if(sourcefile)$
+$for(sourcefile)$
+$sourcefile$
+$endfor$
+$else$
+(stdin)
+$endif$
+```
+
+Similarly, `outputfile` can be `-` if output goes to the terminal.
+
+If you need absolute paths, use e.g. `$curdir$/$sourcefile$`.
+
+`curdir`
+
+working directory from which pandoc is run.
+
+`toc`
+
+non-null value if [`--toc/--table-of-contents`](https://pandoc.org/MANUAL.html#option--toc) was specified
+
+`toc-title`
+
+title of table of contents (works only with EPUB, HTML, opendocument, odt, docx, pptx, beamer, LaTeX)
 
 [back](./)
