@@ -6,7 +6,7 @@ output-file: academic-pandoc-template.pdf
 pdf-engine: xelatex
 standalone: true
 citeproc: true
-data-dir: # A reference.odt, reference.docx, epub.css, templates, slidy, slideous, or s5 directory placed in this directory will override pandoc’s normal defaults.
+data-dir: . # A reference.odt, reference.docx, epub.css, templates, slidy, slideous, or s5 directory placed in this directory will override pandoc’s normal defaults.
 abbreviations: # Specifies a custom abbreviations file, with abbreviations one to a line.
 verbosity: WARNING # ERROR, WARNING, or INFO
 log-file: ./log.json
