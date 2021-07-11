@@ -1,0 +1,38 @@
+name: Pandoc
+
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://pandoc/ubuntu-latex:latest
+        with:
+          args: pandoc -d docx.yaml
+      - uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker://pandoc/ubuntu-latex:latest
+        working-directory: template
+        with:
+          args: pandoc -d pdf.yaml
+      - uses: actions/upload-artifact@v2act 
+        if: failure()
+        with:
+          name: logs
+          path: |
+            template/pdf.json
+            template/docx.json
+      - uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: |
+            template/academic-pandoc-template.pdf
+            template/academic-pandoc-template.docx
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add template/academic-pandoc-template.pdf template/academic-pandoc-template.docx 
+          git commit -m "generated"
+          git push
