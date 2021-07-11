@@ -28,11 +28,11 @@ jobs:
         with:
           name: output
           path: |
-            template/academic-pandoc-template.pdf
-            template/academic-pandoc-template.docx
+            output/academic-pandoc-template.pdf
+            output/academic-pandoc-template.docx
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add template/academic-pandoc-template.pdf template/academic-pandoc-template.docx 
+          git add output/academic-pandoc-template.pdf output/academic-pandoc-template.docx 
           git commit -m "generated"
           git push
