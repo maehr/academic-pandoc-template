@@ -10,11 +10,11 @@ jobs:
       - uses: docker://pandoc/core:latest
         with:
           args: >-
-            --default=docx.yaml
+            --defaults=docx.yaml
       - uses: docker://pandoc/core:latest
         with:
           args: >-
-            --default=pdf.yaml
+            --defaults=pdf.yaml
             --to=latex
             --output=template/academic-pandoc-template.tex
       - uses: docker://dxjoke/tectonic-docker
