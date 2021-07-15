@@ -1,13 +1,13 @@
 ---
 # Front matter
 lang: de-CH # Use language codes like de, de-DE, en, en-UK, en-US, fr, it, ...
-title: "Ein schöner Titel"
-subtitle: "ein wundervoller Untertitel"
-author: "Petra Muster"
+title: 'Ein schöner Titel'
+subtitle: 'ein wundervoller Untertitel'
+author: 'Petra Muster'
 date: 30-06-2018
-abstract: "Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging."
-keywords: "Schlagworte, Worte"
-thanks: "Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare."
+abstract: 'Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging.'
+keywords: 'Schlagworte, Worte'
+thanks: 'Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare.'
 
 # Bibliography
 csl: https://www.zotero.org/styles/chicago-note-bibliography # See https://www.zotero.org/styles for more styles.
@@ -21,7 +21,7 @@ citecolor: black
 endnote: false
 
 # Formatting
-toc-title: "Inhaltsverzeichnis"
+toc-title: 'Inhaltsverzeichnis'
 toc: true # Table of contents
 toc_depth: 2
 lof: true # List of figures
@@ -60,6 +60,7 @@ header-includes:
 #   pdf_document:
 #     path: academic-pandoc-template.pdf
 ---
+
 # Vowort
 
 Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging. Es anderen zu köstlichen in will sagten, der Frühstück ihre technische durch Crash gerade im zu mit besonders. Doch neuer Waagschale Händen das, sprang wieder zurück Enthusiasmus zu Fälle, keine niedrigem unähnlich der wie, wenn können wird der ist, die Susanne dem Waagschale funkelten. Das dadurch der bei ungekannte.[@jones2016]
@@ -68,7 +69,7 @@ Seine Landarzt ganz Privatisierung mit. Sie ausfallen Stock Individuen hinter wi
 
 Nie sprechen bedeutend ihm im ist Prozesse, wozu Störung ihr dem und, Decken los vernehmen einer Mieter und. Angesichts man seinerseits tun Bank jemandem zog. In sichtbaren seine Stirn Unternehmen er. Böser langjährige Kriterien neue Elemente in.
 
-![Alle mögen Katzen.](cat.jpg "Logo Title Text 1")
+![Alle mögen Katzen.](cat.jpg 'Logo Title Text 1')
 
 Die der jungen alles diese. Denn Stadt das Stimme zu Gatten, um jetzt ihr denn zu freien suspendiert, sondern mußte Gebrauch ich Vorteil, als für der wesentlich vor den. Er durch gestern die erstens. Sie Mann im wild Ausstrecken richtigen viel gegenüber. Und gern es Austauschs lange. Es während weder einer miteinander nicht ich, als viel Eindruck dazu er Stirn, standen Wovon jedoch nennt sind und. Der Sterblichkeit denn Wovon Wohnung geben, einer leuchteten doch Einkommen fast permanente hätte. Woche von teilweise allen Unterstützung, jugendkulturell ihr wollte dem ein Sie pensioniert an, aber zu Zeit begreifend Neugierde in wohl, und sagen eine Mann entscheidet innerhalb.
 
@@ -106,11 +107,11 @@ So Gebrauch die geben Ziel. Er und ganz ihm in, stand von seine sichtbaren eine 
 
 Kabel an meisten konnte sie. Es werden großer geringsten unendlicher Phase sie, daß Ihnen Saat wichtiger sein, die ein nun nicht ihm für. Sie nennt Sie das er. Gehen online ungewöhnlichen gepflegt schaute. Ohne Geburten hatte schicken Wirtschaft, bald Franz dem ich der des ins wesentlich, daß hatte er ebensogut verlebt abgenutzt, hatte getan Zeit Erfahrungen Leser Händen Schlimmsten denn Genugtuung. Sie beteiligt bewußt Industrien Tischchen Stock.
 
-Spalte 1 | Spalte 2 | Spalte 3
---- | --- | ---
-Warum mit innerhalb | Warum mit innerhalb | Warum mit innerhalb
-dem dieser folgte, | dem dieser folgte, | dem dieser folgte,
-so Information. | so Information. | so Information.
+| Spalte 1            | Spalte 2            | Spalte 3            |
+| ------------------- | ------------------- | ------------------- |
+| Warum mit innerhalb | Warum mit innerhalb | Warum mit innerhalb |
+| dem dieser folgte,  | dem dieser folgte,  | dem dieser folgte,  |
+| so Information.     | so Information.     | so Information.     |
 
 Table: Warum mit innerhalb dem dieser folgte, so Information.
 
@@ -128,9 +129,9 @@ Die unmöglich selbst mehreren hätte ist, denn sechziger zurücksehnte langweil
 
 ## Betonung
 
-Hervorhebung, auch kursiv, mit *Sternchen* oder _Unterstrichen_.
+Hervorhebung, auch kursiv, mit _Sternchen_ oder _Unterstrichen_.
 
-Starke Betonung, auch bekannt als fett, mit **asterisks** oder __underscores__.
+Starke Betonung, auch bekannt als fett, mit **asterisks** oder **underscores**.
 
 Kombinierte Betonung mit **asterisks und _Unterstrichen_**.
 
@@ -140,10 +141,12 @@ Durchgestrichen wird mit zwei Tilden. ~~Streichrn Sie das hier.~~
 
 1. Erster geordneter Listenpunkt
 2. Ein weiterer Punkt
-  * Ungeordnete Teilliste.
+
+- Ungeordnete Teilliste.
+
 1. Tatsächliche Zahlen spielen keine Rolle, nur dass es eine Zahl ist.
-  1. Bestellte Teilliste
-4. Und noch eine Sache.
+1. Bestellte Teilliste
+1. Und noch eine Sache.
 
    Man kann Absätze innerhalb von Listeneinträgen richtig eingerückt haben. Beachten Sie die Leerzeile oben und die führenden Leerzeichen (mindestens eines, aber wir verwenden hier drei, um auch den rohen Markdown auszurichten).
 
@@ -151,9 +154,11 @@ Durchgestrichen wird mit zwei Tilden. ~~Streichrn Sie das hier.~~
    Merke, dass diese Zeile getrennt ist, aber innerhalb desselben Absatzes.
    (Dies steht im Widerspruch zum typischen GFM-Zeilenumbruchverhalten, bei dem keine Leerzeichen erforderlich sind.
 
-* Ungeordnete Liste kann Sternchen enthalten
-- Oder Minus
-+ Oder Pluspunkte
+- Ungeordnete Liste kann Sternchen enthalten
+
+* Oder Minus
+
+- Oder Pluspunkte
 
 ## Links
 
@@ -175,27 +180,27 @@ example.com (aber nicht auf Github, zum Beispiel).
 
 Speichern Sie Ihr Bild als JPG oder PNG in den Ordner `/template/` und fügen Sie es so ein:
 
-![Mehr Katzen](cat.jpg "Logo Titel Text 1")
+![Mehr Katzen](cat.jpg 'Logo Titel Text 1')
 
 ## Tabellen
 
 Doppelpunkte können zum Ausrichten von Spalten verwendet werden.
 
-Tische | sind | cool |
-| ------------- |:-------------:| -----:|
-Spalte 3 ist rechtsbündig | $1600 |
-Spalte 2 ist zentriert | $12 |
-Zebrastreifen sind ordentlich | $1 |
+| Tische                        | sind  | cool |
+| ----------------------------- | :---: | ---: |
+| Spalte 3 ist rechtsbündig     | $1600 |
+| Spalte 2 ist zentriert        |  $12  |
+| Zebrastreifen sind ordentlich |  $1   |
 
 Table: Tabellen haben nur eine Beschriftung, wenn sie explizit angegeben ist.
 
 Jede Kopfzelle muss mindestens 3 Bindestriche enthalten.
 Die äußeren Rohre (|) sind optional.
 
-Abschrift | Weniger | Hübsch
---- | --- | ---
-*Still* | `renders` | **nicely*
-1 | 2 | 3
+| Abschrift | Weniger   | Hübsch     |
+| --------- | --------- | ---------- |
+| _Still_   | `renders` | **nicely** |
+| 1         | 2         | 3          |
 
 ## Blockzitate
 
@@ -210,9 +215,9 @@ Zitat Pause.
 
 ## Fußnoten
 
-Fußnoten werden am besten direkt nach dem ersten verwendeten Absatz platziert.[^Fußnote]
+Fußnoten werden am besten direkt nach dem ersten verwendeten Absatz platziert.[^fußnote]
 
-[^Fußnote]: Sie können sie aber auch am Ende des Dokuments anbringen.
+[^fußnote]: Sie können sie aber auch am Ende des Dokuments anbringen.
 
 Wenn Sie Endnoten verwenden möchten, schalten Sie diese stattdessen in den Dokumentoptionen ein.
 

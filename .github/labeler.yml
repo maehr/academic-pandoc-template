@@ -1,24 +1,24 @@
 src:
-- .gitattributes
-- .gitignore
-- src/*
+  - .gitattributes
+  - .gitignore
+  - src/*
 
 docs:
-- CODE_OF_CONDUCT.md
-- CONTRIBUTING.md
-- LICENSE.md
-- README.md
-- SECURITY.md
-- _config.yml
-- _layouts
-- android-chrome-192x192.png
-- android-chrome-512x512.png
-- apple-touch-icon.png
-- assets/*
-- favicon-16x16.png
-- favicon-32x32.png
-- favicon.ico
-- site.webmanifest
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - LICENSE.md
+  - README.md
+  - SECURITY.md
+  - _config.yml
+  - _layouts
+  - android-chrome-192x192.png
+  - android-chrome-512x512.png
+  - apple-touch-icon.png
+  - assets/*
+  - favicon-16x16.png
+  - favicon-32x32.png
+  - favicon.ico
+  - site.webmanifest
 
 github:
-- .github/*
+  - .github/*

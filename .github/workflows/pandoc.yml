@@ -4,35 +4,24 @@ on: push
 
 jobs:
   convert_via_pandoc:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://pandoc/ubuntu-latex:latest
+      - uses: docker://pandoc/core:latest
         with:
           args: pandoc -d docx.yaml
-      - uses: wtfjoke/setup-tectonic@v1
+      - uses: docker://pandoc/core:latest
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker://pandoc/ubuntu-latex:latest
-        working-directory: template
+          args: pandoc -d pdf.yaml --to=latex --output=template/academic-pandoc-template.tex
+      - uses: docker://dxjoke/tectonic-docker
         with:
-          args: pandoc -d pdf.yaml
-      - uses: actions/upload-artifact@v2act 
-        if: failure()
+          args: tectonic template/academic-pandoc-template.tex --outdir output
+      - uses: actions/upload-artifact@v2
         with:
-          name: logs
-          path: |
-            template/pdf.json
-            template/docx.json
+          name: log
+          path: log
       - uses: actions/upload-artifact@v2
         with:
           name: output
-          path: |
-            output/academic-pandoc-template.pdf
-            output/academic-pandoc-template.docx
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add output/academic-pandoc-template.pdf output/academic-pandoc-template.docx 
-          git commit -m "generated"
-          git push
+          path: output
+
