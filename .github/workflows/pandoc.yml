@@ -11,6 +11,14 @@ jobs:
         with:
           args: >-
             --defaults=docx.yaml
+      - uses: actions/upload-artifact@v2
+        with:
+          name: academic-pandoc-template.docx
+          path: output/academic-pandoc-template.docx
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docx.log.json
+          path: log/docx.log.json
       - uses: docker://pandoc/core:latest
         with:
           args: >-
@@ -22,9 +30,9 @@ jobs:
           args: tectonic template/academic-pandoc-template.tex --outdir output
       - uses: actions/upload-artifact@v2
         with:
-          name: log
-          path: log
+          name: academic-pandoc-template.pdf
+          path: output/academic-pandoc-template.pdf
       - uses: actions/upload-artifact@v2
         with:
-          name: output
-          path: output
+          name: pdf.log.json
+          path: log/pdf.log.json
