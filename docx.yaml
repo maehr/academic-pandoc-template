@@ -1,0 +1,14 @@
+cite-method: citeproc # citeproc, natbib, or biblatex
+citeproc: true
+file-scope: false # Parse each file individually before combining for multifile documents. This will allow footnotes in different files with the same identifiers to work as expected. If this option is set, footnotes and links will not work across files.
+from: markdown
+highlight-style: pygments
+input-files: [template/academic-pandoc-template.md]
+log-file: log/docx.log.json
+output-file: output/academic-pandoc-template.docx
+reference-location: block # block, section, or document
+resource-path: [template]
+standalone: true
+to: docx
+top-level-division: chapter # part, chapter, section, or default:
+verbosity: WARNING # ERROR, WARNING, or INFO

@@ -7,7 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
 
+## [0.0.7](https://github.com/maehr/academic-pandoc-template/tree/v0.0.6) - 2021-07-11
+
+### Added
+
+- GitHub action for pandoc conversin added
+- Prettier linter and formatter added
+
+### Changed
+
 - fixed default.yaml files to comply with pandoc 2.11
+- Formatted and linted
+- README.md updated
+
+### Removed
+
+- Superlinter GitHub action
 
 ## [0.0.6](https://github.com/maehr/academic-pandoc-template/tree/v0.0.6) - 2020-08-16
 

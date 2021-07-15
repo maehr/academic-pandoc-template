@@ -21,9 +21,9 @@ layout: default
 ## Emphasis
 
 ```markdown
-Emphasis, aka italics, with *asterisks* or _underscores_.
+Emphasis, aka italics, with _asterisks_ or _underscores_.
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+Strong emphasis, aka bold, with **asterisks** or **underscores**.
 
 Combined emphasis with **asterisks and _underscores_**.
 
@@ -35,9 +35,9 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ```markdown
 1. First ordered list item
 2. Another item
-⋅⋅* Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
+   ⋅⋅\* Unordered sub-list.
+3. Actual numbers don't matter, just that it's a number
+   ⋅⋅1. Ordered sub-list
 4. And another item.
 
 ⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
@@ -46,9 +46,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
+- Unordered list can use asterisks
+
+* Or minuses
+
+- Or pluses
 ```
 
 ## Links
@@ -74,7 +76,7 @@ example.com (but not on Github, for example).
 ```markdown
 Save your image (jpg or png format only) to `template/` and insert it like this:
 
-![Figure caption text](template/cat.jpg "Logo Title Text 1")
+![Figure caption text](template/cat.jpg 'Logo Title Text 1')
 ```
 
 ## Tables
@@ -82,11 +84,11 @@ Save your image (jpg or png format only) to `template/` and insert it like this:
 ```markdown
 Colons can be used to align columns.
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 Table: Table captions are done like this.
 
@@ -94,10 +96,10 @@ There must be at least 3 dashes separating each header cell.
 The outer pipes (|) are optional, and you don't need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+| Markdown | Less      | Pretty     |
+| -------- | --------- | ---------- |
+| _Still_  | `renders` | **nicely** |
+| 1        | 2         | 3          |
 ```
 
 ## Blockquotes
@@ -108,7 +110,7 @@ Markdown | Less | Pretty
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 ```
 
 ## Footnotes
@@ -177,13 +179,13 @@ The Academic Pandoc Template already comes with a predefined header block in `te
 ---
 # Front matter
 lang: de-CH # Use language codes like de, de-DE, en, en-UK, en-US, fr, it, ...
-title: "Ein schöner Titel"
-subtitle: "ein wundervoller Untertitel"
-author: "Petra Muster"
+title: 'Ein schöner Titel'
+subtitle: 'ein wundervoller Untertitel'
+author: 'Petra Muster'
 date: 30-06-2018
-abstract: "Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging."
-keywords: "Schlagworte, Worte"
-thanks: "Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare."
+abstract: 'Hier Vorgang ihm als reiße. Ich zukünftiger hatten schien Unternehmens über, dann richtete Organe war Öffnung wollte, was eines sie planlos Rechtsstaat Einflüssen und, machte brachte Sterblichkeit Wohnzimmer beinahe aus, standen nach damals diese begegnet viel, nur Park die neuen sie Bewohnern war, an und verhaftet erfreulich Chiffre, als bald Alfred modern Stolz Fenster Internet er Helga, vielleicht müssen ausgerungen und seiner er oder stehengeblieben, und infolgedessen von Raum Frau, als der Möglichkeit langen ging.'
+keywords: 'Schlagworte, Worte'
+thanks: 'Herzlichen Dank an Gabriela Muster für die wertvollen Kommentare.'
 
 # Bibliography
 csl: https://www.zotero.org/styles/chicago-note-bibliography # See https://www.zotero.org/styles for more styles.
@@ -197,7 +199,7 @@ citecolor: black
 endnote: false
 
 # Formatting
-toc-title: "Inhaltsverzeichnis"
+toc-title: 'Inhaltsverzeichnis'
 toc: true # Table of contents
 toc_depth: 2
 lof: true # List of figures
@@ -236,6 +238,7 @@ header-includes:
 #   pdf_document:
 #     path: academic-pandoc-template.pdf
 ---
+
 ```
 
 You can easily add, remove or modify these variables by editing the corresponding value.
@@ -282,7 +285,7 @@ document description, included in ODT, docx and pptx metadata. Some applications
 
 document category, included in docx and pptx metadata
 
-Additionally, any root-level string metadata, not included in ODT, docx or pptx metadata is added as a *custom property*. The following [YAML](https://yaml.org/spec/1.2/spec.html "YAML v1.2 Spec") metadata block for instance:
+Additionally, any root-level string metadata, not included in ODT, docx or pptx metadata is added as a _custom property_. The following [YAML](https://yaml.org/spec/1.2/spec.html 'YAML v1.2 Spec') metadata block for instance:
 
 ```
 ---

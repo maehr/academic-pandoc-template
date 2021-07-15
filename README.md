@@ -13,37 +13,44 @@ Write beautiful academic texts with the distraction-free [Pandoc Markdown](http:
 
 Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Zettlr](https://www.zettlr.com/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
 
-### Use with [typademic](https://typademic.ch) online (BEGINNER)
+### Use with [GitHub actions](https://docs.github.com/en/actions)
 
-1. Download the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template/archive/master.zip)
-2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://maehr.github.io/academic-pandoc-template/markdown.html) with your favorite Markdown editor
-3. Edit `/template/references.bib` with your favorite Bibtex editor
-3. Upload all files in `/template/` to [typademic](https://typademic.ch) and convert it to PDF or Docx
-4. Be happy!
+1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template)
+2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://maehr.github.io/academic-pandoc-template/markdown.html) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [Zettlr](https://www.zettlr.com/) or with your favorite Markdown editor
+3. Edit `/template/references.bib` [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [JabRef](http://www.jabref.org/) or with your favorite Bibtex editor
+4. [Commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes
+5. GitHub will compile an updated PDF and a DOCX document for you
 
-### Use with Pandoc and Latex (ADVANCED)
+### Use with [typademic](https://typademic.ch) online
+
+1. [Clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) or download the [academic-pandoc-template](https://github.com/maehr/academic-pandoc-template/archive/master.zip)
+2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://maehr.github.io/academic-pandoc-template/markdown.html) with [Zettlr](https://www.zettlr.com/) or your favorite Markdown editor
+3. Edit `/template/references.bib` with [JabRef](http://www.jabref.org/) or your favorite Bibtex editor
+4. Upload all files in `/template/` to [typademic](https://typademic.ch) and convert it to PDF or Docx
+
+### Use with Pandoc and Latex
 
 Install all prerequisites
 
 - [Pandoc 2.11 or newer](http://pandoc.org/installing.html)
 - [LaTeX](https://www.latex-project.org/get/)
 
-Open your command line, navigate to `/template/` and execute the following commands.
+Open your command line and execute the following commands.
 
 ```bash
-pandoc -d pdf.yaml academic-pandoc-template.md
-pandoc -d docx.yaml academic-pandoc-template.md
+pandoc -d pdf.yaml
+pandoc -d docx.yaml
 ```
 
 ## Support
 
 This project is maintained by [@maehr](https://github.com/maehr). Please understand that we won't be able to provide individual support via email. We also believe that help is much more valuable if it's shared publicly, so that more people can benefit from it.
 
-| Type                   | Platforms                                                    |
-| ---------------------- | ------------------------------------------------------------ |
-| 🚨 **Bug Reports**      | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
-| 🎁 **Feature Requests** | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
-| 🛡 **Report a security vulnerability**      | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
+| Type                                  | Platforms                                                                        |
+| ------------------------------------- | -------------------------------------------------------------------------------- |
+| 🚨 **Bug Reports**                    | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
+| 🎁 **Feature Requests**               | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
+| 🛡 **Report a security vulnerability** | [GitHub Issue Tracker](https://github.com/maehr/academic-pandoc-template/issues) |
 
 ## Built With
 

@@ -1,0 +1,12 @@
+{
+	"name": "academic-pandoc-template",
+	"version": "0.0.7",
+	"scripts": {
+		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"prettier": "~2.2.1"
+	},
+	"type": "module"
+}
