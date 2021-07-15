@@ -19,7 +19,7 @@ Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and 
 2. Edit `/template/academic-pandoc-template.md` according to the [Markdown guide](https://maehr.github.io/academic-pandoc-template/markdown.html) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [Zettlr](https://www.zettlr.com/) or with your favorite Markdown editor
 3. Edit `/template/references.bib` [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [JabRef](http://www.jabref.org/) or with your favorite Bibtex editor
 4. [Commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes
-5. GitHub will compile an updated PDF and a DOCX document for you
+5. [GitHub actions](https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts) will compile an updated PDF and a DOCX document and store these artifacts
 
 ### Use with [typademic](https://typademic.ch) online
 
