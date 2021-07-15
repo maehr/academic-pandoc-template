@@ -9,10 +9,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker://pandoc/core:latest
         with:
-          args: pandoc -d docx.yaml
+          args: >-
+            --default=docx.yaml
       - uses: docker://pandoc/core:latest
         with:
-          args: pandoc -d pdf.yaml --to=latex --output=template/academic-pandoc-template.tex
+          args: >-
+            --default=pdf.yaml
+            --to=latex
+            --output=template/academic-pandoc-template.tex
       - uses: docker://dxjoke/tectonic-docker
         with:
           args: tectonic template/academic-pandoc-template.tex --outdir output
@@ -24,4 +28,3 @@ jobs:
         with:
           name: output
           path: output
-
