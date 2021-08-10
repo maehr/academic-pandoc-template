@@ -33,13 +33,45 @@ Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and 
 Install all prerequisites
 
 - [Pandoc 2.11 or newer](http://pandoc.org/installing.html)
-- [LaTeX](https://www.latex-project.org/get/)
+- [Tectonic](https://tectonic-typesetting.github.io/) or another [LaTeX](https://www.latex-project.org/get/) distribution
 
 Open your command line and execute the following commands.
 
 ```bash
-pandoc -d pdf.yaml
-pandoc -d docx.yaml
+pandoc --defaults pdf.yaml
+pandoc --defaults docx.yaml
+```
+
+## Configuration
+
+### YAML front matter
+
+```yaml
+
+```
+
+### Default file
+
+- `docx.yaml`
+- `pdf.yaml`
+- [Docs](https://pandoc.org/MANUAL.html#default-files)
+
+```yaml
+cite-method: citeproc # citeproc, natbib, or biblatex
+citeproc: true
+file-scope: false # Parse each file individually before combining for multifile documents. This will allow footnotes in different files with the same identifiers to work as expected. If this option is set, footnotes and links will not work across files.
+from: markdown
+highlight-style: pygments
+input-files: [template/academic-pandoc-template.md]
+log-file: log/pdf.log.json
+output-file: output/academic-pandoc-template.pdf
+pdf-engine: tectonic # wkhtmltopdf, weasyprint, prince, pdflatex, lualatex, xelatex, latexmk, pdfroff, context
+reference-location: block # block, section, or document
+resource-path: [template]
+standalone: true
+to: pdf
+top-level-division: chapter # part, chapter, section, or default:
+verbosity: WARNING # ERROR, WARNING, or INFO
 ```
 
 ## Support
@@ -55,8 +87,7 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 ## Built With
 
 - [Chicago Manual of Style 17th edition (note)](https://www.zotero.org/styles?q=chicago)
-- [LaTeX](https://www.latex-project.org/)
-- [Pandoc](https://pandoc.org/)
+- [Pandoc](https://pandoc.org/) and [Pandoc GitHub action](https://github.com/pandoc/pandoc-action-example)
 
 ## Roadmap
 
