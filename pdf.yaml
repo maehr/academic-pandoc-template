@@ -6,7 +6,7 @@ highlight-style: pygments
 input-files: [template/academic-pandoc-template.md]
 log-file: log/pdf.log.json
 output-file: output/academic-pandoc-template.pdf
-pdf-engine: tectonic
+pdf-engine: tectonic # wkhtmltopdf, weasyprint, prince, pdflatex, lualatex, xelatex, latexmk, pdfroff, context
 reference-location: block # block, section, or document
 resource-path: [template]
 standalone: true
