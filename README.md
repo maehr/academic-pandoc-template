@@ -154,11 +154,7 @@ header-includes:
   - |
     ```{=latex}
     % add custom hyphentation rules
-    \hyphenation
-    {%
-      Hyphenate-me-like-this
-      Dontyoueverhyphenateme
-    }%
+    \hyphenation{Hyphenate-me-like-this Dontyoueverhyphenateme}
     ```
 ````
 
