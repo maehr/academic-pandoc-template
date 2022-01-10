@@ -25,9 +25,17 @@ jobs:
             --defaults=pdf.yaml
             --to=latex
             --output=template/academic-pandoc-template.tex
-      - uses: docker://dxjoke/tectonic-docker
+      - uses: actions/cache@v2
+        name: Tectonic Cache
         with:
-          args: tectonic template/academic-pandoc-template.tex --outdir output
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+           ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: tectonic template/academic-pandoc-template.tex --outdir output
       - uses: actions/upload-artifact@v2
         with:
           name: academic-pandoc-template.pdf

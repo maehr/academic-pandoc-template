@@ -199,10 +199,14 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 
 ## Built With
 
+- [commitizen](https://github.com/commitizen/cz-cli)
+- [git-cliff](https://github.com/orhun/git-cliff)
+- [husky](https://github.com/typicode/husky)
 - [Pandoc](https://pandoc.org/) a universal document converter and
-- [Pandoc GitHub action](https://github.com/pandoc/pandoc-action-example) using the pandoc document converter on GitHub Actions
-- [Prettier](https://prettier.io/), an opinionated code formatter
-- [Tectonic](https://tectonic-typesetting.github.io/en-US/) is a modernized, complete, self-contained [TeX](https://www.tug.org/)/[LaTeX](https://www.latex-project.org/) engine, powered by [XeTeX](http://xetex.sourceforge.net/) and [TeXLive](https://www.tug.org/texlive/)
+- [Pandoc GitHub action](https://github.com/pandoc/pandoc-action-example)
+- [Prettier](https://prettier.io/) an opinionated code formatter
+- [Tectonic](https://tectonic-typesetting.github.io/en-US/) a modernized, complete, self-contained [TeX](https://www.tug.org/)/[LaTeX](https://www.latex-project.org/) engine, powered by [XeTeX](http://xetex.sourceforge.net/) and [TeXLive](https://www.tug.org/texlive/)
+- [Tectonic GitHub action](https://github.com/WtfJoke/setup-tectonic)
 
 ## Roadmap
 
