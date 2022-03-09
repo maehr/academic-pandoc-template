@@ -60,9 +60,9 @@ header-includes:
     ```
   - |
     ```{=latex}
-    % keep figures where there are in the text
-    \usepackage{float} 
-    \floatplacement{figure}{H}
+    % uncomment to keep figures where there are in the text (does not work well with typademic)
+    % \usepackage{float} 
+    % \floatplacement{figure}{H}
     ```
   - |
     ```{=latex}
