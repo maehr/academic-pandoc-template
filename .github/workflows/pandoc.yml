@@ -6,16 +6,16 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: docker://pandoc/core:latest
         with:
           args: >-
             --defaults=docx.yaml
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: academic-pandoc-template.docx
           path: output/academic-pandoc-template.docx
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: docx.log.json
           path: log/docx.log.json
@@ -25,7 +25,7 @@ jobs:
             --defaults=pdf.yaml
             --to=latex
             --output=template/academic-pandoc-template.tex
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         name: Tectonic Cache
         with:
           path: ~/.cache/Tectonic
@@ -36,11 +36,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: tectonic template/academic-pandoc-template.tex --outdir output
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: academic-pandoc-template.pdf
           path: output/academic-pandoc-template.pdf
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: pdf.log.json
           path: log/pdf.log.json
