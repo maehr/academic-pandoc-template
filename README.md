@@ -26,7 +26,7 @@ Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and 
 
 Install all prerequisites
 
-- [Pandoc 2.11 or newer](http://pandoc.org/installing.html)
+- [Pandoc](http://pandoc.org/installing.html)
 - [Tectonic](https://tectonic-typesetting.github.io/) or another [LaTeX](https://www.latex-project.org/get/) distribution
 
 Open your command line and execute the following commands.
