@@ -31,7 +31,7 @@ jobs:
           path: ~/.cache/Tectonic
           key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
           restore-keys: |
-           ${{ runner.os }}-tectonic-
+            ${{ runner.os }}-tectonic-
       - uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 # Academic Pandoc template
 
-Write beautifully typeset academic texts with distraction-free [Markdown](https://daringfireball.net/projects/markdown/syntax) and [Pandoc](http://pandoc.org/MANUAL.html).
+[Pandoc](http://pandoc.org/MANUAL.html) [markdown](https://daringfireball.net/projects/markdown/syntax) templates for academic articles, theses and presentations to write distraction-free while maintaining beautiful typesetting.
 
 [![GitHub issues](https://img.shields.io/github/issues/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/issues)
 [![GitHub forks](https://img.shields.io/github/forks/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/network)
@@ -12,7 +12,7 @@ Write beautifully typeset academic texts with distraction-free [Markdown](https:
 
 ## Getting Started
 
-Read the [documentation](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Zettlr](https://www.zettlr.com/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
+Follow the [user guide](https://maehr.github.io/academic-pandoc-template/) and make sure you have a Markdown editor like [Zettlr](https://www.zettlr.com/) and a Bibtex editor like [JabRef](http://www.jabref.org/) installed.
 
 ### Use it online
 
