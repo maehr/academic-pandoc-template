@@ -1,0 +1,5 @@
+input-files: [paper.md]
+log-file: paper.log
+output-file: paper.pdf
+pdf-engine: tectonic # wkhtmltopdf, weasyprint, prince, pdflatex, lualatex, xelatex, latexmk, pdfroff, context, tectonic
+to: pdf
