@@ -1,0 +1,18 @@
+filters:
+  - pandoc-crossref
+  - filters/multiple-bibliographies.lua
+  - filters/pandoc-quotes.lua
+input-files:
+  - 00.md
+  - 00_Introduction.md
+  - 10_Chapter_1.md
+  - 20_Chapter_2.md
+  - 30_Chapter_3.md
+  - 40_Chapter_4.md
+  - 50_Conclusion.md
+  - 60_Acknowledgment.md
+  - 74_Bibliography.md
+log-file: thesis.log
+output-file: thesis.docx
+to: docx
+toc-depth: 2
