@@ -8,6 +8,37 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: docker://pandoc/core:latest
+        working-directory: ./article
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=docx.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./article
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=tex.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./presentation
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=html.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./presentation
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=pptx.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./presentation
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=tex.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./thesis
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=docx.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./thesis
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=epub.yaml'
+      - uses: docker://pandoc/core:latest
+        working-directory: ./thesis
+        with:
+          args: '--defaults=./../defaults.yaml --defaults=tex.yaml'
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
@@ -18,9 +49,7 @@ jobs:
       - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: make all
-      - run: rm article/.gitignore presentation/.gitignore thesis/.gitignore
+      - run: make article-pdf presentation-pdf thesis-pdf
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
           message: 'GitHub action artefacts added'
-          new_branch: output

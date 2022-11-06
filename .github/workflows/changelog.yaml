@@ -8,10 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
       - name: Generate a changelog
         uses: orhun/git-cliff-action@v1
         id: git-cliff
@@ -20,6 +19,5 @@ jobs:
           args: --verbose
         env:
           OUTPUT: CHANGELOG.md
-
       - name: Print the changelog
         run: cat "${{ steps.git-cliff.outputs.changelog }}"
