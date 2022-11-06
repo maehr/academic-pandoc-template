@@ -13,7 +13,7 @@ jobs:
           sudo dpkg -i pandoc-2.19.2-1-amd64.deb
           wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.13.0b/pandoc-crossref-Linux.tar.xz
           tar -xvf pandoc-crossref-Linux.tar.xz
-          mv pandoc-crossref /usr/bin
+          sudo mv pandoc-crossref /usr/bin
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
