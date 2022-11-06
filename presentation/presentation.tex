@@ -1,0 +1,539 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{beamer}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\usepackage[normalem]{ulem}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{american}
+\babelprovide[import]{english}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Title},
+  pdfauthor={Eleanor Roosevelt; John Peters Humphrey},
+  pdflang={en-US},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Title}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Subtitle}
+\author{\href{eleanor.eoosevelt@domain.com}{Eleanor
+Roosevelt} \and \href{jph@domain.com}{John Peters Humphrey}}
+\date{1 January 2023}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+All human beings are born free and equal in dignity and rights. All
+human beings are born free and equal in dignity and rights. All human
+beings are born free and equal in dignity and rights. All human beings
+are born free and equal in dignity and rights.
+\end{abstract}
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{heading-1}{%
+\section{Heading 1}\label{heading-1}}
+
+All human beings are born free and equal in dignity and rights. All
+human beings are born free and equal in dignity and rights. All human
+beings are born free and equal in dignity and rights. All human beings
+are born free and equal in dignity and rights.
+
+This is a note visible in PowerPoint.
+
+\begin{itemize}
+\tightlist
+\item
+  It can contain Markdown
+\item
+  like this list
+\end{itemize}
+
+\hypertarget{heading-2}{%
+\subsection{Heading 2}\label{heading-2}}
+
+All human beings are born free and equal in dignity and rights.
+
+\hypertarget{heading-3}{%
+\subsubsection{Heading 3}\label{heading-3}}
+
+All human beings are born free and equal in dignity and rights.
+
+\hypertarget{heading-4}{%
+\paragraph{Heading 4}\label{heading-4}}
+
+All human beings are born free and equal in dignity and rights.
+
+\hypertarget{bold}{%
+\subsection{Bold}\label{bold}}
+
+\textbf{All human beings are born free and equal in dignity and rights.}
+All human beings are born free and equal in dignity and rights.All human
+beings are born free and equal in dignity and rights.All human beings
+are born free and equal in dignity and rights.
+
+\hypertarget{italic}{%
+\subsection{Italic}\label{italic}}
+
+\emph{All human beings are born free and equal in dignity and rights.}
+All human beings are born free and equal in dignity and rights.All human
+beings are born free and equal in dignity and rights.All human beings
+are born free and equal in dignity and rights.
+
+\hypertarget{bold-and-italic}{%
+\subsection{Bold and italic}\label{bold-and-italic}}
+
+\textbf{\emph{All human beings are born free and equal in dignity and
+rights.}} All human beings are born free and equal in dignity and
+rights.All human beings are born free and equal in dignity and
+rights.All human beings are born free and equal in dignity and rights.
+
+\hypertarget{struck-through}{%
+\subsection{Struck through}\label{struck-through}}
+
+\sout{All human beings are born free and equal in dignity and rights.}
+All human beings are born free and equal in dignity and rights.All human
+beings are born free and equal in dignity and rights.All human beings
+are born free and equal in dignity and rights.
+
+\hypertarget{numbered-lists}{%
+\subsection{Numbered lists}\label{numbered-lists}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  All human beings are born free and equal in dignity and rights.
+\item
+  All human beings are born free and equal in dignity and rights.
+\item
+  All human beings are born free and equal in dignity and rights.
+\item
+  All human beings are born free and equal in dignity and rights.
+\end{enumerate}
+
+\hypertarget{unnumbered-lists}{%
+\subsection{Unnumbered lists}\label{unnumbered-lists}}
+
+\begin{itemize}
+\tightlist
+\item
+  All human beings are born free and equal in dignity and rights.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    All human beings are born free and equal in dignity and rights.
+  \end{itemize}
+\item
+  All human beings are born free and equal in dignity and rights.
+\end{itemize}
+
+\hypertarget{mixed-lists}{%
+\subsection{Mixed lists}\label{mixed-lists}}
+
+\begin{itemize}
+\tightlist
+\item
+  All human beings are born free and equal in dignity and rights.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    All human beings are born free and equal in dignity and rights.
+  \item
+    All human beings are born free and equal in dignity and rights.
+  \end{enumerate}
+\item
+  All human beings are born free and equal in dignity and rights.
+\end{itemize}
+
+\hypertarget{figures-and-captions}{%
+\subsection{Figures and captions}\label{figures-and-captions}}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth,height=0.6\textheight]{images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg}
+\caption{Eleanor Roosevelt hält die englische Version der Allgemeinen
+Erklärung der Menschenrechte (FDR Presidential Library \& Museum, CC BY
+2.0 \url{https://creativecommons.org/licenses/by/2.0}, via Wikimedia
+Commons)}
+\end{figure}
+
+\hypertarget{code}{%
+\subsection{Code}\label{code}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ping}\NormalTok{ wikipedia.org}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{urls-and-email-addresses}{%
+\subsection{URLs and email addresses}\label{urls-and-email-addresses}}
+
+\href{https://www.wikipedia.org/}{wikipedia.org},
+\href{mailto:info@wikipedia.org}{\nolinkurl{info@wikipedia.org}}. All
+human beings are born free and equal in dignity and rights. All human
+beings are born free and equal in dignity and rights. All human beings
+are born free and equal in dignity and rights. All human beings are born
+free and equal in dignity and rights.
+
+\hypertarget{tables}{%
+\subsection{Tables}\label{tables}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\caption{Table caption}\tabularnewline
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+column 1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+column 2
+\end{minipage} \\
+\midrule()
+\endfirsthead
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+column 1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+column 2
+\end{minipage} \\
+\midrule()
+\endhead
+All human beings are born free and equal in dignity and rights. & All
+human beings are born free and equal in dignity and rights. \\
+All human beings are born free and equal in dignity and rights. & All
+human beings are born free and equal in dignity and rights. \\
+All human beings are born free and equal in dignity and rights. & All
+human beings are born free and equal in dignity and rights. \\
+All human beings are born free and equal in dignity and rights. & All
+human beings are born free and equal in dignity and rights. \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{footnotes}{%
+\subsection{Footnotes}\label{footnotes}}
+
+All human beings are born free and equal in dignity and rights. All
+human beings are born free and equal in dignity and rights. All human
+beings are born free and equal in dignity and rights. All human beings
+are born free and equal in dignity and rights.\footnote{All human beings
+  are born free and equal in dignity and rights.}
+
+\hypertarget{quotes}{%
+\subsection{Quotes}\label{quotes}}
+
+\begin{quote}
+All human beings are born free and equal in dignity and rights.
+\end{quote}
+
+All human beings are born free and equal in dignity and rights. All
+human beings are born free and equal in dignity and rights. All human
+beings are born free and equal in dignity and rights. All human beings
+are born free and equal in dignity and rights.
+
+\hypertarget{scientific-citations}{%
+\subsection{Scientific citations}\label{scientific-citations}}
+
+\begin{otherlanguage}{english}
+
+\begin{quote}
+All human beings are born free and equal in dignity and rights. They are
+endowed with reason and conscience and should act towards one another in
+a spirit of brotherhood. United Nations (1948)
+\end{quote}
+
+\end{otherlanguage}
+
+All human beings are born free and equal in dignity and rights. All
+human beings are born free and equal in dignity and rights. All human
+beings are born free and equal in dignity and rights. All human beings
+are born free and equal in dignity and rights.(United Nations 1948)
+
+\hypertarget{two-columns-of-equal-width}{%
+\subsection{Two columns of equal
+width}\label{two-columns-of-equal-width}}
+
+Left column text.
+
+Another text line.
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\item
+  Item 3.
+\end{itemize}
+
+\hypertarget{two-columns-of-with-4060-split}{%
+\subsection{Two columns of with 40:60
+split}\label{two-columns-of-with-4060-split}}
+
+Left column text.
+
+Another text line.
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\item
+  Item 3.
+\end{itemize}
+
+\hypertarget{three-columns-with-equal-split}{%
+\subsection{Three columns with equal
+split}\label{three-columns-with-equal-split}}
+
+Left column text.
+
+Another text line.
+
+Middle column list:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\end{enumerate}
+
+Right column list:
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\end{itemize}
+
+\hypertarget{three-columns-with-304030-split}{%
+\subsection{Three columns with 30:40:30
+split}\label{three-columns-with-304030-split}}
+
+Left column text.
+
+Another text line.
+
+Middle column list:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\end{enumerate}
+
+Right column list:
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\end{itemize}
+
+\hypertarget{two-columns-image-and-text}{%
+\subsection{Two columns: image and
+text}\label{two-columns-image-and-text}}
+
+\includegraphics[width=\textwidth,height=0.5\textheight]{images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg}
+
+Text in the right column.
+
+List from the right column:
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1.
+\item
+  Item 2.
+\end{itemize}
+
+\hypertarget{two-columns-image-and-table}{%
+\subsection{Two columns: image and
+table}\label{two-columns-image-and-table}}
+
+\includegraphics[width=\textwidth,height=0.5\textheight]{images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg}
+
+\begin{longtable}[]{@{}lc@{}}
+\toprule()
+\textbf{Item} & \textbf{Option} \\
+\midrule()
+\endhead
+Item 1 & Option 1 \\
+Item 2 & Option 2 \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{bibliography}{%
+\subsection{Bibliography}\label{bibliography}}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-brown2016}{}}%
+Brown, Gordon, ed. 2016. \emph{The {Universal} {Declaration} of {Human}
+{Rights} in the 21st Century, a Living Document in a Changing World}.
+Cambridge, {[}New York{]}: Open Book Publishers ; NYU Global Institute
+for Advanced Study.
+
+\leavevmode\vadjust pre{\hypertarget{ref-unitednations1948}{}}%
+United Nations. 1948. \emph{Universal Declaration of Human Rights}.
+
+\end{CSLReferences}
+
+\end{document}

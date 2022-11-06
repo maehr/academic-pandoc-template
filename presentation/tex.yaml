@@ -1,0 +1,6 @@
+input-files: [presentation.md]
+log-file: presentation.log
+output-file: presentation.tex
+slide-level: 2
+to: latex
+shift-heading-level-by: 0

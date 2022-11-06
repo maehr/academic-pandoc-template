@@ -1,46 +1,33 @@
 name: Pandoc
 
-on: push
+on: workflow_dispatch
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: docker://pandoc/core:latest
-        with:
-          args: >-
-            --defaults=docx.yaml
-      - uses: actions/upload-artifact@v3
-        with:
-          name: academic-pandoc-template.docx
-          path: output/academic-pandoc-template.docx
-      - uses: actions/upload-artifact@v3
-        with:
-          name: docx.log.json
-          path: log/docx.log.json
-      - uses: docker://pandoc/core:latest
-        with:
-          args: >-
-            --defaults=pdf.yaml
-            --to=latex
-            --output=template/academic-pandoc-template.tex
+      - name: install pandoc and pandoc-crossref
+        run: |
+          wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
+          dpkg -i pandoc-2.19.2-1-amd64.deb
+          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.13.0b/pandoc-crossref-Linux.tar.xz
+          tar -xvf pandoc-crossref-Linux.tar.xz
+          mv pandoc-crossref /usr/bin
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
           path: ~/.cache/Tectonic
           key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
           restore-keys: |
-           ${{ runner.os }}-tectonic-
-      - uses: wtfjoke/setup-tectonic@v1
+            ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: tectonic template/academic-pandoc-template.tex --outdir output
-      - uses: actions/upload-artifact@v3
+      - run: make article-pdf presentation-pdf thesis-pdf
+      - run: |
+          export APPIMAGE_EXTRACT_AND_RUN=1
+          make all
+      - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
-          name: academic-pandoc-template.pdf
-          path: output/academic-pandoc-template.pdf
-      - uses: actions/upload-artifact@v3
-        with:
-          name: pdf.log.json
-          path: log/pdf.log.json
+          message: 'GitHub action artefacts added'

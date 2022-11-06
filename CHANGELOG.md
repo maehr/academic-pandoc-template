@@ -7,14 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
 
-## [0.0.8](https://github.com/maehr/academic-pandoc-template/tree/v0.0.6) - 2021-12-02
+## [1.0.0alpha](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0alpha) - 2022-11-06
+
+### Added
+
+- Thesis template added
+- Presentation template added
+- Tectonic caching added (#25)
+- DOI zenodo badge added (#26)
+- Makefile added
+- Rendered examples added
+
+### Changed
+
+- Consistent formatting and naming of the article template
+- Docs updated
+
+### Removed
+
+- Removed {% to build gh-pages
+
+## [0.0.8](https://github.com/maehr/academic-pandoc-template/tree/v0.0.8) - 2021-12-02
 
 ### Documentation
 
 - Better docs
 - Automatic changelog
 
-## [0.0.7](https://github.com/maehr/academic-pandoc-template/tree/v0.0.6) - 2021-07-11
+## [0.0.7](https://github.com/maehr/academic-pandoc-template/tree/v0.0.7) - 2021-07-11
 
 ### Added
 

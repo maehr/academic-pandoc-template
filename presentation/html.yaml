@@ -1,0 +1,5 @@
+input-files: [presentation.md]
+log-file: presentation.log
+output-file: presentation.html
+to: revealjs
+slide-level: 2

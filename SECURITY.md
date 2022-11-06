@@ -24,4 +24,4 @@ reported vulnerability, what to expect if the vulnerability is accepted or
 declined, etc.
 -->
 
-Please use the [GitHub Issue Tracker](https://github.com/USERNAME/REPO_NAME/issues) to report vulnerabilities.
+To report a security issue, please email moritz.maehr@gmail.com with a description of the issue, the steps you took to create the issue, affected versions, and, if known, mitigations for the issue. This project follows a 90 day disclosure timeline.
