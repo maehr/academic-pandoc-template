@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Thesis template added
+- Presentation template added
 - Tectonic caching added (#25)
 - DOI zenodo badge added (#26)
 - Makefile added
