@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-tectonic-
       - uses: wtfjoke/setup-tectonic@v2
         with:
-          github-token: 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
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           export APPIMAGE_EXTRACT_AND_RUN=1
           make all
