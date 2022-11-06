@@ -6,6 +6,7 @@ author:
 bibliography: references.bib # bibliography to use for resolving references
 csl: https://www.zotero.org/styles/chicago-author-date
 date: 1 January 2023
+documentclass: beamer
 keywords: # list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc metadata; repeat as for author, above
 lang: en-US
 nocite: |
@@ -23,6 +24,20 @@ references:
 subtitle: 'Subtitle'
 title: 'Title'
 toc: true
+
+# Fonts
+fontenc: # allows font encoding to be specified through fontenc package (with pdflatex); default is T1 (see LaTeX font encodings guide)
+fontfamily: # font package for use with pdflatex: TeX Live includes many options, documented in the LaTeX Font Catalogue. The default is Latin Modern.
+fontfamilyoptions: # options for package used as fontfamily; repeat for multiple options.
+fontsize: # font size for body text. The standard classes allow 10pt, 11pt, and 12pt. To use another size, set documentclass to one of the KOMA-Script classes, such as scrartcl or scrbook.
+mainfont:
+sansfont:
+monofont:
+mathfont:
+mainfontoptions:
+sansfontoptions:
+monofontoptions:
+mathfontoptions:
 
 # Beamer slides
 aspectratio: 169 #slide aspect ratio (43 for 4:3 [default], 169 for 16:9, 1610 for 16:10, 149 for 14:9, 141 for 1.41:1, 54 for 5:4, 32 for 3:2)
@@ -43,8 +58,6 @@ titlegraphic: # image for title slide
 monofont: # font to use for code.
 
 # reveal.js
-# revealjs-url: # base URL for reveal.js documents (defaults to https://unpkg.com/reveal.js@^4/)
-title-slide-attributes:
 # All reveal.js configuration options are available as variables. To turn off boolean flags that default to true in reveal.js, use 0.
 ---
 
@@ -111,7 +124,7 @@ _All human beings are born free and equal in dignity and rights._ All human bein
 
 ## Figures and captions
 
-![Eleanor Roosevelt hält die englische Version der Allgemeinen Erklärung der Menschenrechte (FDR Presidential Library & Museum, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons)](images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg)
+![Eleanor Roosevelt hält die englische Version der Allgemeinen Erklärung der Menschenrechte (FDR Presidential Library & Museum, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons)](images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg){height=60%}
 
 ## Code
 
@@ -149,7 +162,8 @@ All human beings are born free and equal in dignity and rights. All human beings
 ::: {lang=en}
 
 > All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood. @unitednations1948
-> :::
+
+:::
 
 All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.[@unitednations1948]
 
@@ -267,7 +281,7 @@ Right column list:
 
 :::: column
 
-![](https://upload.wikimedia.org/wikipedia/commons/8/85/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpg){height=50%}
+![](images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg){height=50%}
 
 ::::
 
@@ -279,7 +293,8 @@ List from the right column:
 
 - Item 1.
 - Item 2.
-  ::::
+
+::::
 
 :::
 
@@ -289,7 +304,7 @@ List from the right column:
 
 :::: column
 
-![](https://upload.wikimedia.org/wikipedia/commons/8/85/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpg){height=50%}
+![](images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg){height=50%}
 
 ::::
 

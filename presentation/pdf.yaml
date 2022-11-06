@@ -4,3 +4,4 @@ output-file: presentation.pdf
 slide-level: 2
 pdf-engine: tectonic # wkhtmltopdf, weasyprint, prince, pdflatex, lualatex, xelatex, latexmk, pdfroff, context, tectonic
 to: beamer
+shift-heading-level-by: 0
