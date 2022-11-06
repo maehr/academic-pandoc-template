@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0alpha](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0alpha) - 2022-11-05
 
+### Added
+
+- Tectonic caching added (#25)
+- DOI zenodo badge added (#26)
+- Makefile added
+- Rendered examples added
+
+### Changed
+
+- Consistent formatting and naming of the article template
+- Docs updated
+
+### Removed
+
+- Removed {% to build gh-pages
+
 ## [0.0.8](https://github.com/maehr/academic-pandoc-template/tree/v0.0.8) - 2021-12-02
 
 ### Documentation
