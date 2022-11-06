@@ -1,6 +1,6 @@
 name: Pandoc
 
-on: push
+on: workflow_dispatch
 
 jobs:
   convert_via_pandoc:
@@ -8,23 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: docker://pandoc/core:latest
-        with:
-          args: >-
-            --defaults=docx.yaml
-      - uses: actions/upload-artifact@v3
-        with:
-          name: academic-pandoc-template.docx
-          path: output/academic-pandoc-template.docx
-      - uses: actions/upload-artifact@v3
-        with:
-          name: docx.log.json
-          path: log/docx.log.json
-      - uses: docker://pandoc/core:latest
-        with:
-          args: >-
-            --defaults=pdf.yaml
-            --to=latex
-            --output=template/academic-pandoc-template.tex
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
@@ -32,15 +15,12 @@ jobs:
           key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
           restore-keys: |
             ${{ runner.os }}-tectonic-
-      - uses: wtfjoke/setup-tectonic@v1
+      - uses: wtfjoke/setup-tectonic@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: tectonic template/academic-pandoc-template.tex --outdir output
-      - uses: actions/upload-artifact@v3
+      - run: make all
+      - run: rm article/.gitignore presentation/.gitignore thesis/.gitignore
+      - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
-          name: academic-pandoc-template.pdf
-          path: output/academic-pandoc-template.pdf
-      - uses: actions/upload-artifact@v3
-        with:
-          name: pdf.log.json
-          path: log/pdf.log.json
+          message: 'GitHub action artefacts added'
+          new_branch: output

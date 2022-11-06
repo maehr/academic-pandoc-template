@@ -1,0 +1,11 @@
+cite-method: citeproc # citeproc, natbib, or biblatex
+citeproc: true
+embed-resources: true
+file-scope: false # Parse each file individually before combining for multifile documents. This will allow footnotes in different files with the same identifiers to work as expected. If this option is set, footnotes and links will not work across files.
+from: markdown
+highlight-style: pygments
+reference-location: block # block, section, or document
+resource-path: []
+standalone: true
+top-level-division: default # part, chapter, section, or default
+verbosity: INFO # ERROR, WARNING, or INFO
