@@ -7,38 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: docker://pandoc/core:latest
-        working-directory: ./article
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=docx.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./article
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=tex.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./presentation
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=html.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./presentation
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=pptx.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./presentation
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=tex.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./thesis
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=docx.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./thesis
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=epub.yaml'
-      - uses: docker://pandoc/core:latest
-        working-directory: ./thesis
-        with:
-          args: '--defaults=./../defaults.yaml --defaults=tex.yaml'
+      - name: install pandoc and pandoc-crossref
+        run: |
+          wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
+          dpkg -i pandoc-2.19.2-1-amd64.deb
+          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.13.0b/pandoc-crossref-Linux.tar.xz
+          tar -xvf pandoc-crossref-Linux.tar.xz
+          mv pandoc-crossref /usr/bin
       - uses: actions/cache@v3
         name: Tectonic Cache
         with:
@@ -50,6 +25,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: make article-pdf presentation-pdf thesis-pdf
+      - run: |
+          export APPIMAGE_EXTRACT_AND_RUN=1
+          make all
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
           message: 'GitHub action artefacts added'
