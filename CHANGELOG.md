@@ -23,10 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Consistent formatting and naming of the article template
 - Docs updated
 
-### Removed
-
-- Removed {% to build gh-pages
-
 ## [0.0.8](https://github.com/maehr/academic-pandoc-template/tree/v0.0.8) - 2021-12-02
 
 ### Documentation
