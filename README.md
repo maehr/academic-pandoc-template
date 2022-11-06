@@ -8,14 +8,14 @@
 [![GitHub license](https://img.shields.io/github/license/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/blob/master/LICENSE.md)
 [![DOI](https://zenodo.org/badge/139726344.svg)](https://zenodo.org/badge/latestdoi/139726344)
 
-|      | [article.md](https://maehr.github.io/academic-pandoc-template/#article)      | [presentation.md](https://maehr.github.io/academic-pandoc-template/#presentation)  | [thesis.md](https://maehr.github.io/academic-pandoc-template/#thesis)        |
-| :--- | :--------------------------------------------------------------------------- | :--------------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
-| html |                                                                              | ![](https://maehr.github.io/academic-pandoc-template/assets/presentation-html.png) |                                                                              |
-| docx | ![](https://maehr.github.io/academic-pandoc-template/assets/paper-docx.png)  |                                                                                    | ![](https://maehr.github.io/academic-pandoc-template/assets/thesis-docx.png) |
-| epub |                                                                              |                                                                                    | ![](https://maehr.github.io/academic-pandoc-template/assets/thesis-epub.png) |
-| pdf  | ![](https://maehr.github.io/academic-pandoc-template/assets/paper-pdf.png) ) | ![](https://maehr.github.io/academic-pandoc-template/assets/presentation-pdf.png)  | ![](https://maehr.github.io/academic-pandoc-template/assets/thesis-pdf.png)  |
-| pptx |                                                                              | ![](https://maehr.github.io/academic-pandoc-template/assets/presentation-pptx.png) |                                                                              |
-| tex  | ![](https://maehr.github.io/academic-pandoc-template/assets/paper-tex.png) ) | ![](https://maehr.github.io/academic-pandoc-template/assets/presentation-tex.png)  | ![](https://maehr.github.io/academic-pandoc-template/assets/thesis-tex.png)  |
+| from md | [![](assets/images/article.png)](article/article.md)        | [![](assets/images/presentation.png)](#presentation)                       | [![](assets/images/thesis.png)](#thesis)                 |
+| :------ | :---------------------------------------------------------- | :------------------------------------------------------------------------- | :------------------------------------------------------- |
+| to html |                                                             | [![](assets/images/presentation-html.png)](presentation/presentation.html) |                                                          |
+| to docx | [![](assets/images/article-docx.png)](article/article.docx) |                                                                            | [![](assets/images/thesis-docx.png)](thesis/thesis.pdf)  |
+| to epub |                                                             |                                                                            | [![](assets/images/thesis-epub.png)](thesis/thesis.epub) |
+| to pdf  | [![](assets/images/article-pdf.png)](article/article.pdf)   | [![](assets/images/presentation-pdf.png)](presentation/presentation.pdf)   | [![](assets/images/thesis-pdf.png)](thesis/thesis.pdf)   |
+| to pptx |                                                             | [![](assets/images/presentation-pptx.png)](presentation/presentation.pptx) |                                                          |
+| to tex  | [![](assets/images/article-tex.png)](article/article.tex)   | [![](assets/images/presentation-tex.png)](presentation/presentation.tex)   | [![](assets/images/thesis-tex.png)](thesis/thesis.tex)   |
 
 ## Getting Started
 
@@ -23,24 +23,30 @@ Follow the [The Markdown Guide](https://www.markdownguide.org/) and make sure yo
 
 ### Use it online
 
-1. [Use this template](https://github.com/maehr/academic-pandoc-template/generate) or [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
-2. Edit `/article/article.md`, `/presentation/pressentation.md` or `/thesis/` according to the [The Markdown Guide](https://www.markdownguide.org/) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [Zettlr](https://www.zettlr.com/) or another [Markdown editor](https://www.markdownguide.org/tools/)
-3. Edit `/template/references.bib` [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [JabRef](http://www.jabref.org/) or with your favorite Bibtex editor
+1. [Use this template](https://github.com/maehr/academic-pandoc-template/generate) or [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository.[![](assets/images/use-this-template.png)](https://github.com/maehr/academic-pandoc-template/generate)
+2. Edit [article/article.md](article/article.md), [presentation/presentation.md](presentation/presentation.md) or [thesis/](thesis) according to the [The Markdown Guide](https://www.markdownguide.org/) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [Zettlr](https://www.zettlr.com/) or another [Markdown editor](https://www.markdownguide.org/tools/)
+3. Edit [article/references.bib](article/references.bib), [presentation/references.bib](presentation/references.bib) or [thesis/references.bib](thesis/references.bib) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [JabRef](http://www.jabref.org/) or with your favorite Bibtex editor
 4. [Commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes
-5. [GitHub actions](https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts) will compile an updated PDF and a DOCX document and store these artifacts
+5. Manually run the [Pandoc GitHub actions](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) to build your document. They will be commited to main branch as well. [![](assets/images/workflow_dispatch.png)](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) ![](https://docs.github.com/assets/cb-57703/images/actions-workflow-dispatch.png)
 
 ### Use it locally
 
 Install all prerequisites
 
+- [Make](https://www.gnu.org/software/make/)
 - [Pandoc](http://pandoc.org/installing.html)
 - [Tectonic](https://tectonic-typesetting.github.io/) or another [LaTeX](https://www.latex-project.org/get/) distribution
 
-Open your command line and execute the following commands.
+Open your command line and execute on of the following commands.
 
-```bash
-make all
-```
+- `make all` to build all documents
+- `make article` to build the article
+- `make article-docx article-pdf article-tex` to build the article in different formats
+- `make presentation` to build the presentation
+- `make presentation-html presentation-pdf presentation-pptx presentation-tex` to build the presentation in different formats
+- `make thesis` to build the thesis
+- `make thesis-docx thesis-epub thesis-pdf thesis-tex` to build the thesis in different formats
+- `make help` to get a list of all available commands
 
 ## Linting and formatting
 
@@ -57,15 +63,39 @@ npm run check
 npm run format
 ```
 
-## Conventional Commits
+## Configuration
 
-Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for adding human and machine readable meaning to commit messages. Install [commitizen](https://github.com/commitizen/cz-cli).
+Change the [variables](https://pandoc.org/MANUAL.html#variables) in the frontmatter in [article/article.md](article/article.md), [presentation/presentation.md](presentation/presentation.md) or [thesis/00.md](thesis/00.md) to configure your document.
 
-```bash
-npm install commitizen -g
+```yaml
+author:
+  - '[Eleanor Roosevelt](eleanor.eoosevelt@domain.com)'
+  - '[John Peters Humphrey](jph@domain.com)'
+bibliography: references.bib # bibliography to use for resolving references
+csl: https://www.zotero.org/styles/chicago-note-bibliography
+date: 1 January 2023
+keywords: # list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc metadata; repeat as for author, above
+lang: en-US
 ```
 
-To use Conventional Commits, use the following commands.
+Change the [default files](https://pandoc.org/MANUAL.html#defaults-files) to your needs:
+
+- [default.yaml](default.yaml) for the default configuration
+- [article/docx.yaml](article/docx.yaml) for the article docx configuration
+- [article/pdf.yaml](article/pdf.yaml) for the article pdf configuration
+- [article/tex.yaml](article/tex.yaml) for the article tex configuration
+- [presentation/html.yaml](presentation/html.yaml) for the presentation html configuration
+- [presentation/ppxt.yaml](presentation/ppxt.yaml) for the presentation pptx configuration
+- [presentation/pdf.yaml](presentation/pdf.yaml) for the presentation pdf configuration
+- [presentation/tex.yaml](presentation/tex.yaml) for the presentation tex configuration
+- [thesis/docx.yaml](thesis/docx.yaml) for the thesis docx configuration
+- [thesis/epub.yaml](thesis/epub.yaml) for the thesis epub configuration
+- [thesis/pdf.yaml](thesis/pdf.yaml) for the thesis pdf configuration
+- [thesis/tex.yaml](thesis/tex.yaml) for the thesis tex configuration
+
+## Conventional Commits
+
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for adding human and machine readable meaning to commit messages. To use [commitizen](https://github.com/commitizen/cz-cli), use the following commands.
 
 ```bash
 npm run commit
@@ -96,8 +126,8 @@ This project is maintained by [@maehr](https://github.com/maehr). Please underst
 
 - [x] Refactoring of the article template
 - [x] Templates for presentation and thesis
+- [x] Change name of master branch to main
 - [ ] Improve documentation
-- [ ] Change name of master branch to main
 - [ ] Improve caching in `.github/workflows/pandoc.yml`
 
 ## Contributing
