@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
 
-## [1.0.0alpha](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0alpha) - 2022-11-05
+## [1.0.0alpha](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0alpha) - 2022-11-06
 
 ### Added
 
