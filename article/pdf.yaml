@@ -1,5 +1,5 @@
-input-files: [paper.md]
-log-file: paper.log
-output-file: paper.pdf
+input-files: [article.md]
+log-file: article.log
+output-file: article.pdf
 pdf-engine: tectonic # wkhtmltopdf, weasyprint, prince, pdflatex, lualatex, xelatex, latexmk, pdfroff, context, tectonic
 to: pdf

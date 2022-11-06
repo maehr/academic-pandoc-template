@@ -1,4 +1,0 @@
-input-files: [paper.md]
-log-file: paper.log
-output-file: paper.tex
-to: latex
