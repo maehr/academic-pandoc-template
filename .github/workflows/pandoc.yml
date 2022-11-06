@@ -10,7 +10,7 @@ jobs:
       - name: install pandoc and pandoc-crossref
         run: |
           wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
-          dpkg -i pandoc-2.19.2-1-amd64.deb
+          sudo dpkg -i pandoc-2.19.2-1-amd64.deb
           wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.13.0b/pandoc-crossref-Linux.tar.xz
           tar -xvf pandoc-crossref-Linux.tar.xz
           mv pandoc-crossref /usr/bin
@@ -23,8 +23,7 @@ jobs:
             ${{ runner.os }}-tectonic-
       - uses: wtfjoke/setup-tectonic@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: make article-pdf presentation-pdf thesis-pdf
+          github-token: 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
       - run: |
           export APPIMAGE_EXTRACT_AND_RUN=1
           make all
