@@ -1,5 +1,4 @@
 ---
-abstract: 'All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.'
 author:
   - '[Eleanor Roosevelt](eleanor.eoosevelt@domain.com)'
   - '[John Peters Humphrey](jph@domain.com)'
