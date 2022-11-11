@@ -8,15 +8,16 @@
 [![GitHub license](https://img.shields.io/github/license/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/blob/master/LICENSE.md)
 [![DOI](https://zenodo.org/badge/139726344.svg)](https://zenodo.org/badge/latestdoi/139726344)
 
-| from md | [article/article.md](article/article.md)                    | [presentation/presentation.md](presentation/presentation.md)               | [thesis/00.md](thesis/00.md)                             |
-| :------ | :---------------------------------------------------------- | :------------------------------------------------------------------------- | :------------------------------------------------------- |
-|         | [![](assets/images/article.png)](article/article.md)        | [![](assets/images/presentation.png)](presentation/presentation.md)        | [![](assets/images/thesis.png)](thesis/00.md)            |
-| to html |                                                             | [![](assets/images/presentation-html.png)](presentation/presentation.html) |                                                          |
-| to docx | [![](assets/images/article-docx.png)](article/article.docx) |                                                                            | [![](assets/images/thesis-docx.png)](thesis/thesis.pdf)  |
-| to epub |                                                             |                                                                            | [![](assets/images/thesis-epub.png)](thesis/thesis.epub) |
-| to pdf  | [![](assets/images/article-pdf.png)](article/article.pdf)   | [![](assets/images/presentation-pdf.png)](presentation/presentation.pdf)   | [![](assets/images/thesis-pdf.png)](thesis/thesis.pdf)   |
-| to pptx |                                                             | [![](assets/images/presentation-pptx.png)](presentation/presentation.pptx) |                                                          |
-| to tex  | [![](assets/images/article-tex.png)](article/article.tex)   | [![](assets/images/presentation-tex.png)](presentation/presentation.tex)   | [![](assets/images/thesis-tex.png)](thesis/thesis.tex)   |
+// prettier-ignore
+| from md | [article/article.md](article/article.md)[article/article.md](article/article.md) | [presentation/presentation.md](presentation/presentation.md) | [thesis/00.md](thesis/00.md) |
+|---|-----|-----|-----|
+| | [![](assets/images/article.png)](article/article.md) | [![](assets/images/presentation.png)](presentation/presentation.md) | [![](assets/images/thesis.png)](thesis/00.md) |
+| to html | | [![](assets/images/presentation-html.png)](presentation/presentation.html) | |
+| to docx | [![](assets/images/article-docx.png)](article/article.docx) | | [![](assets/images/thesis-docx.png)](thesis/thesis.pdf) |
+| to epub | | | [![](assets/images/thesis-epub.png)](thesis/thesis.epub) |
+| to pdf | [![](assets/images/article-pdf.png)](article/article.pdf) | [![](assets/images/presentation-pdf.png)](presentation/presentation.pdf) | [![](assets/images/thesis-pdf.png)](thesis/thesis.pdf) |
+| to pptx | | [![](assets/images/presentation-pptx.png)](presentation/presentation.pptx) | |
+| to tex | [![](assets/images/article-tex.png)](article/article.tex) | [![](assets/images/presentation-tex.png)](presentation/presentation.tex) | [![](assets/images/thesis-tex.png)](thesis/thesis.tex) |
 
 ## Getting Started
 
@@ -28,7 +29,7 @@ Follow the [The Markdown Guide](https://www.markdownguide.org/) and make sure yo
 2. Edit [article/article.md](article/article.md), [presentation/presentation.md](presentation/presentation.md) or [thesis/](thesis) according to the [The Markdown Guide](https://www.markdownguide.org/) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [Zettlr](https://www.zettlr.com/) or another [Markdown editor](https://www.markdownguide.org/tools/)
 3. Edit [article/references.bib](article/references.bib), [presentation/references.bib](presentation/references.bib) or [thesis/references.bib](thesis/references.bib) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [JabRef](http://www.jabref.org/) or with your favorite Bibtex editor
 4. [Commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes
-5. Manually run the [Pandoc GitHub actions](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) to build your document. They will be commited to main branch as well. [![](assets/images/workflow_dispatch.png)](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) ![](https://docs.github.com/assets/cb-57703/images/actions-workflow-dispatch.png)
+5. Manually run the [Pandoc GitHub actions](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) to build your document. They will be commited to main branch as well. [![](assets/images/workflow_dispatch.png)](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml)
 
 ### Use it locally
 
