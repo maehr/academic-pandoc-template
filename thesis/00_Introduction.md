@@ -98,7 +98,8 @@ All human beings are born free and equal in dignity and rights. All human beings
 ::: {lang=de}
 
 > Alle Menschen sind frei und gleich an Würde und Rechten geboren.
-> :::
+
+:::
 
 All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.
 
