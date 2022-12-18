@@ -8,7 +8,8 @@
 [![GitHub license](https://img.shields.io/github/license/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/blob/master/LICENSE.md)
 [![DOI](https://zenodo.org/badge/139726344.svg)](https://zenodo.org/badge/latestdoi/139726344)
 
-// prettier-ignore
+<!-- prettier-ignore -->
+
 | from md | [article/article.md](article/article.md)[article/article.md](article/article.md) | [presentation/presentation.md](presentation/presentation.md) | [thesis/00.md](thesis/00.md) |
 |---|-----|-----|-----|
 | | [![](assets/images/article.png)](article/article.md) | [![](assets/images/presentation.png)](presentation/presentation.md) | [![](assets/images/thesis.png)](thesis/00.md) |
