@@ -135,6 +135,7 @@
 \usepackage[bidi=default]{babel}
 \fi
 \babelprovide[main,import]{american}
+\babelprovide[import]{ngerman}
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
@@ -477,11 +478,13 @@ are born free and equal in dignity and rights.\footnote{All human beings
 \hypertarget{quotes}{%
 \section{Quotes}\label{quotes}}
 
-::: \{lang=de\}
+\begin{otherlanguage}{ngerman}
 
 \begin{quote}
-Alle Menschen sind frei und gleich an Würde und Rechten geboren. :::
+Alle Menschen sind frei und gleich an Würde und Rechten geboren.
 \end{quote}
+
+\end{otherlanguage}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
