@@ -111,11 +111,7 @@ All human beings are born free and equal in dignity and rights. All human beings
 
 ## Equations
 
-$$
-x^2 + y^2 = z^2
-$$
-
-{#eq:pythagoras}
+$$x^2 + y^2 = z^2$${#eq:pythagoras}
 
 ## Cross-references
 

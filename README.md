@@ -9,7 +9,6 @@
 [![DOI](https://zenodo.org/badge/139726344.svg)](https://zenodo.org/badge/latestdoi/139726344)
 
 <!-- prettier-ignore -->
-
 | from md | [article/article.md](article/article.md)[article/article.md](article/article.md) | [presentation/presentation.md](presentation/presentation.md) | [thesis/00.md](thesis/00.md) |
 |---|-----|-----|-----|
 | | [![](assets/images/article.png)](article/article.md) | [![](assets/images/presentation.png)](presentation/presentation.md) | [![](assets/images/thesis.png)](thesis/00.md) |
