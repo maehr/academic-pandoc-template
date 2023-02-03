@@ -8,7 +8,8 @@
 [![GitHub license](https://img.shields.io/github/license/maehr/academic-pandoc-template.svg)](https://github.com/maehr/academic-pandoc-template/blob/master/LICENSE.md)
 [![DOI](https://zenodo.org/badge/139726344.svg)](https://zenodo.org/badge/latestdoi/139726344)
 
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+
 | from md | [article/article.md](article/article.md)[article/article.md](article/article.md) | [presentation/presentation.md](presentation/presentation.md) | [thesis/00.md](thesis/00.md) |
 |---|-----|-----|-----|
 | | [![](assets/images/article.png)](article/article.md) | [![](assets/images/presentation.png)](presentation/presentation.md) | [![](assets/images/thesis.png)](thesis/00.md) |
@@ -18,6 +19,8 @@
 | to pdf | [![](assets/images/article-pdf.png)](article/article.pdf) | [![](assets/images/presentation-pdf.png)](presentation/presentation.pdf) | [![](assets/images/thesis-pdf.png)](thesis/thesis.pdf) |
 | to pptx | | [![](assets/images/presentation-pptx.png)](presentation/presentation.pptx) | |
 | to tex | [![](assets/images/article-tex.png)](article/article.tex) | [![](assets/images/presentation-tex.png)](presentation/presentation.tex) | [![](assets/images/thesis-tex.png)](thesis/thesis.tex) |
+
+<!-- prettier-ignore-end -->
 
 ## Getting Started
 
