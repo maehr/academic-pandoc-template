@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
 
+## [1.0.0](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0-beta) - 2023-02-03
+
+### Fixed
+
+- Formatting fixed
+
+### Documentation
+
+- Changelog updated
+
 ## [1.0.0-beta](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0-beta) - 2023-02-03
 
 ### Fixed
@@ -33,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Formatting and binaries added to .gitignore
 
-## [1.0.0alpha](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0-alpha) - 2022-11-06
+## [1.0.0-alpha](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0-alpha) - 2022-11-06
 
 ### Added
 
