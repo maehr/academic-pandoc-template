@@ -1,6 +1,6 @@
 {
 	"name": "academic-pandoc-template",
-	"version": "0.0.8",
+	"version": "1.0.0",
 	"scripts": {
 		"check": "prettier --ignore-path .gitignore  --check . '!{CODE_OF_CONDUCT.md,LICENSE.md,_layouts/default.html}'",
 		"commit": "cz",
