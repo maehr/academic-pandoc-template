@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
 
+## [1.0.0](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0) - 2023-04-11
+
+### Fixed
+
+- Pandoc updated to 3.1.2 and pandoc-crossref to 0.3.15.2a
+- Rerun `make all` with pandoc 3.1.2
+- Enhanced docs
+
+### Ci
+
+- Changelog improved
+
 ## [1.0.0-beta](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0-beta) - 2023-02-03
 
 ### Fixed
