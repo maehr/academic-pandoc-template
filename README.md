@@ -9,8 +9,8 @@
 [![DOI](https://zenodo.org/badge/139726344.svg)](https://zenodo.org/badge/latestdoi/139726344)
 
 <!-- prettier-ignore -->
-| from md | [article/article.md](article/article.md)[article/article.md](article/article.md) | [presentation/presentation.md](presentation/presentation.md) | [thesis/00.md](thesis/00.md) |
-|---|-----|-----|-----|
+| from md | [article](article/article.md) | [presentation](presentation/presentation.md) | [thesis](thesis/00.md) |
+| :--- | :-----: | :-----: | :-----: |
 | | [![](assets/images/article.png)](article/article.md) | [![](assets/images/presentation.png)](presentation/presentation.md) | [![](assets/images/thesis.png)](thesis/00.md) |
 | to html | | [![](assets/images/presentation-html.png)](presentation/presentation.html) | |
 | to docx | [![](assets/images/article-docx.png)](article/article.docx) | | [![](assets/images/thesis-docx.png)](thesis/thesis.pdf) |
@@ -30,6 +30,9 @@ Follow the [The Markdown Guide](https://www.markdownguide.org/) and make sure yo
 3. Edit [article/references.bib](article/references.bib), [presentation/references.bib](presentation/references.bib) or [thesis/references.bib](thesis/references.bib) [online](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [JabRef](http://www.jabref.org/) or with your favorite Bibtex editor
 4. [Commit](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project) your changes
 5. Manually run the [Pandoc GitHub actions](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) to build your document. They will be commited to main branch as well. [![](assets/images/workflow_dispatch.png)](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml)
+   a. Click on [Actions](https://github.com/maehr/academic-pandoc-template/actions) in the top menu
+   b. Click on [Pandoc](https://github.com/maehr/academic-pandoc-template/actions/workflows/pandoc.yml) in the left menu
+   c. Click on `Run workflow` in the top right corner
 
 ### Use it locally
 
