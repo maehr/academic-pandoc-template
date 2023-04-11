@@ -5,11 +5,13 @@
 		"check": "prettier --ignore-path .gitignore  --check . '!{CODE_OF_CONDUCT.md,LICENSE.md,_layouts/default.html}'",
 		"commit": "cz",
 		"format": "prettier --ignore-path .gitignore --write . '!{CODE_OF_CONDUCT.md,LICENSE.md,_layouts/default.html}'",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"changelog": "git-cliff --config .git-cliff.toml"
 	},
 	"devDependencies": {
-		"commitizen": "^4.2.5",
+		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "^3.3.0",
+		"git-cliff": "^1.1.2",
 		"husky": "^7.0.4",
 		"prettier": "~2.2.1"
 	},
