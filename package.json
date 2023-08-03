@@ -11,7 +11,7 @@
 	"devDependencies": {
 		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"git-cliff": "^1.1.2",
+		"git-cliff": "^1.2.0",
 		"husky": "^7.0.4",
 		"prettier": "~2.2.1"
 	},
