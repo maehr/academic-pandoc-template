@@ -9,10 +9,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: install pandoc and pandoc-crossref
         run: |
-          wget https://github.com/jgm/pandoc/releases/download/3.1.2/pandoc-3.1.2-1-amd64.deb
-          sudo dpkg -i pandoc-3.1.2-1-amd64.deb
-          rm pandoc-3.1.2-1-amd64.deb
-          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.15.2a/pandoc-crossref-Linux.tar.xz
+          wget https://github.com/jgm/pandoc/releases/download/3.1.6.1/pandoc-3.1.6.1-1-amd64.deb
+          sudo dpkg -i pandoc-3.1.6.1-1-amd64.deb
+          rm pandoc-3.1.6.1-1-amd64.deb
+          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.16.0e/pandoc-crossref-Linux.tar.xz
           tar -xvf pandoc-crossref-Linux.tar.xz
           sudo mv pandoc-crossref /usr/bin
       - uses: actions/cache@v3
