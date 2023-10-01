@@ -114,28 +114,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -249,77 +259,68 @@ Die Anerkennung der angeborenen Würde und der gleichen und unveräußerlichen R
 \renewcommand*\contentsname{Contents}
 {
 \hypersetup{linkcolor=}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
 \setstretch{1.5}
 \mainmatter
-\hypertarget{sec:introduction}{%
-\chapter{Introduction}\label{sec:introduction}}
+\chapter{Introduction}\label{sec:introduction}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{heading-2}{%
-\section{Heading 2}\label{heading-2}}
+\section{Heading 2}\label{heading-2}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{heading-3}{%
-\subsection{Heading 3}\label{heading-3}}
+\subsection{Heading 3}\label{heading-3}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{heading-4}{%
-\subsubsection{Heading 4}\label{heading-4}}
+\subsubsection{Heading 4}\label{heading-4}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{bold}{%
-\section{Bold}\label{bold}}
+\section{Bold}\label{bold}
 
 \textbf{All human beings are born free and equal in dignity and rights.}
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights.
 
-\hypertarget{italic}{%
-\section{Italic}\label{italic}}
+\section{Italic}\label{italic}
 
 \emph{All human beings are born free and equal in dignity and rights.}
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights.
 
-\hypertarget{bold-and-italic}{%
-\section{Bold and italic}\label{bold-and-italic}}
+\section{Bold and italic}\label{bold-and-italic}
 
 \textbf{\emph{All human beings are born free and equal in dignity and
 rights.}} All human beings are born free and equal in dignity and
 rights. All human beings are born free and equal in dignity and rights.
 All human beings are born free and equal in dignity and rights.
 
-\hypertarget{struck-through}{%
-\section{Struck through}\label{struck-through}}
+\section{Struck through}\label{struck-through}
 
 \st{All human beings are born free and equal in dignity and rights.} All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{numbered-lists}{%
-\section{Numbered lists}\label{numbered-lists}}
+\section{Numbered lists}\label{numbered-lists}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -339,8 +340,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{unnumbered-lists}{%
-\section{Unnumbered lists}\label{unnumbered-lists}}
+\section{Unnumbered lists}\label{unnumbered-lists}
 
 \begin{itemize}
 \tightlist
@@ -361,8 +361,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{mixed-lists}{%
-\section{Mixed lists}\label{mixed-lists}}
+\section{Mixed lists}\label{mixed-lists}
 
 \begin{itemize}
 \tightlist
@@ -386,18 +385,15 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{figures-and-captions}{%
-\section{Figures and captions}\label{figures-and-captions}}
+\section{Figures and captions}\label{figures-and-captions}
 
 \begin{figure}
-\hypertarget{fig:eleanor}{%
 \centering
 \includegraphics{images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg}
 \caption{Eleanor Roosevelt hält die englische Version der Allgemeinen
 Erklärung der Menschenrechte (FDR Presidential Library \& Museum, CC BY
 2.0 \url{https://creativecommons.org/licenses/by/2.0}, via Wikimedia
 Commons)}\label{fig:eleanor}
-}
 \end{figure}
 
 All human beings are born free and equal in dignity and rights. All
@@ -405,8 +401,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{code}{%
-\section{Code}\label{code}}
+\section{Code}\label{code}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
@@ -424,8 +419,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{urls-and-email-addresses}{%
-\section{URLs and email addresses}\label{urls-and-email-addresses}}
+\section{URLs and email addresses}\label{urls-and-email-addresses}
 
 \href{https://www.wikipedia.org/}{wikipedia.org},
 \href{mailto:info@wikipedia.org}{\nolinkurl{info@wikipedia.org}}. All
@@ -434,10 +428,8 @@ beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights. All human beings are born
 free and equal in dignity and rights.
 
-\hypertarget{tables}{%
-\section{Tables}\label{tables}}
+\section{Tables}\label{tables}
 
-\hypertarget{tbl:example_tbl}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
@@ -475,8 +467,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\section{Footnotes}\label{footnotes}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
@@ -484,8 +475,7 @@ beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.\footnote{All human beings
   are born free and equal in dignity and rights.}
 
-\hypertarget{quotes}{%
-\section{Quotes}\label{quotes}}
+\section{Quotes}\label{quotes}
 
 \begin{otherlanguage}{ngerman}
 
@@ -500,28 +490,25 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{scientific-citations}{%
-\section{Scientific citations}\label{scientific-citations}}
+\section{Scientific citations}\label{scientific-citations}
 
 \begin{quote}
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
-a spirit of brotherhood.Nations\footnote{\protect\hyperlink{ref-unitednations1948}{\emph{Universal
+a spirit of brotherhood.Nations\footnote{\citeproc{ref-unitednations1948}{\emph{Universal
   {Declaration} of {Human} {Rights}}}.}
 \end{quote}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
-are born free and equal in dignity and rights.\footnote{\protect\hyperlink{ref-unitednations1948}{Nations}.}
+are born free and equal in dignity and rights.\footnote{\citeproc{ref-unitednations1948}{Nations}.}
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+\section{Equations}\label{equations}
 
-\begin{equation}\protect\hypertarget{eq:pythagoras}{}{x^2 + y^2 = z^2}\label{eq:pythagoras}\end{equation}
+\begin{equation}\phantomsection\label{eq:pythagoras}{x^2 + y^2 = z^2}\end{equation}
 
-\hypertarget{cross-references}{%
-\section{Cross-references}\label{cross-references}}
+\section{Cross-references}\label{cross-references}
 
 Thanks to
 \href{https://lierdakil.github.io/pandoc-crossref/}{pandoc-crossref} you
@@ -529,15 +516,12 @@ can crossreference equations (eq.~\ref{eq:pythagoras}), figures
 (Figure~\ref{fig:eleanor}) and tables (tbl.~\ref{tbl:example_tbl}).
 Sections (sec.~\ref{sec:conclusion}) are not supported in LaTeX.
 
-\hypertarget{sec:chapter1}{%
-\chapter{Chapter 1}\label{sec:chapter1}}
+\chapter{Chapter 1}\label{sec:chapter1}
 
-\hypertarget{a-universal-declaration-of-human-rights}{%
 \section{A Universal Declaration of Human
-Rights}\label{a-universal-declaration-of-human-rights}}
+Rights}\label{a-universal-declaration-of-human-rights}
 
-\hypertarget{preamble}{%
-\subsection{Preamble}\label{preamble}}
+\subsection{Preamble}\label{preamble}
 
 Whereas recognition of the inherent dignity and of the equal and
 inalienable rights of all members of the human family is the foundation
@@ -583,15 +567,13 @@ recognition and observance, both among the peoples of Member States
 themselves and among the peoples of territories under their
 jurisdiction.
 
-\hypertarget{article-1}{%
-\subsection{Article 1}\label{article-1}}
+\subsection{Article 1}\label{article-1}
 
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
 a spirit of brotherhood.
 
-\hypertarget{article-2}{%
-\subsection{Article 2}\label{article-2}}
+\subsection{Article 2}\label{article-2}
 
 Everyone is entitled to all the rights and freedoms set forth in this
 Declaration, without distinction of any kind, such as race, colour, sex,
@@ -603,58 +585,49 @@ jurisdictional or international status of the country or territory to
 which a person belongs, whether it be independent, trust,
 non-self-governing or under any other limitation of sovereignty.
 
-\hypertarget{article-3}{%
-\subsection{Article 3}\label{article-3}}
+\subsection{Article 3}\label{article-3}
 
 Everyone has the right to life, liberty and the security of person.
 
-\hypertarget{article-4}{%
-\subsection{Article 4}\label{article-4}}
+\subsection{Article 4}\label{article-4}
 
 No one shall be held in slavery or servitude; slavery and the slave
 trade shall be prohibited in all their forms.
 
-\hypertarget{article-5}{%
-\subsection{Article 5}\label{article-5}}
+\subsection{Article 5}\label{article-5}
 
 No one shall be subjected to torture or to cruel, inhuman or degrading
 treatment or punishment.
 
-\hypertarget{article-6}{%
-\subsection{Article 6}\label{article-6}}
+\subsection{Article 6}\label{article-6}
 
 Everyone has the right to recognition everywhere as a person before the
 law.
 
-\hypertarget{article-7}{%
-\subsection{Article 7}\label{article-7}}
+\subsection{Article 7}\label{article-7}
 
 All are equal before the law and are entitled without any discrimination
 to equal protection of the law. All are entitled to equal protection
 against any discrimination in violation of this Declaration and against
 any incitement to such discrimination.
 
-\hypertarget{article-8}{%
-\subsection{Article 8}\label{article-8}}
+\subsection{Article 8}\label{article-8}
 
 Everyone has the right to an effective remedy by the competent national
 tribunals for acts violating the fundamental rights granted him by the
 constitution or by law.
 
-\hypertarget{article-9}{%
-\subsection{Article 9}\label{article-9}}
+\subsection{Article 9}\label{article-9}
 
 No one shall be subjected to arbitrary arrest, detention or exile.
 
-\hypertarget{article-10}{%
-\subsection{Article 10}\label{article-10}}
+\subsection{Article 10}\label{article-10}
 
 Everyone is entitled in full equality to a fair and public hearing by an
 independent and impartial tribunal, in the determination of his rights
 and obligations and of any criminal charge against him.
 
-\hypertarget{article-11}{%
-\subsection{Article 11}\label{article-11}}
+\subsection{Article 11}\label{article-11}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -670,16 +643,14 @@ and obligations and of any criminal charge against him.
   time the penal offence was committed.
 \end{enumerate}
 
-\hypertarget{article-12}{%
-\subsection{Article 12}\label{article-12}}
+\subsection{Article 12}\label{article-12}
 
 No one shall be subjected to arbitrary interference with his privacy,
 family, home or correspondence, nor to attacks upon his honour and
 reputation. Everyone has the right to the protection of the law against
 such interference or attacks.
 
-\hypertarget{article-13}{%
-\subsection{Article 13}\label{article-13}}
+\subsection{Article 13}\label{article-13}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -691,8 +662,7 @@ such interference or attacks.
   return to his country.
 \end{enumerate}
 
-\hypertarget{article-14}{%
-\subsection{Article 14}\label{article-14}}
+\subsection{Article 14}\label{article-14}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -705,8 +675,7 @@ such interference or attacks.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-15}{%
-\subsection{Article 15}\label{article-15}}
+\subsection{Article 15}\label{article-15}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -717,8 +686,7 @@ such interference or attacks.
   right to change his nationality.
 \end{enumerate}
 
-\hypertarget{article-16}{%
-\subsection{Article 16}\label{article-16}}
+\subsection{Article 16}\label{article-16}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -735,8 +703,7 @@ such interference or attacks.
   entitled to protection by society and the State.
 \end{enumerate}
 
-\hypertarget{article-17}{%
-\subsection{Article 17}\label{article-17}}
+\subsection{Article 17}\label{article-17}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -747,8 +714,7 @@ such interference or attacks.
   No one shall be arbitrarily deprived of his property.
 \end{enumerate}
 
-\hypertarget{article-18}{%
-\subsection{Article 18}\label{article-18}}
+\subsection{Article 18}\label{article-18}
 
 Everyone has the right to freedom of thought, conscience and religion;
 this right includes freedom to change his religion or belief, and
@@ -756,16 +722,14 @@ freedom, either alone or in community with others and in public or
 private, to manifest his religion or belief in teaching, practice,
 worship and observance.
 
-\hypertarget{article-19}{%
-\subsection{Article 19}\label{article-19}}
+\subsection{Article 19}\label{article-19}
 
 Everyone has the right to freedom of opinion and expression; this right
 includes freedom to hold opinions without interference and to seek,
 receive and impart information and ideas through any media and
 regardless of frontiers.
 
-\hypertarget{article-20}{%
-\subsection{Article 20}\label{article-20}}
+\subsection{Article 20}\label{article-20}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -776,8 +740,7 @@ regardless of frontiers.
   No one may be compelled to belong to an association.
 \end{enumerate}
 
-\hypertarget{article-21}{%
-\subsection{Article 21}\label{article-21}}
+\subsection{Article 21}\label{article-21}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -794,8 +757,7 @@ regardless of frontiers.
   held by secret vote or by equivalent free voting procedures.
 \end{enumerate}
 
-\hypertarget{article-22}{%
-\subsection{Article 22}\label{article-22}}
+\subsection{Article 22}\label{article-22}
 
 Everyone, as a member of society, has the right to social security and
 is entitled to realization, through national effort and international
@@ -803,8 +765,7 @@ co-operation and in accordance with the organization and resources of
 each State, of the economic, social and cultural rights indispensable
 for his dignity and the free development of his personality.
 
-\hypertarget{article-23}{%
-\subsection{Article 23}\label{article-23}}
+\subsection{Article 23}\label{article-23}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -825,14 +786,12 @@ for his dignity and the free development of his personality.
   protection of his interests.
 \end{enumerate}
 
-\hypertarget{article-24}{%
-\subsection{Article 24}\label{article-24}}
+\subsection{Article 24}\label{article-24}
 
 Everyone has the right to rest and leisure, including reasonable
 limitation of working hours and periodic holidays with pay.
 
-\hypertarget{article-25}{%
-\subsection{Article 25}\label{article-25}}
+\subsection{Article 25}\label{article-25}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -849,8 +808,7 @@ limitation of working hours and periodic holidays with pay.
   social protection.
 \end{enumerate}
 
-\hypertarget{article-26}{%
-\subsection{Article 26}\label{article-26}}
+\subsection{Article 26}\label{article-26}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -872,8 +830,7 @@ limitation of working hours and periodic holidays with pay.
   be given to their children.
 \end{enumerate}
 
-\hypertarget{article-27}{%
-\subsection{Article 27}\label{article-27}}
+\subsection{Article 27}\label{article-27}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -887,14 +844,12 @@ limitation of working hours and periodic holidays with pay.
   production of which he is the author.
 \end{enumerate}
 
-\hypertarget{article-28}{%
-\subsection{Article 28}\label{article-28}}
+\subsection{Article 28}\label{article-28}
 
 Everyone is entitled to a social and international order in which the
 rights and freedoms set forth in this Declaration can be fully realized.
 
-\hypertarget{article-29}{%
-\subsection{Article 29}\label{article-29}}
+\subsection{Article 29}\label{article-29}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -912,23 +867,19 @@ rights and freedoms set forth in this Declaration can be fully realized.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-30}{%
-\subsection{Article 30}\label{article-30}}
+\subsection{Article 30}\label{article-30}
 
 Nothing in this Declaration may be interpreted as implying for any
 State, group or person any right to engage in any activity or to perform
 any act aimed at the destruction of any of the rights and freedoms set
 forth herein.
 
-\hypertarget{sec:chapter2}{%
-\chapter{Chapter 2}\label{sec:chapter2}}
+\chapter{Chapter 2}\label{sec:chapter2}
 
-\hypertarget{a-universal-declaration-of-human-rights-1}{%
 \section{A Universal Declaration of Human
-Rights}\label{a-universal-declaration-of-human-rights-1}}
+Rights}\label{a-universal-declaration-of-human-rights-1}
 
-\hypertarget{preamble-1}{%
-\subsection{Preamble}\label{preamble-1}}
+\subsection{Preamble}\label{preamble-1}
 
 Whereas recognition of the inherent dignity and of the equal and
 inalienable rights of all members of the human family is the foundation
@@ -974,15 +925,13 @@ recognition and observance, both among the peoples of Member States
 themselves and among the peoples of territories under their
 jurisdiction.
 
-\hypertarget{article-1-1}{%
-\subsection{Article 1}\label{article-1-1}}
+\subsection{Article 1}\label{article-1-1}
 
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
 a spirit of brotherhood.
 
-\hypertarget{article-2-1}{%
-\subsection{Article 2}\label{article-2-1}}
+\subsection{Article 2}\label{article-2-1}
 
 Everyone is entitled to all the rights and freedoms set forth in this
 Declaration, without distinction of any kind, such as race, colour, sex,
@@ -994,58 +943,49 @@ jurisdictional or international status of the country or territory to
 which a person belongs, whether it be independent, trust,
 non-self-governing or under any other limitation of sovereignty.
 
-\hypertarget{article-3-1}{%
-\subsection{Article 3}\label{article-3-1}}
+\subsection{Article 3}\label{article-3-1}
 
 Everyone has the right to life, liberty and the security of person.
 
-\hypertarget{article-4-1}{%
-\subsection{Article 4}\label{article-4-1}}
+\subsection{Article 4}\label{article-4-1}
 
 No one shall be held in slavery or servitude; slavery and the slave
 trade shall be prohibited in all their forms.
 
-\hypertarget{article-5-1}{%
-\subsection{Article 5}\label{article-5-1}}
+\subsection{Article 5}\label{article-5-1}
 
 No one shall be subjected to torture or to cruel, inhuman or degrading
 treatment or punishment.
 
-\hypertarget{article-6-1}{%
-\subsection{Article 6}\label{article-6-1}}
+\subsection{Article 6}\label{article-6-1}
 
 Everyone has the right to recognition everywhere as a person before the
 law.
 
-\hypertarget{article-7-1}{%
-\subsection{Article 7}\label{article-7-1}}
+\subsection{Article 7}\label{article-7-1}
 
 All are equal before the law and are entitled without any discrimination
 to equal protection of the law. All are entitled to equal protection
 against any discrimination in violation of this Declaration and against
 any incitement to such discrimination.
 
-\hypertarget{article-8-1}{%
-\subsection{Article 8}\label{article-8-1}}
+\subsection{Article 8}\label{article-8-1}
 
 Everyone has the right to an effective remedy by the competent national
 tribunals for acts violating the fundamental rights granted him by the
 constitution or by law.
 
-\hypertarget{article-9-1}{%
-\subsection{Article 9}\label{article-9-1}}
+\subsection{Article 9}\label{article-9-1}
 
 No one shall be subjected to arbitrary arrest, detention or exile.
 
-\hypertarget{article-10-1}{%
-\subsection{Article 10}\label{article-10-1}}
+\subsection{Article 10}\label{article-10-1}
 
 Everyone is entitled in full equality to a fair and public hearing by an
 independent and impartial tribunal, in the determination of his rights
 and obligations and of any criminal charge against him.
 
-\hypertarget{article-11-1}{%
-\subsection{Article 11}\label{article-11-1}}
+\subsection{Article 11}\label{article-11-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1061,16 +1001,14 @@ and obligations and of any criminal charge against him.
   time the penal offence was committed.
 \end{enumerate}
 
-\hypertarget{article-12-1}{%
-\subsection{Article 12}\label{article-12-1}}
+\subsection{Article 12}\label{article-12-1}
 
 No one shall be subjected to arbitrary interference with his privacy,
 family, home or correspondence, nor to attacks upon his honour and
 reputation. Everyone has the right to the protection of the law against
 such interference or attacks.
 
-\hypertarget{article-13-1}{%
-\subsection{Article 13}\label{article-13-1}}
+\subsection{Article 13}\label{article-13-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1082,8 +1020,7 @@ such interference or attacks.
   return to his country.
 \end{enumerate}
 
-\hypertarget{article-14-1}{%
-\subsection{Article 14}\label{article-14-1}}
+\subsection{Article 14}\label{article-14-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1096,8 +1033,7 @@ such interference or attacks.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-15-1}{%
-\subsection{Article 15}\label{article-15-1}}
+\subsection{Article 15}\label{article-15-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1108,8 +1044,7 @@ such interference or attacks.
   right to change his nationality.
 \end{enumerate}
 
-\hypertarget{article-16-1}{%
-\subsection{Article 16}\label{article-16-1}}
+\subsection{Article 16}\label{article-16-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1126,8 +1061,7 @@ such interference or attacks.
   entitled to protection by society and the State.
 \end{enumerate}
 
-\hypertarget{article-17-1}{%
-\subsection{Article 17}\label{article-17-1}}
+\subsection{Article 17}\label{article-17-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1138,8 +1072,7 @@ such interference or attacks.
   No one shall be arbitrarily deprived of his property.
 \end{enumerate}
 
-\hypertarget{article-18-1}{%
-\subsection{Article 18}\label{article-18-1}}
+\subsection{Article 18}\label{article-18-1}
 
 Everyone has the right to freedom of thought, conscience and religion;
 this right includes freedom to change his religion or belief, and
@@ -1147,16 +1080,14 @@ freedom, either alone or in community with others and in public or
 private, to manifest his religion or belief in teaching, practice,
 worship and observance.
 
-\hypertarget{article-19-1}{%
-\subsection{Article 19}\label{article-19-1}}
+\subsection{Article 19}\label{article-19-1}
 
 Everyone has the right to freedom of opinion and expression; this right
 includes freedom to hold opinions without interference and to seek,
 receive and impart information and ideas through any media and
 regardless of frontiers.
 
-\hypertarget{article-20-1}{%
-\subsection{Article 20}\label{article-20-1}}
+\subsection{Article 20}\label{article-20-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1167,8 +1098,7 @@ regardless of frontiers.
   No one may be compelled to belong to an association.
 \end{enumerate}
 
-\hypertarget{article-21-1}{%
-\subsection{Article 21}\label{article-21-1}}
+\subsection{Article 21}\label{article-21-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1185,8 +1115,7 @@ regardless of frontiers.
   held by secret vote or by equivalent free voting procedures.
 \end{enumerate}
 
-\hypertarget{article-22-1}{%
-\subsection{Article 22}\label{article-22-1}}
+\subsection{Article 22}\label{article-22-1}
 
 Everyone, as a member of society, has the right to social security and
 is entitled to realization, through national effort and international
@@ -1194,8 +1123,7 @@ co-operation and in accordance with the organization and resources of
 each State, of the economic, social and cultural rights indispensable
 for his dignity and the free development of his personality.
 
-\hypertarget{article-23-1}{%
-\subsection{Article 23}\label{article-23-1}}
+\subsection{Article 23}\label{article-23-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1216,14 +1144,12 @@ for his dignity and the free development of his personality.
   protection of his interests.
 \end{enumerate}
 
-\hypertarget{article-24-1}{%
-\subsection{Article 24}\label{article-24-1}}
+\subsection{Article 24}\label{article-24-1}
 
 Everyone has the right to rest and leisure, including reasonable
 limitation of working hours and periodic holidays with pay.
 
-\hypertarget{article-25-1}{%
-\subsection{Article 25}\label{article-25-1}}
+\subsection{Article 25}\label{article-25-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1240,8 +1166,7 @@ limitation of working hours and periodic holidays with pay.
   social protection.
 \end{enumerate}
 
-\hypertarget{article-26-1}{%
-\subsection{Article 26}\label{article-26-1}}
+\subsection{Article 26}\label{article-26-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1263,8 +1188,7 @@ limitation of working hours and periodic holidays with pay.
   be given to their children.
 \end{enumerate}
 
-\hypertarget{article-27-1}{%
-\subsection{Article 27}\label{article-27-1}}
+\subsection{Article 27}\label{article-27-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1278,14 +1202,12 @@ limitation of working hours and periodic holidays with pay.
   production of which he is the author.
 \end{enumerate}
 
-\hypertarget{article-28-1}{%
-\subsection{Article 28}\label{article-28-1}}
+\subsection{Article 28}\label{article-28-1}
 
 Everyone is entitled to a social and international order in which the
 rights and freedoms set forth in this Declaration can be fully realized.
 
-\hypertarget{article-29-1}{%
-\subsection{Article 29}\label{article-29-1}}
+\subsection{Article 29}\label{article-29-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1303,23 +1225,19 @@ rights and freedoms set forth in this Declaration can be fully realized.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-30-1}{%
-\subsection{Article 30}\label{article-30-1}}
+\subsection{Article 30}\label{article-30-1}
 
 Nothing in this Declaration may be interpreted as implying for any
 State, group or person any right to engage in any activity or to perform
 any act aimed at the destruction of any of the rights and freedoms set
 forth herein.
 
-\hypertarget{sec:chapter3}{%
-\chapter{Chapter 3}\label{sec:chapter3}}
+\chapter{Chapter 3}\label{sec:chapter3}
 
-\hypertarget{a-universal-declaration-of-human-rights-2}{%
 \section{A Universal Declaration of Human
-Rights}\label{a-universal-declaration-of-human-rights-2}}
+Rights}\label{a-universal-declaration-of-human-rights-2}
 
-\hypertarget{preamble-2}{%
-\subsection{Preamble}\label{preamble-2}}
+\subsection{Preamble}\label{preamble-2}
 
 Whereas recognition of the inherent dignity and of the equal and
 inalienable rights of all members of the human family is the foundation
@@ -1365,15 +1283,13 @@ recognition and observance, both among the peoples of Member States
 themselves and among the peoples of territories under their
 jurisdiction.
 
-\hypertarget{article-1-2}{%
-\subsection{Article 1}\label{article-1-2}}
+\subsection{Article 1}\label{article-1-2}
 
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
 a spirit of brotherhood.
 
-\hypertarget{article-2-2}{%
-\subsection{Article 2}\label{article-2-2}}
+\subsection{Article 2}\label{article-2-2}
 
 Everyone is entitled to all the rights and freedoms set forth in this
 Declaration, without distinction of any kind, such as race, colour, sex,
@@ -1385,58 +1301,49 @@ jurisdictional or international status of the country or territory to
 which a person belongs, whether it be independent, trust,
 non-self-governing or under any other limitation of sovereignty.
 
-\hypertarget{article-3-2}{%
-\subsection{Article 3}\label{article-3-2}}
+\subsection{Article 3}\label{article-3-2}
 
 Everyone has the right to life, liberty and the security of person.
 
-\hypertarget{article-4-2}{%
-\subsection{Article 4}\label{article-4-2}}
+\subsection{Article 4}\label{article-4-2}
 
 No one shall be held in slavery or servitude; slavery and the slave
 trade shall be prohibited in all their forms.
 
-\hypertarget{article-5-2}{%
-\subsection{Article 5}\label{article-5-2}}
+\subsection{Article 5}\label{article-5-2}
 
 No one shall be subjected to torture or to cruel, inhuman or degrading
 treatment or punishment.
 
-\hypertarget{article-6-2}{%
-\subsection{Article 6}\label{article-6-2}}
+\subsection{Article 6}\label{article-6-2}
 
 Everyone has the right to recognition everywhere as a person before the
 law.
 
-\hypertarget{article-7-2}{%
-\subsection{Article 7}\label{article-7-2}}
+\subsection{Article 7}\label{article-7-2}
 
 All are equal before the law and are entitled without any discrimination
 to equal protection of the law. All are entitled to equal protection
 against any discrimination in violation of this Declaration and against
 any incitement to such discrimination.
 
-\hypertarget{article-8-2}{%
-\subsection{Article 8}\label{article-8-2}}
+\subsection{Article 8}\label{article-8-2}
 
 Everyone has the right to an effective remedy by the competent national
 tribunals for acts violating the fundamental rights granted him by the
 constitution or by law.
 
-\hypertarget{article-9-2}{%
-\subsection{Article 9}\label{article-9-2}}
+\subsection{Article 9}\label{article-9-2}
 
 No one shall be subjected to arbitrary arrest, detention or exile.
 
-\hypertarget{article-10-2}{%
-\subsection{Article 10}\label{article-10-2}}
+\subsection{Article 10}\label{article-10-2}
 
 Everyone is entitled in full equality to a fair and public hearing by an
 independent and impartial tribunal, in the determination of his rights
 and obligations and of any criminal charge against him.
 
-\hypertarget{article-11-2}{%
-\subsection{Article 11}\label{article-11-2}}
+\subsection{Article 11}\label{article-11-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1452,16 +1359,14 @@ and obligations and of any criminal charge against him.
   time the penal offence was committed.
 \end{enumerate}
 
-\hypertarget{article-12-2}{%
-\subsection{Article 12}\label{article-12-2}}
+\subsection{Article 12}\label{article-12-2}
 
 No one shall be subjected to arbitrary interference with his privacy,
 family, home or correspondence, nor to attacks upon his honour and
 reputation. Everyone has the right to the protection of the law against
 such interference or attacks.
 
-\hypertarget{article-13-2}{%
-\subsection{Article 13}\label{article-13-2}}
+\subsection{Article 13}\label{article-13-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1473,8 +1378,7 @@ such interference or attacks.
   return to his country.
 \end{enumerate}
 
-\hypertarget{article-14-2}{%
-\subsection{Article 14}\label{article-14-2}}
+\subsection{Article 14}\label{article-14-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1487,8 +1391,7 @@ such interference or attacks.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-15-2}{%
-\subsection{Article 15}\label{article-15-2}}
+\subsection{Article 15}\label{article-15-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1499,8 +1402,7 @@ such interference or attacks.
   right to change his nationality.
 \end{enumerate}
 
-\hypertarget{article-16-2}{%
-\subsection{Article 16}\label{article-16-2}}
+\subsection{Article 16}\label{article-16-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1517,8 +1419,7 @@ such interference or attacks.
   entitled to protection by society and the State.
 \end{enumerate}
 
-\hypertarget{article-17-2}{%
-\subsection{Article 17}\label{article-17-2}}
+\subsection{Article 17}\label{article-17-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1529,8 +1430,7 @@ such interference or attacks.
   No one shall be arbitrarily deprived of his property.
 \end{enumerate}
 
-\hypertarget{article-18-2}{%
-\subsection{Article 18}\label{article-18-2}}
+\subsection{Article 18}\label{article-18-2}
 
 Everyone has the right to freedom of thought, conscience and religion;
 this right includes freedom to change his religion or belief, and
@@ -1538,16 +1438,14 @@ freedom, either alone or in community with others and in public or
 private, to manifest his religion or belief in teaching, practice,
 worship and observance.
 
-\hypertarget{article-19-2}{%
-\subsection{Article 19}\label{article-19-2}}
+\subsection{Article 19}\label{article-19-2}
 
 Everyone has the right to freedom of opinion and expression; this right
 includes freedom to hold opinions without interference and to seek,
 receive and impart information and ideas through any media and
 regardless of frontiers.
 
-\hypertarget{article-20-2}{%
-\subsection{Article 20}\label{article-20-2}}
+\subsection{Article 20}\label{article-20-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1558,8 +1456,7 @@ regardless of frontiers.
   No one may be compelled to belong to an association.
 \end{enumerate}
 
-\hypertarget{article-21-2}{%
-\subsection{Article 21}\label{article-21-2}}
+\subsection{Article 21}\label{article-21-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1576,8 +1473,7 @@ regardless of frontiers.
   held by secret vote or by equivalent free voting procedures.
 \end{enumerate}
 
-\hypertarget{article-22-2}{%
-\subsection{Article 22}\label{article-22-2}}
+\subsection{Article 22}\label{article-22-2}
 
 Everyone, as a member of society, has the right to social security and
 is entitled to realization, through national effort and international
@@ -1585,8 +1481,7 @@ co-operation and in accordance with the organization and resources of
 each State, of the economic, social and cultural rights indispensable
 for his dignity and the free development of his personality.
 
-\hypertarget{article-23-2}{%
-\subsection{Article 23}\label{article-23-2}}
+\subsection{Article 23}\label{article-23-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1607,14 +1502,12 @@ for his dignity and the free development of his personality.
   protection of his interests.
 \end{enumerate}
 
-\hypertarget{article-24-2}{%
-\subsection{Article 24}\label{article-24-2}}
+\subsection{Article 24}\label{article-24-2}
 
 Everyone has the right to rest and leisure, including reasonable
 limitation of working hours and periodic holidays with pay.
 
-\hypertarget{article-25-2}{%
-\subsection{Article 25}\label{article-25-2}}
+\subsection{Article 25}\label{article-25-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1631,8 +1524,7 @@ limitation of working hours and periodic holidays with pay.
   social protection.
 \end{enumerate}
 
-\hypertarget{article-26-2}{%
-\subsection{Article 26}\label{article-26-2}}
+\subsection{Article 26}\label{article-26-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1654,8 +1546,7 @@ limitation of working hours and periodic holidays with pay.
   be given to their children.
 \end{enumerate}
 
-\hypertarget{article-27-2}{%
-\subsection{Article 27}\label{article-27-2}}
+\subsection{Article 27}\label{article-27-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1669,14 +1560,12 @@ limitation of working hours and periodic holidays with pay.
   production of which he is the author.
 \end{enumerate}
 
-\hypertarget{article-28-2}{%
-\subsection{Article 28}\label{article-28-2}}
+\subsection{Article 28}\label{article-28-2}
 
 Everyone is entitled to a social and international order in which the
 rights and freedoms set forth in this Declaration can be fully realized.
 
-\hypertarget{article-29-2}{%
-\subsection{Article 29}\label{article-29-2}}
+\subsection{Article 29}\label{article-29-2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1694,23 +1583,19 @@ rights and freedoms set forth in this Declaration can be fully realized.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-30-2}{%
-\subsection{Article 30}\label{article-30-2}}
+\subsection{Article 30}\label{article-30-2}
 
 Nothing in this Declaration may be interpreted as implying for any
 State, group or person any right to engage in any activity or to perform
 any act aimed at the destruction of any of the rights and freedoms set
 forth herein.
 
-\hypertarget{sec:chapter4}{%
-\chapter{Chapter 4}\label{sec:chapter4}}
+\chapter{Chapter 4}\label{sec:chapter4}
 
-\hypertarget{a-universal-declaration-of-human-rights-3}{%
 \section{A Universal Declaration of Human
-Rights}\label{a-universal-declaration-of-human-rights-3}}
+Rights}\label{a-universal-declaration-of-human-rights-3}
 
-\hypertarget{preamble-3}{%
-\subsection{Preamble}\label{preamble-3}}
+\subsection{Preamble}\label{preamble-3}
 
 Whereas recognition of the inherent dignity and of the equal and
 inalienable rights of all members of the human family is the foundation
@@ -1756,15 +1641,13 @@ recognition and observance, both among the peoples of Member States
 themselves and among the peoples of territories under their
 jurisdiction.
 
-\hypertarget{article-1-3}{%
-\subsection{Article 1}\label{article-1-3}}
+\subsection{Article 1}\label{article-1-3}
 
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
 a spirit of brotherhood.
 
-\hypertarget{article-2-3}{%
-\subsection{Article 2}\label{article-2-3}}
+\subsection{Article 2}\label{article-2-3}
 
 Everyone is entitled to all the rights and freedoms set forth in this
 Declaration, without distinction of any kind, such as race, colour, sex,
@@ -1776,58 +1659,49 @@ jurisdictional or international status of the country or territory to
 which a person belongs, whether it be independent, trust,
 non-self-governing or under any other limitation of sovereignty.
 
-\hypertarget{article-3-3}{%
-\subsection{Article 3}\label{article-3-3}}
+\subsection{Article 3}\label{article-3-3}
 
 Everyone has the right to life, liberty and the security of person.
 
-\hypertarget{article-4-3}{%
-\subsection{Article 4}\label{article-4-3}}
+\subsection{Article 4}\label{article-4-3}
 
 No one shall be held in slavery or servitude; slavery and the slave
 trade shall be prohibited in all their forms.
 
-\hypertarget{article-5-3}{%
-\subsection{Article 5}\label{article-5-3}}
+\subsection{Article 5}\label{article-5-3}
 
 No one shall be subjected to torture or to cruel, inhuman or degrading
 treatment or punishment.
 
-\hypertarget{article-6-3}{%
-\subsection{Article 6}\label{article-6-3}}
+\subsection{Article 6}\label{article-6-3}
 
 Everyone has the right to recognition everywhere as a person before the
 law.
 
-\hypertarget{article-7-3}{%
-\subsection{Article 7}\label{article-7-3}}
+\subsection{Article 7}\label{article-7-3}
 
 All are equal before the law and are entitled without any discrimination
 to equal protection of the law. All are entitled to equal protection
 against any discrimination in violation of this Declaration and against
 any incitement to such discrimination.
 
-\hypertarget{article-8-3}{%
-\subsection{Article 8}\label{article-8-3}}
+\subsection{Article 8}\label{article-8-3}
 
 Everyone has the right to an effective remedy by the competent national
 tribunals for acts violating the fundamental rights granted him by the
 constitution or by law.
 
-\hypertarget{article-9-3}{%
-\subsection{Article 9}\label{article-9-3}}
+\subsection{Article 9}\label{article-9-3}
 
 No one shall be subjected to arbitrary arrest, detention or exile.
 
-\hypertarget{article-10-3}{%
-\subsection{Article 10}\label{article-10-3}}
+\subsection{Article 10}\label{article-10-3}
 
 Everyone is entitled in full equality to a fair and public hearing by an
 independent and impartial tribunal, in the determination of his rights
 and obligations and of any criminal charge against him.
 
-\hypertarget{article-11-3}{%
-\subsection{Article 11}\label{article-11-3}}
+\subsection{Article 11}\label{article-11-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1843,16 +1717,14 @@ and obligations and of any criminal charge against him.
   time the penal offence was committed.
 \end{enumerate}
 
-\hypertarget{article-12-3}{%
-\subsection{Article 12}\label{article-12-3}}
+\subsection{Article 12}\label{article-12-3}
 
 No one shall be subjected to arbitrary interference with his privacy,
 family, home or correspondence, nor to attacks upon his honour and
 reputation. Everyone has the right to the protection of the law against
 such interference or attacks.
 
-\hypertarget{article-13-3}{%
-\subsection{Article 13}\label{article-13-3}}
+\subsection{Article 13}\label{article-13-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1864,8 +1736,7 @@ such interference or attacks.
   return to his country.
 \end{enumerate}
 
-\hypertarget{article-14-3}{%
-\subsection{Article 14}\label{article-14-3}}
+\subsection{Article 14}\label{article-14-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1878,8 +1749,7 @@ such interference or attacks.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-15-3}{%
-\subsection{Article 15}\label{article-15-3}}
+\subsection{Article 15}\label{article-15-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1890,8 +1760,7 @@ such interference or attacks.
   right to change his nationality.
 \end{enumerate}
 
-\hypertarget{article-16-3}{%
-\subsection{Article 16}\label{article-16-3}}
+\subsection{Article 16}\label{article-16-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1908,8 +1777,7 @@ such interference or attacks.
   entitled to protection by society and the State.
 \end{enumerate}
 
-\hypertarget{article-17-3}{%
-\subsection{Article 17}\label{article-17-3}}
+\subsection{Article 17}\label{article-17-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1920,8 +1788,7 @@ such interference or attacks.
   No one shall be arbitrarily deprived of his property.
 \end{enumerate}
 
-\hypertarget{article-18-3}{%
-\subsection{Article 18}\label{article-18-3}}
+\subsection{Article 18}\label{article-18-3}
 
 Everyone has the right to freedom of thought, conscience and religion;
 this right includes freedom to change his religion or belief, and
@@ -1929,16 +1796,14 @@ freedom, either alone or in community with others and in public or
 private, to manifest his religion or belief in teaching, practice,
 worship and observance.
 
-\hypertarget{article-19-3}{%
-\subsection{Article 19}\label{article-19-3}}
+\subsection{Article 19}\label{article-19-3}
 
 Everyone has the right to freedom of opinion and expression; this right
 includes freedom to hold opinions without interference and to seek,
 receive and impart information and ideas through any media and
 regardless of frontiers.
 
-\hypertarget{article-20-3}{%
-\subsection{Article 20}\label{article-20-3}}
+\subsection{Article 20}\label{article-20-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1949,8 +1814,7 @@ regardless of frontiers.
   No one may be compelled to belong to an association.
 \end{enumerate}
 
-\hypertarget{article-21-3}{%
-\subsection{Article 21}\label{article-21-3}}
+\subsection{Article 21}\label{article-21-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1967,8 +1831,7 @@ regardless of frontiers.
   held by secret vote or by equivalent free voting procedures.
 \end{enumerate}
 
-\hypertarget{article-22-3}{%
-\subsection{Article 22}\label{article-22-3}}
+\subsection{Article 22}\label{article-22-3}
 
 Everyone, as a member of society, has the right to social security and
 is entitled to realization, through national effort and international
@@ -1976,8 +1839,7 @@ co-operation and in accordance with the organization and resources of
 each State, of the economic, social and cultural rights indispensable
 for his dignity and the free development of his personality.
 
-\hypertarget{article-23-3}{%
-\subsection{Article 23}\label{article-23-3}}
+\subsection{Article 23}\label{article-23-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1998,14 +1860,12 @@ for his dignity and the free development of his personality.
   protection of his interests.
 \end{enumerate}
 
-\hypertarget{article-24-3}{%
-\subsection{Article 24}\label{article-24-3}}
+\subsection{Article 24}\label{article-24-3}
 
 Everyone has the right to rest and leisure, including reasonable
 limitation of working hours and periodic holidays with pay.
 
-\hypertarget{article-25-3}{%
-\subsection{Article 25}\label{article-25-3}}
+\subsection{Article 25}\label{article-25-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2022,8 +1882,7 @@ limitation of working hours and periodic holidays with pay.
   social protection.
 \end{enumerate}
 
-\hypertarget{article-26-3}{%
-\subsection{Article 26}\label{article-26-3}}
+\subsection{Article 26}\label{article-26-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2045,8 +1904,7 @@ limitation of working hours and periodic holidays with pay.
   be given to their children.
 \end{enumerate}
 
-\hypertarget{article-27-3}{%
-\subsection{Article 27}\label{article-27-3}}
+\subsection{Article 27}\label{article-27-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2060,14 +1918,12 @@ limitation of working hours and periodic holidays with pay.
   production of which he is the author.
 \end{enumerate}
 
-\hypertarget{article-28-3}{%
-\subsection{Article 28}\label{article-28-3}}
+\subsection{Article 28}\label{article-28-3}
 
 Everyone is entitled to a social and international order in which the
 rights and freedoms set forth in this Declaration can be fully realized.
 
-\hypertarget{article-29-3}{%
-\subsection{Article 29}\label{article-29-3}}
+\subsection{Article 29}\label{article-29-3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2085,23 +1941,19 @@ rights and freedoms set forth in this Declaration can be fully realized.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-30-3}{%
-\subsection{Article 30}\label{article-30-3}}
+\subsection{Article 30}\label{article-30-3}
 
 Nothing in this Declaration may be interpreted as implying for any
 State, group or person any right to engage in any activity or to perform
 any act aimed at the destruction of any of the rights and freedoms set
 forth herein.
 
-\hypertarget{sec:conclusion}{%
-\chapter{Conclusion}\label{sec:conclusion}}
+\chapter{Conclusion}\label{sec:conclusion}
 
-\hypertarget{a-universal-declaration-of-human-rights-4}{%
 \section{A Universal Declaration of Human
-Rights}\label{a-universal-declaration-of-human-rights-4}}
+Rights}\label{a-universal-declaration-of-human-rights-4}
 
-\hypertarget{preamble-4}{%
-\subsection{Preamble}\label{preamble-4}}
+\subsection{Preamble}\label{preamble-4}
 
 Whereas recognition of the inherent dignity and of the equal and
 inalienable rights of all members of the human family is the foundation
@@ -2147,15 +1999,13 @@ recognition and observance, both among the peoples of Member States
 themselves and among the peoples of territories under their
 jurisdiction.
 
-\hypertarget{article-1-4}{%
-\subsection{Article 1}\label{article-1-4}}
+\subsection{Article 1}\label{article-1-4}
 
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
 a spirit of brotherhood.
 
-\hypertarget{article-2-4}{%
-\subsection{Article 2}\label{article-2-4}}
+\subsection{Article 2}\label{article-2-4}
 
 Everyone is entitled to all the rights and freedoms set forth in this
 Declaration, without distinction of any kind, such as race, colour, sex,
@@ -2167,58 +2017,49 @@ jurisdictional or international status of the country or territory to
 which a person belongs, whether it be independent, trust,
 non-self-governing or under any other limitation of sovereignty.
 
-\hypertarget{article-3-4}{%
-\subsection{Article 3}\label{article-3-4}}
+\subsection{Article 3}\label{article-3-4}
 
 Everyone has the right to life, liberty and the security of person.
 
-\hypertarget{article-4-4}{%
-\subsection{Article 4}\label{article-4-4}}
+\subsection{Article 4}\label{article-4-4}
 
 No one shall be held in slavery or servitude; slavery and the slave
 trade shall be prohibited in all their forms.
 
-\hypertarget{article-5-4}{%
-\subsection{Article 5}\label{article-5-4}}
+\subsection{Article 5}\label{article-5-4}
 
 No one shall be subjected to torture or to cruel, inhuman or degrading
 treatment or punishment.
 
-\hypertarget{article-6-4}{%
-\subsection{Article 6}\label{article-6-4}}
+\subsection{Article 6}\label{article-6-4}
 
 Everyone has the right to recognition everywhere as a person before the
 law.
 
-\hypertarget{article-7-4}{%
-\subsection{Article 7}\label{article-7-4}}
+\subsection{Article 7}\label{article-7-4}
 
 All are equal before the law and are entitled without any discrimination
 to equal protection of the law. All are entitled to equal protection
 against any discrimination in violation of this Declaration and against
 any incitement to such discrimination.
 
-\hypertarget{article-8-4}{%
-\subsection{Article 8}\label{article-8-4}}
+\subsection{Article 8}\label{article-8-4}
 
 Everyone has the right to an effective remedy by the competent national
 tribunals for acts violating the fundamental rights granted him by the
 constitution or by law.
 
-\hypertarget{article-9-4}{%
-\subsection{Article 9}\label{article-9-4}}
+\subsection{Article 9}\label{article-9-4}
 
 No one shall be subjected to arbitrary arrest, detention or exile.
 
-\hypertarget{article-10-4}{%
-\subsection{Article 10}\label{article-10-4}}
+\subsection{Article 10}\label{article-10-4}
 
 Everyone is entitled in full equality to a fair and public hearing by an
 independent and impartial tribunal, in the determination of his rights
 and obligations and of any criminal charge against him.
 
-\hypertarget{article-11-4}{%
-\subsection{Article 11}\label{article-11-4}}
+\subsection{Article 11}\label{article-11-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2234,16 +2075,14 @@ and obligations and of any criminal charge against him.
   time the penal offence was committed.
 \end{enumerate}
 
-\hypertarget{article-12-4}{%
-\subsection{Article 12}\label{article-12-4}}
+\subsection{Article 12}\label{article-12-4}
 
 No one shall be subjected to arbitrary interference with his privacy,
 family, home or correspondence, nor to attacks upon his honour and
 reputation. Everyone has the right to the protection of the law against
 such interference or attacks.
 
-\hypertarget{article-13-4}{%
-\subsection{Article 13}\label{article-13-4}}
+\subsection{Article 13}\label{article-13-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2255,8 +2094,7 @@ such interference or attacks.
   return to his country.
 \end{enumerate}
 
-\hypertarget{article-14-4}{%
-\subsection{Article 14}\label{article-14-4}}
+\subsection{Article 14}\label{article-14-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2269,8 +2107,7 @@ such interference or attacks.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-15-4}{%
-\subsection{Article 15}\label{article-15-4}}
+\subsection{Article 15}\label{article-15-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2281,8 +2118,7 @@ such interference or attacks.
   right to change his nationality.
 \end{enumerate}
 
-\hypertarget{article-16-4}{%
-\subsection{Article 16}\label{article-16-4}}
+\subsection{Article 16}\label{article-16-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2299,8 +2135,7 @@ such interference or attacks.
   entitled to protection by society and the State.
 \end{enumerate}
 
-\hypertarget{article-17-4}{%
-\subsection{Article 17}\label{article-17-4}}
+\subsection{Article 17}\label{article-17-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2311,8 +2146,7 @@ such interference or attacks.
   No one shall be arbitrarily deprived of his property.
 \end{enumerate}
 
-\hypertarget{article-18-4}{%
-\subsection{Article 18}\label{article-18-4}}
+\subsection{Article 18}\label{article-18-4}
 
 Everyone has the right to freedom of thought, conscience and religion;
 this right includes freedom to change his religion or belief, and
@@ -2320,16 +2154,14 @@ freedom, either alone or in community with others and in public or
 private, to manifest his religion or belief in teaching, practice,
 worship and observance.
 
-\hypertarget{article-19-4}{%
-\subsection{Article 19}\label{article-19-4}}
+\subsection{Article 19}\label{article-19-4}
 
 Everyone has the right to freedom of opinion and expression; this right
 includes freedom to hold opinions without interference and to seek,
 receive and impart information and ideas through any media and
 regardless of frontiers.
 
-\hypertarget{article-20-4}{%
-\subsection{Article 20}\label{article-20-4}}
+\subsection{Article 20}\label{article-20-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2340,8 +2172,7 @@ regardless of frontiers.
   No one may be compelled to belong to an association.
 \end{enumerate}
 
-\hypertarget{article-21-4}{%
-\subsection{Article 21}\label{article-21-4}}
+\subsection{Article 21}\label{article-21-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2358,8 +2189,7 @@ regardless of frontiers.
   held by secret vote or by equivalent free voting procedures.
 \end{enumerate}
 
-\hypertarget{article-22-4}{%
-\subsection{Article 22}\label{article-22-4}}
+\subsection{Article 22}\label{article-22-4}
 
 Everyone, as a member of society, has the right to social security and
 is entitled to realization, through national effort and international
@@ -2367,8 +2197,7 @@ co-operation and in accordance with the organization and resources of
 each State, of the economic, social and cultural rights indispensable
 for his dignity and the free development of his personality.
 
-\hypertarget{article-23-4}{%
-\subsection{Article 23}\label{article-23-4}}
+\subsection{Article 23}\label{article-23-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2389,14 +2218,12 @@ for his dignity and the free development of his personality.
   protection of his interests.
 \end{enumerate}
 
-\hypertarget{article-24-4}{%
-\subsection{Article 24}\label{article-24-4}}
+\subsection{Article 24}\label{article-24-4}
 
 Everyone has the right to rest and leisure, including reasonable
 limitation of working hours and periodic holidays with pay.
 
-\hypertarget{article-25-4}{%
-\subsection{Article 25}\label{article-25-4}}
+\subsection{Article 25}\label{article-25-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2413,8 +2240,7 @@ limitation of working hours and periodic holidays with pay.
   social protection.
 \end{enumerate}
 
-\hypertarget{article-26-4}{%
-\subsection{Article 26}\label{article-26-4}}
+\subsection{Article 26}\label{article-26-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2436,8 +2262,7 @@ limitation of working hours and periodic holidays with pay.
   be given to their children.
 \end{enumerate}
 
-\hypertarget{article-27-4}{%
-\subsection{Article 27}\label{article-27-4}}
+\subsection{Article 27}\label{article-27-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2451,14 +2276,12 @@ limitation of working hours and periodic holidays with pay.
   production of which he is the author.
 \end{enumerate}
 
-\hypertarget{article-28-4}{%
-\subsection{Article 28}\label{article-28-4}}
+\subsection{Article 28}\label{article-28-4}
 
 Everyone is entitled to a social and international order in which the
 rights and freedoms set forth in this Declaration can be fully realized.
 
-\hypertarget{article-29-4}{%
-\subsection{Article 29}\label{article-29-4}}
+\subsection{Article 29}\label{article-29-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2476,16 +2299,14 @@ rights and freedoms set forth in this Declaration can be fully realized.
   purposes and principles of the United Nations.
 \end{enumerate}
 
-\hypertarget{article-30-4}{%
-\subsection{Article 30}\label{article-30-4}}
+\subsection{Article 30}\label{article-30-4}
 
 Nothing in this Declaration may be interpreted as implying for any
 State, group or person any right to engage in any activity or to perform
 any act aimed at the destruction of any of the rights and freedoms set
 forth herein.
 
-\hypertarget{sec:acknowledgment}{%
-\chapter{Acknowledgment}\label{sec:acknowledgment}}
+\chapter{Acknowledgment}\label{sec:acknowledgment}
 
 Whereas recognition of the inherent dignity and of the equal and
 inalienable rights of all members of the human family is the foundation
@@ -2536,15 +2357,13 @@ jurisdiction.
 
 \listoffigures
 
-\hypertarget{bibliography}{%
-\chapter{Bibliography}\label{bibliography}}
+\chapter{Bibliography}\label{bibliography}
 
-\hypertarget{sources}{%
-\section{Sources}\label{sources}}
+\section{Sources}\label{sources}
 
-\hypertarget{refs_sources}{}
+\phantomsection\label{refs_sources}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-unitednations1948}{}}%
+\bibitem[\citeproctext]{ref-unitednations1948}
 Nations, United. \emph{Universal {Declaration} of {Human} {Rights}},
 1948.
 
@@ -2552,12 +2371,11 @@ Nations, United. \emph{Universal {Declaration} of {Human} {Rights}},
 
 \clearpage
 
-\hypertarget{literature}{%
-\section{Literature}\label{literature}}
+\section{Literature}\label{literature}
 
-\hypertarget{refs_main}{}
+\phantomsection\label{refs_main}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-brown2016}{}}%
+\bibitem[\citeproctext]{ref-brown2016}
 Brown, Gordon, ed. \emph{The {Universal} {Declaration} of {Human}
 {Rights} in the 21st Century, a Living Document in a Changing World}.
 Cambridge, {[}New York{]}: Open Book Publishers ; NYU Global Institute

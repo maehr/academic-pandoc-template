@@ -12,47 +12,48 @@ devDependencies:
     specifier: ^3.3.0
     version: 3.3.0
   git-cliff:
-    specifier: ^1.2.0
-    version: 1.2.0
+    specifier: ^1.3.1
+    version: 1.3.1
   husky:
-    specifier: ^7.0.4
-    version: 7.0.4
+    specifier: ^8.0.3
+    version: 8.0.3
   prettier:
-    specifier: ~2.2.1
-    version: 2.2.1
+    specifier: ~3.0.3
+    version: 3.0.3
 
 packages:
-  /@babel/code-frame@7.22.5:
+  /@babel/code-frame@7.22.13:
     resolution:
       {
-        integrity: sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ==
+        integrity: sha512-XktuhWlJ5g+3TJXc5upd9Ks1HutSArik6jf2eAjYFyIOf4ej3RN+184cZbzDvbPnuTJIUhPKKJE3cIsYTiAT3w==
       }
     engines: { node: '>=6.9.0' }
     requiresBuild: true
     dependencies:
-      '@babel/highlight': 7.22.5
+      '@babel/highlight': 7.22.20
+      chalk: 2.4.2
     dev: true
     optional: true
 
-  /@babel/helper-validator-identifier@7.22.5:
+  /@babel/helper-validator-identifier@7.22.20:
     resolution:
       {
-        integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==
+        integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==
       }
     engines: { node: '>=6.9.0' }
     requiresBuild: true
     dev: true
     optional: true
 
-  /@babel/highlight@7.22.5:
+  /@babel/highlight@7.22.20:
     resolution:
       {
-        integrity: sha512-BSKlD1hgnedS5XRnGOljZawtag7H1yPfQp0tdNJCHoH6AZ+Pcm9VvkrK59/Yy593Ypg0zMxH2BxD1VPYUQ7UIw==
+        integrity: sha512-dkdMCN3py0+ksCgYmGG8jKeGA/8Tk+gJwSYYlFGxG5lmhfKNoAy004YpLxpS1W2J8m/EK2Ew+yOs9pVRwO89mg==
       }
     engines: { node: '>=6.9.0' }
     requiresBuild: true
     dependencies:
-      '@babel/helper-validator-identifier': 7.22.5
+      '@babel/helper-validator-identifier': 7.22.20
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
@@ -81,10 +82,10 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/load@17.6.7:
+  /@commitlint/load@17.7.2:
     resolution:
       {
-        integrity: sha512-QZ2rJTbX55BQdYrCm/p6+hh/pFBgC9nTJxfsrK6xRPe2thiQzHN0AQDBqBwAirn6gIkHrjIbCbtAE6kiDYLjrw==
+        integrity: sha512-XA7WTnsjHZ4YH6ZYsrnxgLdXzriwMMq+utZUET6spbOEEIPBCDLdOQXS26P+v3TTO4hUHOEhzUquaBv3jbBixw==
       }
     engines: { node: '>=v14' }
     requiresBuild: true
@@ -93,16 +94,16 @@ packages:
       '@commitlint/execute-rule': 17.4.0
       '@commitlint/resolve-extends': 17.6.7
       '@commitlint/types': 17.4.4
-      '@types/node': 20.4.6
+      '@types/node': 20.5.1
       chalk: 4.1.2
-      cosmiconfig: 8.2.0
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.4.6)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.1.6)
+      cosmiconfig: 8.3.6(typescript@5.2.2)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6)(ts-node@10.9.1)(typescript@5.2.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@20.4.6)(typescript@5.1.6)
-      typescript: 5.1.6
+      ts-node: 10.9.1(@types/node@20.5.1)(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -217,10 +218,10 @@ packages:
     dev: true
     optional: true
 
-  /@types/node@20.4.6:
+  /@types/node@20.5.1:
     resolution:
       {
-        integrity: sha512-q0RkvNgMweWWIvSMDiXhflGUKMdIxBo2M2tYM/0kEGDueQByFzK4KZAgu5YHGFNxziTlppNpTIBcqHQAxlfHdA==
+        integrity: sha512-4tT2UrL5LBqDwoed9wZ6N3umC4Yhz3W3FloMmiiG4JwmUJWpie0c7lcnUNd4gtMKuDEO4wRVS8B6Xa0uMRsMKg==
       }
     requiresBuild: true
     dev: true
@@ -438,10 +439,10 @@ packages:
       restore-cursor: 3.1.0
     dev: true
 
-  /cli-spinners@2.9.0:
+  /cli-spinners@2.9.1:
     resolution:
       {
-        integrity: sha512-4/aL9X3Wh0yiMQlE+eeRhWP6vclO3QRtw1JHKIT0FFUs5FjpFmESqtMvYZ0+lbzBw900b95mS0hohy+qn2VK/g==
+        integrity: sha512-jHgecW0pxkonBJdrKsqxgRX9AcG+u/5k0Q7WPDfi8AogLAdwxEkyYYNWwZ5GvVFoFx2uiY1eNcSK00fh+1+FyQ==
       }
     engines: { node: '>=6' }
     dev: true
@@ -536,8 +537,8 @@ packages:
       }
     dev: true
 
-  ? /cosmiconfig-typescript-loader@4.4.0(@types/node@20.4.6)(cosmiconfig@8.2.0)(ts-node@10.9.1)(typescript@5.1.6)
-  : resolution:
+  /cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6)(ts-node@10.9.1)(typescript@5.2.2):
+    resolution:
       {
         integrity: sha512-BabizFdC3wBHhbI4kJh0VkQP9GkBfoHPydD0COMce1nJ1kJAB3F2TmJ/I7diULBKtmEWSwEbuN/KDtgnmUUVmw==
       }
@@ -549,25 +550,31 @@ packages:
       ts-node: '>=10'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.4.6
-      cosmiconfig: 8.2.0
-      ts-node: 10.9.1(@types/node@20.4.6)(typescript@5.1.6)
-      typescript: 5.1.6
+      '@types/node': 20.5.1
+      cosmiconfig: 8.3.6(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.5.1)(typescript@5.2.2)
+      typescript: 5.2.2
     dev: true
     optional: true
 
-  /cosmiconfig@8.2.0:
+  /cosmiconfig@8.3.6(typescript@5.2.2):
     resolution:
       {
-        integrity: sha512-3rTMnFJA1tCOPwRxtgF4wd7Ab2qvDbL8jX+3smjIbS4HlZBagTlpERbdN7iAbWlrfxE3M8c27kTwTawQ7st+OQ==
+        integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==
       }
     engines: { node: '>=14' }
     requiresBuild: true
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
+      typescript: 5.2.2
     dev: true
     optional: true
 
@@ -594,7 +601,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 17.6.7
+      '@commitlint/load': 17.7.2
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -769,10 +776,10 @@ packages:
       }
     dev: true
 
-  /git-cliff-darwin-arm64@1.2.0:
+  /git-cliff-darwin-arm64@1.3.1:
     resolution:
       {
-        integrity: sha512-zWkTEnB1SenJULqi4QzQzs8Sp2yvGkvglEH75Gia+cBe32jXar6zDw9gI3D3ikcuboyCrFNpERT+pbNIJlOT6w==
+        integrity: sha512-Ms8xACh/8GFQ2t7/2MJk9yJof/Ir5Ls9d+LuEMut0D3toNjIaGSmHq0WC5hBPq2PJ1/FK8U53sgkOIf2x8Q4aA==
       }
     cpu: [arm64]
     os: [darwin]
@@ -780,10 +787,10 @@ packages:
     dev: true
     optional: true
 
-  /git-cliff-darwin-x64@1.2.0:
+  /git-cliff-darwin-x64@1.3.1:
     resolution:
       {
-        integrity: sha512-ye4AfgaDPhNGnDx2r09Wvaic2nJRVE4PZltupABjVNWoBEIiTjEA0kw32WjgdZjVkJipAwkqh27HnKnR2lVvyQ==
+        integrity: sha512-lnotUCDnCQmEyadf2t9NASeTT6/3Gaz5Hf3+W/uS1fpnPJKWWY4n9TNfCKhZyJhUOq43/vrcOScznuLug+YPcw==
       }
     cpu: [x64]
     os: [darwin]
@@ -791,10 +798,10 @@ packages:
     dev: true
     optional: true
 
-  /git-cliff-linux-arm64@1.2.0:
+  /git-cliff-linux-arm64@1.3.1:
     resolution:
       {
-        integrity: sha512-C6A/UAq6M1UFso4r9gfG5FF1wAyj5ysPX8X6KFVS2UgU+zJJqNBQKD5kYxDDHRsCq/bMV8oVHyYJlt2wVKAo+A==
+        integrity: sha512-ydx5CSjKlELFEH7NAJf2aciBJg0hzIoM3308E8sGSBltXPeSHOuMAxIJP4jMkJ9ONsY90AHmunldCUSPv1gwTA==
       }
     cpu: [arm64]
     os: [linux]
@@ -802,10 +809,10 @@ packages:
     dev: true
     optional: true
 
-  /git-cliff-linux-x64@1.2.0:
+  /git-cliff-linux-x64@1.3.1:
     resolution:
       {
-        integrity: sha512-nT9QPYO1XigDrNJie4EMonBvWtZaZmOQsiYd10zt9b15uYfbadymkQJXZy2w1OaqVsl82zRDzjpdQ2x6qFbK8g==
+        integrity: sha512-CJXRH+37PDQMQWuGwXPDacZmbQQ6xQji6h7HXifxCkanOsKqsBocYI+n35woa+Pgk3QUcf2pTGpZuFhrKlwSoA==
       }
     cpu: [x64]
     os: [linux]
@@ -813,10 +820,10 @@ packages:
     dev: true
     optional: true
 
-  /git-cliff-windows-arm64@1.2.0:
+  /git-cliff-windows-arm64@1.3.1:
     resolution:
       {
-        integrity: sha512-peEdb0MRhLb5bcpLGdDcITAk42Tp0oWvPApAr/PVZbcuz441VppIrEoXsJeZYqKM6cuD/x0N2uC96sRrrV5Gig==
+        integrity: sha512-uKP7syv0SeJjJq58vSqI4fXOnlbfXpi1VLTrLLMJljnk+i/V2AfDJaZaRgYOxtuxMcRXq5/SD8v47vvbugFRvw==
       }
     cpu: [arm64]
     os: [win32]
@@ -824,10 +831,10 @@ packages:
     dev: true
     optional: true
 
-  /git-cliff-windows-x64@1.2.0:
+  /git-cliff-windows-x64@1.3.1:
     resolution:
       {
-        integrity: sha512-PZ3QwZOGEaRQ02c8F4khYRQC2VHAJDmYn9ZVEdSBYArPJr8xFe3QLib/T33kz4rs7P1050pr1Ze9dnOAbdMaJQ==
+        integrity: sha512-TU4/PBvo6Qb9Lz2/5pHPamkJuymHzn7ypLQCfg5AT3V27VVnphJMAR7iScBxDLvtj4mey48uFjCaWX+7ub+Z9w==
       }
     cpu: [x64]
     os: [win32]
@@ -835,19 +842,19 @@ packages:
     dev: true
     optional: true
 
-  /git-cliff@1.2.0:
+  /git-cliff@1.3.1:
     resolution:
       {
-        integrity: sha512-nuruES3361gZPi0p9C+vNRW8o/e7W6Y2iuriiQnukWhy9zjlZ4Qx2uCLV8iTTKfms9EoG54x6FCP4cnSAXL9Kg==
+        integrity: sha512-w0d35QMWuN4HSutGZINQ1rFD4zmWmWIzB40pXHwgb/fBSlXNvjGsFAoz/vxhsKUrlRSc2VZX/pdTC81hx+JzPA==
       }
     hasBin: true
     optionalDependencies:
-      git-cliff-darwin-arm64: 1.2.0
-      git-cliff-darwin-x64: 1.2.0
-      git-cliff-linux-arm64: 1.2.0
-      git-cliff-linux-x64: 1.2.0
-      git-cliff-windows-arm64: 1.2.0
-      git-cliff-windows-x64: 1.2.0
+      git-cliff-darwin-arm64: 1.3.1
+      git-cliff-darwin-x64: 1.3.1
+      git-cliff-linux-arm64: 1.3.1
+      git-cliff-linux-x64: 1.3.1
+      git-cliff-windows-arm64: 1.3.1
+      git-cliff-windows-x64: 1.3.1
     dev: true
 
   /glob@7.2.3:
@@ -935,12 +942,12 @@ packages:
       parse-passwd: 1.0.0
     dev: true
 
-  /husky@7.0.4:
+  /husky@8.0.3:
     resolution:
       {
-        integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==
+        integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==
       }
-    engines: { node: '>=12' }
+    engines: { node: '>=14' }
     hasBin: true
     dev: true
 
@@ -1318,7 +1325,7 @@ packages:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.9.0
+      cli-spinners: 2.9.1
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -1354,7 +1361,7 @@ packages:
     engines: { node: '>=8' }
     requiresBuild: true
     dependencies:
-      '@babel/code-frame': 7.22.5
+      '@babel/code-frame': 7.22.13
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
@@ -1395,12 +1402,12 @@ packages:
     engines: { node: '>=8.6' }
     dev: true
 
-  /prettier@2.2.1:
+  /prettier@3.0.3:
     resolution:
       {
-        integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+        integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==
       }
-    engines: { node: '>=10.13.0' }
+    engines: { node: '>=14' }
     hasBin: true
     dev: true
 
@@ -1504,7 +1511,7 @@ packages:
         integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
       }
     dependencies:
-      tslib: 2.6.1
+      tslib: 2.6.2
     dev: true
 
   /safe-buffer@5.2.1:
@@ -1622,7 +1629,7 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.4.6)(typescript@5.1.6):
+  /ts-node@10.9.1(@types/node@20.5.1)(typescript@5.2.2):
     resolution:
       {
         integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
@@ -1645,23 +1652,23 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.4.6
+      '@types/node': 20.5.1
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.1.6
+      typescript: 5.2.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
     optional: true
 
-  /tslib@2.6.1:
+  /tslib@2.6.2:
     resolution:
       {
-        integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==
+        integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==
       }
     dev: true
 
@@ -1673,10 +1680,10 @@ packages:
     engines: { node: '>=10' }
     dev: true
 
-  /typescript@5.1.6:
+  /typescript@5.2.2:
     resolution:
       {
-        integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
+        integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
       }
     engines: { node: '>=14.17' }
     hasBin: true

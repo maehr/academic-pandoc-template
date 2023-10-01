@@ -107,28 +107,38 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -193,72 +203,63 @@ are born free and equal in dignity and rights.
 }
 \listoffigures
 \listoftables
-\hypertarget{heading-1}{%
-\section{Heading 1}\label{heading-1}}
+\section{Heading 1}\label{heading-1}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{heading-2}{%
-\subsection{Heading 2}\label{heading-2}}
+\subsection{Heading 2}\label{heading-2}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{heading-3}{%
-\subsubsection{Heading 3}\label{heading-3}}
+\subsubsection{Heading 3}\label{heading-3}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{heading-4}{%
-\paragraph{Heading 4}\label{heading-4}}
+\paragraph{Heading 4}\label{heading-4}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{bold}{%
-\subsection{Bold}\label{bold}}
+\subsection{Bold}\label{bold}
 
 \textbf{All human beings are born free and equal in dignity and rights.}
 All human beings are born free and equal in dignity and rights.All human
 beings are born free and equal in dignity and rights.All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{italic}{%
-\subsection{Italic}\label{italic}}
+\subsection{Italic}\label{italic}
 
 \emph{All human beings are born free and equal in dignity and rights.}
 All human beings are born free and equal in dignity and rights.All human
 beings are born free and equal in dignity and rights.All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{bold-and-italic}{%
-\subsection{Bold and italic}\label{bold-and-italic}}
+\subsection{Bold and italic}\label{bold-and-italic}
 
 \textbf{\emph{All human beings are born free and equal in dignity and
 rights.}} All human beings are born free and equal in dignity and
 rights.All human beings are born free and equal in dignity and
 rights.All human beings are born free and equal in dignity and rights.
 
-\hypertarget{struck-through}{%
-\subsection{Struck through}\label{struck-through}}
+\subsection{Struck through}\label{struck-through}
 
 \st{All human beings are born free and equal in dignity and rights.} All
 human beings are born free and equal in dignity and rights.All human
 beings are born free and equal in dignity and rights.All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{numbered-lists}{%
-\subsection{Numbered lists}\label{numbered-lists}}
+\subsection{Numbered lists}\label{numbered-lists}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -278,8 +279,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{unnumbered-lists}{%
-\subsection{Unnumbered lists}\label{unnumbered-lists}}
+\subsection{Unnumbered lists}\label{unnumbered-lists}
 
 \begin{itemize}
 \tightlist
@@ -300,8 +300,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{mixed-lists}{%
-\subsection{Mixed lists}\label{mixed-lists}}
+\subsection{Mixed lists}\label{mixed-lists}
 
 \begin{itemize}
 \tightlist
@@ -325,8 +324,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{figures-and-captions}{%
-\subsection{Figures and captions}\label{figures-and-captions}}
+\subsection{Figures and captions}\label{figures-and-captions}
 
 \begin{figure}
 \centering
@@ -342,8 +340,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{code}{%
-\subsection{Code}\label{code}}
+\subsection{Code}\label{code}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
@@ -361,8 +358,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{urls-and-email-addresses}{%
-\subsection{URLs and email addresses}\label{urls-and-email-addresses}}
+\subsection{URLs and email addresses}\label{urls-and-email-addresses}
 
 \href{https://www.wikipedia.org/}{wikipedia.org},
 \href{mailto:info@wikipedia.org}{\nolinkurl{info@wikipedia.org}}. All
@@ -371,8 +367,7 @@ beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights. All human beings are born
 free and equal in dignity and rights.
 
-\hypertarget{tables}{%
-\subsection{Tables}\label{tables}}
+\subsection{Tables}\label{tables}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
@@ -411,8 +406,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{footnotes}{%
-\subsection{Footnotes}\label{footnotes}}
+\subsection{Footnotes}\label{footnotes}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
@@ -420,8 +414,7 @@ beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.\footnote{All human beings
   are born free and equal in dignity and rights.}
 
-\hypertarget{quotes}{%
-\subsection{Quotes}\label{quotes}}
+\subsection{Quotes}\label{quotes}
 
 \begin{otherlanguage}{ngerman}
 
@@ -436,8 +429,7 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.
 
-\hypertarget{scientific-citations}{%
-\subsection{Scientific citations}\label{scientific-citations}}
+\subsection{Scientific citations}\label{scientific-citations}
 
 \begin{quote}
 All human beings are born free and equal in dignity and rights. They are
@@ -451,18 +443,17 @@ human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
 are born free and equal in dignity and rights.\footnote{United Nations.}
 
-\hypertarget{bibliography}{%
-\section{Bibliography}\label{bibliography}}
+\section{Bibliography}\label{bibliography}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-brown2016}{}}%
+\bibitem[\citeproctext]{ref-brown2016}
 Brown, Gordon, ed. \emph{The {Universal} {Declaration} of {Human}
 {Rights} in the 21st Century, a Living Document in a Changing World}.
 Cambridge, {[}New York{]}: Open Book Publishers ; NYU Global Institute
 for Advanced Study, 2016.
 
-\leavevmode\vadjust pre{\hypertarget{ref-unitednations1948}{}}%
+\bibitem[\citeproctext]{ref-unitednations1948}
 United Nations. \emph{Universal Declaration of Human Rights}, 1948.
 
 \end{CSLReferences}
