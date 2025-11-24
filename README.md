@@ -11,13 +11,13 @@
 <!-- prettier-ignore -->
 | from md | [article](article/article.md) | [presentation](presentation/presentation.md) | [thesis](thesis/00.md) |
 | :--- | :-----: | :-----: | :-----: |
-| | [![](assets/images/article.png)](article/article.md) | [![](assets/images/presentation.png)](presentation/presentation.md) | [![](assets/images/thesis.png)](thesis/00.md) |
-| to html | | [![](assets/images/presentation-html.png)](presentation/presentation.html) | |
-| to docx | [![](assets/images/article-docx.png)](article/article.docx) | | [![](assets/images/thesis-docx.png)](thesis/thesis.pdf) |
-| to epub | | | [![](assets/images/thesis-epub.png)](thesis/thesis.epub) |
-| to pdf | [![](assets/images/article-pdf.png)](article/article.pdf) | [![](assets/images/presentation-pdf.png)](presentation/presentation.pdf) | [![](assets/images/thesis-pdf.png)](thesis/thesis.pdf) |
-| to pptx | | [![](assets/images/presentation-pptx.png)](presentation/presentation.pptx) | |
-| to tex | [![](assets/images/article-tex.png)](article/article.tex) | [![](assets/images/presentation-tex.png)](presentation/presentation.tex) | [![](assets/images/thesis-tex.png)](thesis/thesis.tex) |
+| &nbsp; | [![article](assets/images/article.png)](article/article.md) | [![presentation](assets/images/presentation.png)](presentation/presentation.md) | [![thesis](assets/images/thesis.png)](thesis/00.md) |
+| to html | &nbsp; | [![presentation-html](assets/images/presentation-html.png)](presentation/presentation.html) | &nbsp; |
+| to docx | [![article-docx](assets/images/article-docx.png)](article/article.docx) | &nbsp; | [![thesis-docx](assets/images/thesis-docx.png)](thesis/thesis.pdf) |
+| to epub | &nbsp; | &nbsp; | [![thesis-epub](assets/images/thesis-epub.png)](thesis/thesis.epub) |
+| to pdf | [![article-pdf](assets/images/article-pdf.png)](article/article.pdf) | [![presentation-pdf](assets/images/presentation-pdf.png)](presentation/presentation.pdf) | [![thesis-pdf](assets/images/thesis-pdf.png)](thesis/thesis.pdf) |
+| to pptx | &nbsp; | [![presentation-pptx](assets/images/presentation-pptx.png)](presentation/presentation.pptx) | &nbsp; |
+| to tex | [![article-tex](assets/images/article-tex.png)](article/article.tex) | [![presentation-tex](assets/images/presentation-tex.png)](presentation/presentation.tex) | [![thesis-tex](assets/images/thesis-tex.png)](thesis/thesis.tex) |
 
 ## Getting Started
 
