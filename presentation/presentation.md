@@ -3,7 +3,7 @@ author:
   - '[Eleanor Roosevelt](eleanor.eoosevelt@domain.com)'
   - '[John Peters Humphrey](jph@domain.com)'
 bibliography: references.bib # bibliography to use for resolving references
-csl: https://www.zotero.org/styles/chicago-author-date
+csl: ../assets/csl/chicago-author-date.csl
 date: 1 January 2023
 documentclass: beamer
 keywords: # list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc metadata; repeat as for author, above

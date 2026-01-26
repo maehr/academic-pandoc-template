@@ -4,7 +4,7 @@ author:
   - '[Eleanor Roosevelt](eleanor.eoosevelt@domain.com)'
   - '[John Peters Humphrey](jph@domain.com)'
 bibliography: references.bib # bibliography to use for resolving references
-csl: https://www.zotero.org/styles/chicago-note-bibliography
+csl: ../assets/csl/chicago-note-bibliography.csl
 date: 1 January 2023
 keywords: # list of keywords to be included in HTML, PDF, ODT, pptx, docx and AsciiDoc metadata; repeat as for author, above
 lang: en-US

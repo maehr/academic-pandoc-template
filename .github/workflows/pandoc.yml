@@ -15,8 +15,8 @@ jobs:
           wget https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-1-amd64.deb
           sudo dpkg -i pandoc-3.8.3-1-amd64.deb
           rm pandoc-3.8.3-1-amd64.deb
-          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.22b/pandoc-crossref-Linux.tar.xz
-          tar -xvf pandoc-crossref-Linux.tar.xz
+          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.22b/pandoc-crossref-Linux-X64.tar.xz
+          tar -xvf pandoc-crossref-Linux-X64.tar.xz
           sudo mv pandoc-crossref /usr/bin
       - uses: actions/cache@v4
         name: Tectonic Cache
