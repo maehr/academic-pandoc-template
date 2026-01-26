@@ -18,7 +18,7 @@ jobs:
           wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.22b/pandoc-crossref-Linux-X64.tar.xz
           tar -xvf pandoc-crossref-Linux-X64.tar.xz
           sudo mv pandoc-crossref /usr/bin
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Tectonic Cache
         with:
           path: ~/.cache/Tectonic
