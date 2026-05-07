@@ -31,6 +31,6 @@ jobs:
       - run: |
           export APPIMAGE_EXTRACT_AND_RUN=1
           make all
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v10
         with:
           message: 'GitHub action artefacts added'
