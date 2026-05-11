@@ -1,4 +1,4 @@
-author-meta: '[Eleanor Roosevelt](eleanor.eoosevelt@domain.com)'
+author-meta: '[Eleanor Roosevelt](eleanor.roosevelt@domain.com)'
 bibliography_main: references.bib
 bibliography_sources: sources.bib
 citecolor: black
@@ -37,7 +37,7 @@ header-includes:
     \publishers{A thesis submitted to attain the degree of\\DOCTOR OF SCIENCES\\(Dr. sc.)\\~\\~\\presented by\\~\\Eleanor Roosevelt\\MA, University of Example\\born on 11.10.1884\\~\\~\\accepted on the recommendation of \\~\\Prof. Dr. Anna Hall Roosevelt\\Prof. Dr. Elliott Roosevelt\\~\\2022}
     \uppertitleback{Title}
     \lowertitleback{\emph{Eleanor Roosevelt} is Fellow at the University of Example.}
-    \dedication{\emph{For all humants of this world}}
+    \dedication{\emph{For all humans of this world}}
   - |
     % typesetting options
     \clubpenalty=10000
