@@ -1,62 +1,54 @@
 
-.PHONY: help all article article-docx article-pdf article-tex presentation presentation-html presentation-pdf presentation-pptx presentation-tex thesis thesis-docx thesis-epub thesis-pdf thesis-tex
+.PHONY: help all article article-docx article-html article-pdf article-tex presentation presentation-html presentation-pdf presentation-pptx presentation-tex thesis thesis-docx thesis-epub thesis-pdf thesis-tex
 .DEFAULT_GOAL := help
 
 help:
 	head -2 Makefile
 
 all:
-	make article presentation thesis
+	npm run render
+
+article-html:
+	npm run render:article:html
 
 article-docx:
-	(cd article && \
-	pandoc --defaults=./../defaults.yaml --defaults=docx.yaml)
+	npm run render:article:docx
 
 article-pdf:
-	(cd article && \
-	pandoc --defaults=./../defaults.yaml --defaults=pdf.yaml)
+	npm run render:article:pdf
 
 article-tex:
-	(cd article && \
-	pandoc --defaults=./../defaults.yaml --defaults=tex.yaml)
+	npm run render:article:tex
 
 article:
-	make article-docx article-pdf article-tex
+	npm run render:article
 
 presentation-html:
-	(cd presentation && \
-	pandoc --defaults=./../defaults.yaml --defaults=html.yaml)
+	npm run render:presentation:html
 
 presentation-pdf:
-	(cd presentation && \
-	pandoc --defaults=./../defaults.yaml --defaults=pdf.yaml)
+	npm run render:presentation:pdf
 
 presentation-pptx:
-	(cd presentation && \
-	pandoc --defaults=./../defaults.yaml --defaults=pptx.yaml)
+	npm run render:presentation:pptx
 
 presentation-tex:
-	(cd presentation && \
-	pandoc --defaults=./../defaults.yaml --defaults=tex.yaml)
+	npm run render:presentation:tex
 
 presentation:
-	make presentation-html presentation-pdf presentation-pptx presentation-tex
+	npm run render:presentation
 
 thesis-docx:
-	(cd thesis && \
-	pandoc --defaults=./../defaults.yaml --defaults=docx.yaml)
+	npm run render:thesis:docx
 
 thesis-epub:
-	(cd thesis && \
-	pandoc --defaults=./../defaults.yaml --defaults=epub.yaml)
+	npm run render:thesis:epub
 
 thesis-pdf:
-	(cd thesis && \
-	pandoc --defaults=./../defaults.yaml --defaults=pdf.yaml)
+	npm run render:thesis:pdf
 
 thesis-tex:
-	(cd thesis && \
-	pandoc --defaults=./../defaults.yaml --defaults=tex.yaml)
+	npm run render:thesis:tex
 
 thesis:
-	make thesis-docx thesis-epub thesis-pdf thesis-tex
+	npm run render:thesis

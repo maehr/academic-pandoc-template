@@ -1,0 +1,10 @@
+CODE_OF_CONDUCT.md
+LICENSE.md
+_layouts/default.html
+*.docx
+*.epub
+*.html
+*.pdf
+*.pptx
+*.tex
+package-lock.json
