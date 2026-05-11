@@ -1,4 +1,4 @@
-name: Mark stale issues and pull requests
+name: Mark Stale Issues and Pull Requests
 
 on:
   schedule:
@@ -12,7 +12,8 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v10
+      - name: Mark Stale
+        uses: actions/stale@v10
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'Stale issue message'

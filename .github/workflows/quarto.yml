@@ -1,6 +1,6 @@
 name: Quarto
 
-on: workflow_dispatch
+on: [workflow_dispatch]
 
 permissions:
   contents: write
@@ -9,17 +9,24 @@ jobs:
   render:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
-      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-      - run: npm run check
-      - run: npm run render
-      - uses: EndBug/add-and-commit@v10
+      - name: Check for linting errors
+        run: npm run check
+      - name: Render Quarto artifacts
+        run: npm run render
+      - name: Commit artifacts
+        uses: EndBug/add-and-commit@v10
         with:
           message: 'chore: render quarto artefacts'

@@ -1,4 +1,4 @@
-name: Create changelog
+name: Create Changelog
 
 on: [push]
 

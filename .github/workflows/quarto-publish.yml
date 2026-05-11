@@ -27,15 +27,16 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Check for linting errors
         run: npm run check
@@ -46,7 +47,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Overwrite _quarto.yml
         if: github.repository == 'maehr/open-research-data-template'
@@ -54,9 +55,10 @@ jobs:
           cp .github/_quarto.yml _quarto.yml
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: '24'
+          cache: npm
 
       - name: Install Node.js dependencies
         run: npm ci
@@ -70,7 +72,7 @@ jobs:
         run: npm run site:build
 
       - name: Upload Built Artifacts
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         with:
           name: built-site
           path: _site

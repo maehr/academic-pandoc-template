@@ -1,7 +1,6 @@
 name: Pull Request Labeler
 
-on:
-  - pull_request
+on: [pull_request]
 
 permissions:
   contents: read
@@ -11,6 +10,7 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v6
+      - name: Label Pull Request
+        uses: actions/labeler@v6
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
