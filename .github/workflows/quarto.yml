@@ -22,8 +22,6 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-      - name: Set up Pandoc
-        uses: r-lib/actions/setup-pandoc@v2
       - name: Check for linting errors
         run: npm run check
       - name: Render Quarto artifacts
