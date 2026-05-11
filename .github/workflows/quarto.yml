@@ -24,7 +24,7 @@ jobs:
         with:
           tinytex: true
       - name: Install Quarto Extensions
-        run: quarto install extension pandoc-ext/multibib --no-prompt
+        run: cd thesis && quarto install extension pandoc-ext/multibib --no-prompt
       - name: Check for linting errors
         run: npm run check
       - name: Render Quarto artifacts

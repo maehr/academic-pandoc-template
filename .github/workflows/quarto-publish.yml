@@ -58,7 +58,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Quarto Extensions
-        run: quarto install extension pandoc-ext/multibib --no-prompt
+        run: cd thesis && quarto install extension pandoc-ext/multibib --no-prompt
 
       - name: Render Quarto Project
         run: npm run render
