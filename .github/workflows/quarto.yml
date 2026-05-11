@@ -20,6 +20,6 @@ jobs:
           tinytex: true
       - run: npm run check
       - run: npm run render
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v10
         with:
           message: 'chore: render quarto artefacts'
