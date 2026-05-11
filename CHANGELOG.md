@@ -28,8 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated GitHub Actions to their latest versions.
-- Removed R and Python support from the GitHub Pages pipeline as they are not needed.
-- Replaced auto-commit logic with strict validation for PRs.
 - Installed TinyTeX in the CI pipeline to fix PDF rendering issues.
 - Updated the README to document the Quarto workflow, prerequisites, render commands, and project structure.
 - Replaced the manual Pandoc GitHub Actions workflow with a Quarto workflow that installs npm dependencies, Quarto, and TinyTeX before rendering artifacts.
