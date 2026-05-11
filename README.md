@@ -27,7 +27,6 @@ Use this template, edit one of the document sources, and run the Quarto build. T
 
 - [Quarto](https://quarto.org/docs/get-started/)
 - [TinyTeX](https://yihui.org/tinytex/) for PDF output: `quarto install tinytex`
-- [Make](https://www.gnu.org/software/make/) for the convenience targets
 - [Node.js](https://nodejs.org/) and npm for formatting, rendering, and changelog tooling
 
 ### Build
@@ -44,14 +43,12 @@ npm run preview
 
 Document-specific previews are available with `npm run preview:article`, `npm run preview:presentation`, and `npm run preview:thesis`.
 
-Useful targets:
+Useful render scripts:
 
-- `make article` renders all article formats.
-- `make presentation` renders RevealJS, Beamer PDF, PowerPoint, and TeX outputs.
-- `make thesis` renders Word, EPUB, PDF, and TeX thesis outputs.
-- `make article-pdf`, `make presentation-pptx`, or `make thesis-docx` render a single format.
-
-The `Makefile` is kept as a thin compatibility layer, so `make all`, `make article`, `make presentation`, and `make thesis` call the corresponding npm scripts.
+- `npm run render:article` renders all article formats.
+- `npm run render:presentation` renders RevealJS, Beamer PDF, PowerPoint, and TeX outputs.
+- `npm run render:thesis` renders Word, EPUB, PDF, and TeX thesis outputs.
+- `npm run render:article:pdf`, `npm run render:presentation:pptx`, or `npm run render:thesis:docx` render a single format.
 
 You can also call Quarto directly:
 
