@@ -1,0 +1,29 @@
+project:
+  type: default
+  render:
+    - index.qmd
+
+format:
+  docx:
+    output-file: thesis.docx
+    toc: true
+  epub:
+    output-file: thesis.epub
+    toc: true
+  pdf:
+    output-file: thesis.pdf
+    pdf-engine: xelatex
+    keep-tex: false
+    toc: true
+  latex:
+    output-file: thesis.tex
+
+filters:
+  - filters/multiple-bibliographies.lua
+  - filters/pandoc-quotes.lua
+
+execute:
+  freeze: false
+
+lang: en-US
+syntax-highlighting: pygments

@@ -1,4 +1,4 @@
-# Chapter 4 {#sec:chapter4 label="Chapter 4"}
+# Chapter 4 {#sec-chapter4 label="Chapter 4"}
 
 ## A Universal Declaration of Human Rights
 
