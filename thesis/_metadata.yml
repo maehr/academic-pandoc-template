@@ -1,6 +1,8 @@
 author-meta: '[Eleanor Roosevelt](eleanor.roosevelt@domain.com)'
-bibliography_main: references.bib
-bibliography_sources: sources.bib
+bibliography:
+  main: references.bib
+  sources: sources.bib
+validate-yaml: false
 citecolor: black
 color-links: true
 csl: ../assets/csl/chicago-note-bibliography.csl

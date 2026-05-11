@@ -19,7 +19,7 @@ format:
     output-file: thesis.tex
 
 filters:
-  - filters/multiple-bibliographies.lua
+  - multibib
   - filters/pandoc-quotes.lua
 
 execute:

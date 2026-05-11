@@ -144,39 +144,6 @@
   \usepackage{soul}
 \fi
 
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \ifLuaTeX
 \usepackage[bidi=basic,shorthands=off]{babel}
@@ -219,6 +186,9 @@
 % number figures consecutively and not chapter by chapter
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
+\makeatletter
+\newcommand{\citeproc}[2]{#2}
+\makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -541,14 +511,13 @@ are born free and equal in dignity and rights.
 \begin{quote}
 All human beings are born free and equal in dignity and rights. They are
 endowed with reason and conscience and should act towards one another in
-a spirit of brotherhood. United Nations\footnote{\citeproc{ref-unitednations1948}{\emph{Universal
-  {Declaration} of {Human} {Rights}} (1948)}.}
+a spirit of brotherhood.\footnote{\citeproc{ref-unitednations1948}{\textbf{unitednations1948?}}}
 \end{quote}
 
 All human beings are born free and equal in dignity and rights. All
 human beings are born free and equal in dignity and rights. All human
 beings are born free and equal in dignity and rights. All human beings
-are born free and equal in dignity and rights.\footnote{\citeproc{ref-unitednations1948}{Nations}.}
+are born free and equal in dignity and rights.\footnote{\citeproc{ref-unitednations1948}{\textbf{unitednations1948?}}}
 
 \section{Equations}\label{equations}
 
@@ -2405,26 +2374,12 @@ jurisdiction.
 \section{Sources}\label{sources}
 
 \protect\phantomsection\label{refs_sources}
-\begin{CSLReferences}{1}{1}
-\bibitem[\citeproctext]{ref-unitednations1948}
-Nations, United. \emph{Universal {Declaration} of {Human} {Rights}}.
-1948.
-
-\end{CSLReferences}
 
 \clearpage
 
 \section{Literature}\label{literature}
 
 \protect\phantomsection\label{refs_main}
-\begin{CSLReferences}{1}{1}
-\bibitem[\citeproctext]{ref-brown2016}
-Brown, Gordon, ed. \emph{The {Universal} {Declaration} of {Human}
-{Rights} in the 21st Century, a Living Document in a Changing World}.
-Cambridge, {[}New York{]}: Open Book Publishers ; NYU Global Institute
-for Advanced Study, 2016.
-
-\end{CSLReferences}
 
 
 \backmatter
