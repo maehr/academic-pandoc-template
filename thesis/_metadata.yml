@@ -1,0 +1,68 @@
+author-meta: '[Eleanor Roosevelt](eleanor.roosevelt@domain.com)'
+bibliography_main: references.bib
+bibliography_sources: sources.bib
+citecolor: black
+color-links: true
+csl: ../assets/csl/chicago-note-bibliography.csl
+date-meta: '2022'
+endnote: false
+keywords: []
+link-citations: true
+linkcolor: black
+nocite: |
+  @brown2016
+subtitle: Subtitle
+suppress-bibliography: false
+title: Title
+urlcolor: black
+classoption: [titlepage, openright, DIV=calc, toc=listof, listof=nochaptergap]
+documentclass: scrbook
+figPrefix: Figure
+figureTitle: Figure
+geometry: [a4paper, bindingoffset=0mm, inner=30mm, outer=30mm, top=30mm, bottom=30mm]
+header-includes:
+  - |
+    % custom line spacing for quotes
+    \BeforeBeginEnvironment{quote}{\setstretch{1}}
+    \AfterEndEnvironment{quote}{\setstretch{1.5}}
+  - |
+    \hyphenation
+    {%
+      Hyphenate-me-like-this
+      Dontyoueverhyphenateme
+    }%
+  - |
+    % titlepage
+    \subject{DISS. Nr. 1111\\~\\~\\}
+    \publishers{A thesis submitted to attain the degree of\\DOCTOR OF SCIENCES\\(Dr. sc.)\\~\\~\\presented by\\~\\Eleanor Roosevelt\\MA, University of Example\\born on 11.10.1884\\~\\~\\accepted on the recommendation of \\~\\Prof. Dr. Anna Hall Roosevelt\\Prof. Dr. Elliott Roosevelt\\~\\2022}
+    \uppertitleback{Title}
+    \lowertitleback{\emph{Eleanor Roosevelt} is Fellow at the University of Example.}
+    \dedication{\emph{For all humans of this world}}
+  - |
+    % typesetting options
+    \clubpenalty=10000
+    \widowpenalty=10000
+    \raggedbottom
+  - |
+    % number figures consecutively and not chapter by chapter
+    \usepackage{chngcntr}
+    \counterwithout{figure}{chapter}
+include-before:
+  - |
+    \chapter*{Abstract}
+    \begin{spacing}{1.5}
+    Whereas recognition of the inherent dignity and of the equal and inalienable rights of all members of the human family is the foundation of freedom, justice and peace in the world.
+    \end{spacing}
+  - |
+    \begin{otherlanguage}{german}
+    \chapter*{Zusammenfassung}
+    \begin{spacing}{1.5}
+    Die Anerkennung der angeborenen Würde und der gleichen und unveräußerlichen Rechte aller Mitglieder der Menschheitsfamilie ist die Grundlage für Freiheit, Gerechtigkeit und Frieden in der Welt.
+    \end{spacing}
+    \end{otherlanguage}
+linestretch: 1.5
+lof: false
+lofTitle: Figures
+lot: false
+toc-depth: 2
+toc-title: Contents

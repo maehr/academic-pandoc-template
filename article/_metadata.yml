@@ -1,0 +1,26 @@
+title: Title
+subtitle: Subtitle
+author:
+  - Eleanor Roosevelt
+  - John Peters Humphrey
+date: 1 January 2023
+abstract: All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.
+bibliography: references.bib
+csl: ../assets/csl/chicago-note-bibliography.csl
+nocite: |
+  @brown2016
+references:
+  - id: unitednations1948
+    author:
+      - literal: United Nations
+    citation-key: unitednations1948
+    issued:
+      - year: 1948
+        month: 12
+    title: Universal Declaration of Human Rights
+    type: book
+keywords: [keyword1, keyword2]
+toc-title: Contents
+toc-depth: 2
+abstract-title: Abstract
+thanks: Many thanks for the valuable comments.

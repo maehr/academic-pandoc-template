@@ -1,4 +1,4 @@
-# Introduction {#sec:introduction label="Introduction"}
+# Introduction {#sec-introduction label="Introduction"}
 
 All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.
 
@@ -58,7 +58,7 @@ All human beings are born free and equal in dignity and rights. All human beings
 
 ## Figures and captions
 
-![Eleanor Roosevelt hält die englische Version der Allgemeinen Erklärung der Menschenrechte (FDR Presidential Library & Museum, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons)](images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg){#fig:eleanor}
+![Eleanor Roosevelt hält die englische Version der Allgemeinen Erklärung der Menschenrechte (FDR Presidential Library & Museum, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons)](images/Eleanor_Roosevelt_and_Human_Rights_Declaration.jpeg){#fig-eleanor}
 
 All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.
 
@@ -85,7 +85,7 @@ All human beings are born free and equal in dignity and rights. All human beings
 | All human beings are born free and equal in dignity and rights. | All human beings are born free and equal in dignity and rights. |
 | All human beings are born free and equal in dignity and rights. | All human beings are born free and equal in dignity and rights. |
 
-: Table caption {#tbl:example_tbl}
+: Table caption {#tbl-example}
 
 All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights. All human beings are born free and equal in dignity and rights.
 
@@ -111,8 +111,8 @@ All human beings are born free and equal in dignity and rights. All human beings
 
 ## Equations
 
-$$x^2 + y^2 = z^2$${#eq:pythagoras}
+$$x^2 + y^2 = z^2$${#eq-pythagoras}
 
 ## Cross-references
 
-Thanks to [pandoc-crossref](https://lierdakil.github.io/pandoc-crossref/) you can crossreference equations ([@eq:pythagoras]), figures ([@fig:eleanor]) and tables ([@tbl:example_tbl]). Sections ([@sec:conclusion]) are not supported in LaTeX.
+Quarto labels make equations, figures, tables, and sections linkable across formats.

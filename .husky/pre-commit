@@ -1,1 +1,1 @@
-pnpm exec prettier --ignore-path .gitignore  --check . '!{CODE_OF_CONDUCT.md,LICENSE.md,_layouts/default.html,template/academic-pandoc-template.md}'
+npm run check

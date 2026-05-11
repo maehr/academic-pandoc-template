@@ -1,4 +1,0 @@
-input-files: [article.md]
-log-file: article.log
-output-file: article.tex
-to: latex

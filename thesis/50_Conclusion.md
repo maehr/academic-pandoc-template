@@ -1,4 +1,4 @@
-# Conclusion {#sec:conclusion label="Conclusion"}
+# Conclusion {#sec-conclusion label="Conclusion"}
 
 ## A Universal Declaration of Human Rights
 

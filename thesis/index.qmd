@@ -1,0 +1,17 @@
+{{< include 00_Introduction.md >}}
+
+{{< include 10_Chapter_1.md >}}
+
+{{< include 20_Chapter_2.md >}}
+
+{{< include 30_Chapter_3.md >}}
+
+{{< include 40_Chapter_4.md >}}
+
+{{< include 50_Conclusion.md >}}
+
+{{< include 60_Acknowledgment.md >}}
+
+{{< include 71_Figures.md >}}
+
+{{< include 74_Bibliography.md >}}

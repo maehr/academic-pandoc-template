@@ -1,0 +1,22 @@
+title: Title
+subtitle: Subtitle
+author:
+  - Eleanor Roosevelt
+  - John Peters Humphrey
+date: 1 January 2023
+bibliography: references.bib
+csl: ../assets/csl/chicago-author-date.csl
+nocite: |
+  @brown2016
+references:
+  - id: unitednations1948
+    author:
+      - literal: United Nations
+    citation-key: unitednations1948
+    issued:
+      - year: 1948
+        month: 12
+    title: Universal Declaration of Human Rights
+    type: book
+institute: United Nations
+slide-level: 2

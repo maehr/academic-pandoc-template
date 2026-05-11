@@ -1,0 +1,25 @@
+project:
+  type: default
+  render:
+    - index.qmd
+
+format:
+  revealjs:
+    output-file: presentation.html
+    embed-resources: true
+  pptx:
+    output-file: presentation.pptx
+  beamer:
+    output-file: presentation.pdf
+    pdf-engine: xelatex
+    keep-tex: false
+    aspectratio: 169
+  latex:
+    output-file: presentation.tex
+    documentclass: beamer
+
+execute:
+  freeze: false
+
+lang: en-US
+syntax-highlighting: pygments

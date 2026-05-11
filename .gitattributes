@@ -21,6 +21,7 @@
 *.rtf           diff=astextplain
 *.RTF	        diff=astextplain
 *.md       text
+*.qmd      text
 *.tex      text diff=tex
 *.adoc     text
 *.textile  text

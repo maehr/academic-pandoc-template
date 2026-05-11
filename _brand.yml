@@ -1,0 +1,9 @@
+meta:
+  name: Academic Pandoc Template
+  link:
+    home: https://maehr.github.io/academic-pandoc-template
+    github: https://github.com/maehr/academic-pandoc-template
+  description: |
+    Quarto templates for academic articles, presentations, and theses.
+
+# Go to https://quarto.org/docs/authoring/brand.html to learn more about multiformat branding with brand.yml

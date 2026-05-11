@@ -1,0 +1,65 @@
+project:
+  type: website
+  render:
+    - index.qmd
+
+website:
+  title: Academic Pandoc Template
+  favicon: favicon.ico
+  open-graph: true
+  twitter-card: true
+  site-url: https://maehr.github.io/academic-pandoc-template/
+  repo-url: https://github.com/maehr/academic-pandoc-template/
+  issue-url: https://github.com/maehr/academic-pandoc-template/issues/new/choose
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+  search:
+    show-item-context: true
+    type: overlay
+  navbar:
+    title: Academic Pandoc Template
+    tools:
+      - icon: github
+        url: https://github.com/maehr/academic-pandoc-template/
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Examples
+        menu:
+          - text: Article HTML
+            href: article/article.html
+          - text: Presentation HTML
+            href: presentation/presentation.html
+  sidebar:
+    contents:
+      - section: Academic Pandoc Template
+        href: index.qmd
+        contents:
+          - text: Changelog
+            href: CHANGELOG.md
+          - text: Code of Conduct
+            href: CODE_OF_CONDUCT.md
+          - text: Contributing
+            href: CONTRIBUTING.md
+          - text: License
+            href: LICENSE.md
+          - text: Security
+            href: SECURITY.md
+
+execute:
+  freeze: false
+
+format:
+  html:
+    toc: true
+    theme:
+      - brand
+      - cosmo
+    code-copy: true
+    code-overflow: wrap
+    canonical-url: true
+
+lang: en-US
+syntax-highlighting: pygments

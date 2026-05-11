@@ -1,0 +1,36 @@
+project:
+  type: default
+  render:
+    - index.qmd
+
+format:
+  html:
+    output-file: article.html
+    embed-resources: true
+    toc: true
+  docx:
+    output-file: article.docx
+    toc: true
+  pdf:
+    output-file: article.pdf
+    pdf-engine: xelatex
+    documentclass: scrartcl
+    keep-tex: false
+    toc: true
+    lof: true
+    lot: true
+    include-in-header:
+      text: |
+        \raggedbottom
+        \usepackage{float}
+        \floatplacement{figure}{H}
+        \hyphenation{Hyphenate-me-like-this Dontyoueverhyphenateme}
+  latex:
+    output-file: article.tex
+    documentclass: scrartcl
+
+execute:
+  freeze: false
+
+lang: en-US
+syntax-highlighting: pygments

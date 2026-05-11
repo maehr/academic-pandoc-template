@@ -5,7 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/...HEAD)
+## [Unreleased](https://github.com/maehr/academic-pandoc-template/compare/v2.0.0...HEAD)
+
+## [2.0.0](https://github.com/maehr/academic-pandoc-template/compare/v1.0.0...v2.0.0) - 2026-05-11
+
+### Breaking Changes
+
+- Migrated the document build system from Pandoc defaults and Make targets to Quarto projects and npm render scripts.
+- Removed the `Makefile`; use `npm run render`, `npm run render:article`, `npm run render:presentation`, or `npm run render:thesis` instead of `make all` and related targets.
+- Removed Pandoc defaults files such as `defaults.yaml`, `article/pdf.yaml`, `presentation/html.yaml`, and `thesis/docx.yaml`; configure output through the relevant `_quarto.yml` and `_metadata.yml` files.
+- Switched dependency management from pnpm to npm by replacing `pnpm-lock.yaml` with `package-lock.json` and updating CI/pre-commit commands accordingly.
+
+### Added
+
+- Added Quarto project configuration for the root documentation website and for article, presentation, and thesis examples.
+- Added npm preview and render scripts for the full project and for individual document formats.
+- Added rendered Quarto HTML output for the article example and updated generated article, presentation, and thesis artifacts.
+- Added shared website branding and navigation/sidebar configuration for the Quarto documentation site.
+
+### Changed
+
+- Updated the README to document the Quarto workflow, prerequisites, render commands, and project structure.
+- Replaced the manual Pandoc GitHub Actions workflow with a Quarto workflow that installs npm dependencies, Quarto, and TinyTeX before rendering artifacts.
+- Updated formatting configuration to use `.prettierignore` and `npm run check` consistently.
 
 ## [1.0.0](https://github.com/maehr/academic-pandoc-template/tree/v1.0.0) - 2023-04-11
 
