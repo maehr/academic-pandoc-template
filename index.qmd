@@ -1,5 +1,1 @@
----
-title: Academic Pandoc Template
----
-
 {{< include README.md >}}

@@ -24,8 +24,14 @@ website:
       - icon: github
         url: https://github.com/maehr/academic-pandoc-template/
     left:
-      - text: Readme
+      - text: Home
         href: index.qmd
+      - text: Examples
+        menu:
+          - text: Article HTML
+            href: article/article.html
+          - text: Presentation HTML
+            href: presentation/presentation.html
   sidebar:
     contents:
       - section: Academic Pandoc Template
