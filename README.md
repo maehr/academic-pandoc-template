@@ -21,15 +21,40 @@
 
 ## Getting Started
 
+You can use this template entirely on GitHub, or build the documents locally if you are comfortable installing tools.
+
+### Use The Template On GitHub
+
+1. Click [Use this template](https://github.com/maehr/academic-pandoc-template/generate) to create your own copy of this repository. You can also [fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+2. Edit the document you want to write:
+   - Article: [article/article.md](article/article.md)
+   - Presentation: [presentation/presentation.md](presentation/presentation.md)
+   - Thesis: files in [thesis/](thesis), starting with [thesis/index.qmd](thesis/index.qmd)
+3. Edit titles, authors, dates, and other document settings in the matching `_metadata.yml` file:
+   - Article: [article/\_metadata.yml](article/_metadata.yml)
+   - Presentation: [presentation/\_metadata.yml](presentation/_metadata.yml)
+   - Thesis: [thesis/\_metadata.yml](thesis/_metadata.yml)
+4. Edit references in the matching `references.bib` file:
+   - Article: [article/references.bib](article/references.bib)
+   - Presentation: [presentation/references.bib](presentation/references.bib)
+   - Thesis: [thesis/references.bib](thesis/references.bib)
+5. [Commit your changes](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project).
+6. Open the repository's [Actions](https://github.com/maehr/academic-pandoc-template/actions) tab, select the [Quarto workflow](https://github.com/maehr/academic-pandoc-template/actions/workflows/quarto.yml), and click **Run workflow**.
+7. When the workflow finishes, the rendered files such as PDF, Word, HTML, EPUB, PowerPoint, and TeX are committed back to the repository.
+
+You can edit Markdown files [online on GitHub](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github/editing-files-in-your-repository), with [Zettlr](https://www.zettlr.com/), or with another [Markdown editor](https://www.markdownguide.org/tools/). If you are new to Markdown, start with [The Markdown Guide](https://www.markdownguide.org/). You can edit BibTeX references online, with [JabRef](http://www.jabref.org/), or with your favorite BibTeX editor.
+
+### Build Locally
+
 Use this template, edit one of the document sources, and run the Quarto build. The npm scripts render the root documentation site and each document-specific Quarto project.
 
-### Prerequisites
+#### Prerequisites
 
 - [Quarto](https://quarto.org/docs/get-started/)
 - [TinyTeX](https://yihui.org/tinytex/) for PDF output: `quarto install tinytex`
 - [Node.js](https://nodejs.org/) and npm for formatting, rendering, and changelog tooling
 
-### Build
+#### Build
 
 ```bash
 npm run render
