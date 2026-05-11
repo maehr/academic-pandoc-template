@@ -11,8 +11,6 @@ name: Render and Publish
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: '${{ github.workflow }}-${{ github.ref }}'
@@ -49,11 +47,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Overwrite _quarto.yml
-        if: github.repository == 'maehr/open-research-data-template'
-        run: |
-          cp .github/_quarto.yml _quarto.yml
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -69,7 +62,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Render Quarto Project
-        run: npm run site:build
+        run: npm run render
 
       - name: Upload Built Artifacts
         uses: actions/upload-artifact@v4
@@ -91,6 +84,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint, build-optimize]
     if: github.event_name != 'pull_request'
+    permissions:
+      pages: write
+      id-token: write
 
     steps:
       - name: Deploy to GitHub Pages
