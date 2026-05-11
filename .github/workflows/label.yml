@@ -1,4 +1,4 @@
-name: Pull Request Labeler
+name: Label Pull Requests
 
 on: [pull_request]
 
@@ -8,6 +8,7 @@ permissions:
 
 jobs:
   triage:
+    name: Apply Labels
     runs-on: ubuntu-latest
     steps:
       - name: Label Pull Request

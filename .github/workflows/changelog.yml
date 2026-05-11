@@ -7,7 +7,7 @@ permissions:
 
 jobs:
   changelog:
-    name: Generate changelog
+    name: Generate Changelog
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
