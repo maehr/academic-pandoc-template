@@ -1,4 +1,4 @@
-name: Greetings
+name: Greet First-Time Contributors
 
 on: [pull_request, issues]
 
@@ -8,6 +8,7 @@ permissions:
 
 jobs:
   greeting:
+    name: Greet Contributor
     runs-on: ubuntu-latest
     steps:
       - uses: actions/first-interaction@v3
