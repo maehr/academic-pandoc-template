@@ -57,6 +57,7 @@ Use this template, edit one of the document sources, and run the Quarto build. T
 #### Build
 
 ```bash
+quarto install extension pandoc-ext/multibib
 npm run render
 ```
 
@@ -73,7 +74,11 @@ Useful render scripts:
 - `npm run render:article` renders all article formats.
 - `npm run render:presentation` renders RevealJS, Beamer PDF, PowerPoint, and TeX outputs.
 - `npm run render:thesis` renders Word, EPUB, PDF, and TeX thesis outputs.
-- `npm run render:article:pdf`, `npm run render:presentation:pptx`, or `npm run render:thesis:docx` render a single format.
+
+Note that for theses, you must manually install the multibib extension first:
+```bash
+quarto install extension pandoc-ext/multibib
+```
 
 You can also call Quarto directly:
 
