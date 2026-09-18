@@ -73,6 +73,7 @@ Useful render scripts:
 - `npm run render:article` renders all article formats.
 - `npm run render:presentation` renders RevealJS, Beamer PDF, PowerPoint, and TeX outputs.
 - `npm run render:thesis` renders Word, EPUB, PDF, and TeX thesis outputs.
+- `npm run render:article:pdf`, `npm run render:presentation:pptx`, or `npm run render:thesis:docx` render a single format.
 
 You can also call Quarto directly:
 
