@@ -18,7 +18,6 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-          multibib: true
       - run: npm run check
       - run: npm run render
       - uses: EndBug/add-and-commit@v10
