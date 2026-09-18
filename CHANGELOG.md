@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- GitHub Pages CI pipeline for Quarto to automatically publish documentation on `workflow_dispatch`.
+- PR validation CI step for Quarto rendering.
 - Added Quarto project configuration for the root documentation website and for article, presentation, and thesis examples.
 - Added npm preview and render scripts for the full project and for individual document formats.
 - Added rendered Quarto HTML output for the article example and updated generated article, presentation, and thesis artifacts.
@@ -25,6 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updated GitHub Actions to their latest versions.
+- Installed TinyTeX in the CI pipeline to fix PDF rendering issues.
 - Updated the README to document the Quarto workflow, prerequisites, render commands, and project structure.
 - Replaced the manual Pandoc GitHub Actions workflow with a Quarto workflow that installs npm dependencies, Quarto, and TinyTeX before rendering artifacts.
 - Updated formatting configuration to use `.prettierignore` and `npm run check` consistently.
